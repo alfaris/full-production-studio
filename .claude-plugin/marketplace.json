@@ -1,0 +1,13 @@
+{
+  "name": "full-production-studio",
+  "owner": { "name": "Ahmed Faris", "url": "https://github.com/alfaris" },
+  "metadata": { "description": "استوديو إنتاج متكامل — Full Production Studio skills for creators." },
+  "plugins": [
+    {
+      "name": "full-production-studio",
+      "source": "./",
+      "description": "65 skills for video & content creators: ideas, content, motion graphics, and pro editing.",
+      "category": "productivity"
+    }
+  ]
+}
