@@ -9,6 +9,12 @@
 <meta property="og:description" content="Open-source AI skills for video & content creators. Works with Claude, ChatGPT, Gemini, Codex, Cursor.">
 <meta property="og:image" content="https://raw.githubusercontent.com/alfaris/full-production-studio/main/assets/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+} }
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -129,6 +135,47 @@
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+  /* 3D stage */
+  .stage { position: relative; height: clamp(380px, 46vw, 520px); margin: 18px -20px 0; display: none; touch-action: pan-y; }
+  body.has3d .stage { display: block; }
+  body.has3d .tiles { display: none; }
+  .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .stage-labels { position: absolute; inset: 0; pointer-events: none; }
+  .stage-label, .stage-pill {
+    position: absolute; left: 0; top: 0; pointer-events: auto; opacity: 0; cursor: pointer;
+    background: none; border: 0; color: var(--text); font: inherit; text-align: center; will-change: transform;
+  }
+  .stage-label { display: flex; flex-direction: column; align-items: center; line-height: 1.25; padding: 4px 10px; }
+  .stage-label span { font-weight: 900; font-size: 22px; transition: color .2s; }
+  .stage-label small { color: var(--dim); font-size: 12px; letter-spacing: 1.5px; }
+  .stage-label.hot span, .stage-label:hover span, .stage-label:focus-visible span { color: var(--orange2); }
+  .stage-pill {
+    border: 1.5px solid var(--orange); color: var(--orange2); background: rgba(21,23,28,.75); backdrop-filter: blur(6px);
+    border-radius: 999px; padding: 4px 16px; font-weight: 800; font-size: 14px; direction: ltr; white-space: nowrap;
+  }
+  .stage-pill:hover { background: var(--orange); color: #fff; }
+
+  /* founder */
+  .founder {
+    display: grid; grid-template-columns: 170px 1fr; gap: 28px; align-items: center; background: var(--panel);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; position: relative; overflow: hidden;
+  }
+  .founder::after { content: ""; position: absolute; inset: auto -80px -120px auto; width: 320px; height: 320px; background: radial-gradient(circle, rgba(244,123,32,.18), transparent 65%); pointer-events: none; }
+  .avatar {
+    width: 170px; height: 170px; border-radius: 28px; overflow: hidden; background: linear-gradient(145deg, var(--orange2), var(--orange));
+    display: grid; place-items: center; font-weight: 900; font-size: 54px; color: #fff;
+    box-shadow: 0 18px 40px rgba(0,0,0,.45); outline: 2px dashed rgba(255,255,255,.16); outline-offset: 8px;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .founder .kicker { color: var(--orange2); font-weight: 800; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+  .founder h2 { margin: 2px 0 2px; font-size: 30px; font-weight: 900; }
+  .founder .role { color: var(--muted); font-weight: 700; margin-bottom: 10px; }
+  .founder p { margin: 0 0 14px; color: #c9cdd4; max-width: 720px; }
+  .stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .stats span { background: var(--panel2); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; }
+  .stats b { color: var(--orange2); }
+
+  @media (max-width: 760px) { .founder { grid-template-columns: 1fr; text-align: center; } .avatar { margin: 0 auto; width: 140px; height: 140px; } .stats { justify-content: center; } .founder p { margin-inline: auto; } }
   @media (max-width: 760px) { .director { grid-template-columns: 1fr; } .tiles { gap: 18px; } }
   @media (max-width: 520px) {
     .brand span { display: none; }
@@ -137,6 +184,8 @@
     .tile .sq { width: 60px; height: 60px; border-radius: 16px; font-size: 26px; outline-offset: 4px; }
     .tile span { font-size: 14px; }
     .grid { grid-template-columns: 1fr; }
+    .stage { height: 560px; }
+    .stage-label span { font-size: 17px; }
   }
 </style>
 </head>
@@ -156,6 +205,7 @@
     <h2>Full Production Studio</h2>
     <p data-i18n="tagline"></p>
 
+    <div class="stage" id="stage"><div class="stage-labels"></div></div>
     <div class="tiles" id="tiles"></div>
 
     <div class="install">
@@ -164,7 +214,7 @@
     </div>
   </div>
 
-  <section>
+  <section id="director">
     <div class="director">
       <div>
         <h2 class="sec-title" data-i18n="dirTitle"></h2>
@@ -200,6 +250,20 @@
     <div class="how" id="how"></div>
   </section>
 
+  <section id="founder">
+    <div class="founder">
+      <div class="avatar"><img src="https://afaris.me/wp-content/uploads/2024/01/WhatsApp-Image-2022-08-27-at-12.09.55-AM-2-jpeg.avif" alt="Ahmed Faris" loading="lazy" onerror="const a=this.parentNode; this.remove(); a.textContent='AF';"></div>
+      <div>
+        <div class="kicker" data-i18n="fKicker"></div>
+        <h2 data-i18n="fName"></h2>
+        <div class="role" data-i18n="fRole"></div>
+        <p data-i18n="fBio"></p>
+        <div class="stats" id="fStats"></div>
+        <a class="btn primary" href="https://afaris.me/" target="_blank" rel="noopener" data-i18n="fCta"></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div data-i18n="footer"></div>
     <div style="margin-top:6px"><a href="https://github.com/alfaris/full-production-studio#-credits" data-i18n="credits"></a></div>
@@ -231,6 +295,10 @@ const T = {
       ['Claude.ai', 'Download a skill’s <b>.zip</b> (button on each card) → Settings → Capabilities → Skills → Upload.'],
       ['ChatGPT · Gemini · Claude Projects', 'Download a skill’s <b>.md</b> from the latest release and paste it into a custom GPT, a Gem, or Project instructions.'],
     ],
+    fKicker: 'Meet the founder', fName: 'Ahmed Faris', fRole: 'Product Designer · Educator · Mentor',
+    fBio: 'I’m a product designer, educator and mentor with 15+ years in design. I built Full Production Studio so every creator, especially Arab creators, can make better videos with AI without being a programmer, from the first idea to the final export.',
+    fStats: ['<b>15+</b> years in design', '<b>5,000+</b> learners taught', 'Senior Product Designer at <b>Teracloud</b>'],
+    fCta: 'Visit afaris.me →',
     footer: 'MIT licensed. Made for creators by Ahmed Faris.', credits: 'Credits to the original skill authors →',
   },
   ar: {
@@ -254,6 +322,10 @@ const T = {
       ['Claude.ai', 'نزّل ملف الـ<b>zip</b> للسكيل (الزرار في كل كارت) ← Settings ← Capabilities ← Skills ← Upload.'],
       ['ChatGPT · Gemini · Claude Projects', 'نزّل ملف الـ<b>md</b> للسكيل من آخر إصدار، والصقه في تعليمات الـGPT أو الـGem أو الـProject.'],
     ],
+    fKicker: 'المؤسس', fName: 'أحمد فارس', fRole: 'مصمم منتجات · مدرّب · منتور',
+    fBio: 'أنا مصمم منتجات ومدرّب ومنتور، وبشتغل في التصميم من أكتر من ١٥ سنة. عملت «استوديو إنتاج متكامل» عشان أي صانع محتوى، وخصوصًا صنّاع المحتوى العرب، يقدر يطلّع فيديوهات أحسن بالـAI من غير ما يكون مبرمج، من أول فكرة لحد التصدير.',
+    fStats: ['<b>+15</b> سنة في التصميم', '<b>+5,000</b> متعلم درّبتهم', 'Senior Product Designer في <b>Teracloud</b>'],
+    fCta: 'زور موقعي afaris.me ←',
     footer: 'رخصة MIT. معمول لصنّاع المحتوى بواسطة أحمد فارس.', credits: 'الكريدت لأصحاب السكيلز الأصليين ←',
   },
 };
@@ -279,6 +351,7 @@ function setLang(l) {
   });
   $('#q').placeholder = T[l].search;
   $('#flow').innerHTML = T[l].flow.map(s => `<span>${s}</span>`).join(`<i>${l === 'ar' ? '←' : '→'}</i>`);
+  $('#fStats').innerHTML = T[l].fStats.map(x => `<span>${x}</span>`).join('');
   $('#how').innerHTML = T[l].how.map(([h, p]) => `<div><h3>${h}</h3><p>${p}</p></div>`).join('');
   if (DATA) renderAll();
 }
@@ -329,18 +402,32 @@ document.addEventListener('click', e => {
   if (!b) return;
   if (b.dataset.copy) copy(b.dataset.copy);
   else if (b.dataset.copyFrom) copy(document.getElementById(b.dataset.copyFrom).textContent);
-  else if (b.dataset.cat) {
-    cat = cat === b.dataset.cat && b.classList.contains('tile') ? 'all' : b.dataset.cat;
-    renderAll();
-    if (b.classList.contains('tile')) document.getElementById('skills').scrollIntoView();
-  }
+  else if (b.dataset.cat) selectCat(b.dataset.cat, b.classList.contains('tile'));
 });
+function selectCat(k, fromHero) {
+  cat = fromHero && cat === k ? 'all' : k;
+  if (DATA) renderAll();
+  if (fromHero) document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+}
+window.fpsSelectCat = k => selectCat(k, true);
 $('#q').addEventListener('input', renderGrid);
 $('#langBtn').addEventListener('click', () => setLang(lang === 'ar' ? 'en' : 'ar'));
 
 setLang(localStorage.getItem('fps-lang') || ((navigator.language || '').startsWith('ar') ? 'ar' : 'en'));
 fetch('data.json').then(r => r.json()).then(d => { DATA = d; renderAll(); })
   .catch(() => { $('#grid').innerHTML = '<div class="empty">Could not load skills. <a href="https://github.com/' + REPO + '">Open on GitHub</a></div>'; });
+</script>
+<script type="module">
+  // 3D hero: progressive enhancement. If WebGL or the CDN fails, the flat tiles stay.
+  try {
+    const { mountStudio3D } = await import('./studio3d.js');
+    document.body.classList.add('has3d'); // show the stage first so it has a size
+    const ok = mountStudio3D(document.getElementById('stage'), {
+      onSelect: k => window.fpsSelectCat(k),
+      onDirector: () => document.getElementById('director').scrollIntoView({ behavior: 'smooth' }),
+    });
+    if (!ok) document.body.classList.remove('has3d');
+  } catch (e) { document.body.classList.remove('has3d'); console.warn('3D hero disabled:', e); }
 </script>
 </body>
 </html>
