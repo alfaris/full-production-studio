@@ -122,11 +122,24 @@
   .card .actions .btn { padding: 6px 12px; font-size: 13px; }
   .empty { color: var(--muted); text-align: center; padding: 40px; }
 
-  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .how div { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
-  .how h3 { margin: 0 0 6px; font-size: 17px; }
+  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
+  .how > div { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .how h3 { margin: 0; font-size: 17px; }
   .how p { margin: 0; color: var(--muted); font-size: 14px; }
-  .how code { direction: ltr; unicode-bidi: isolate; background: #0f1114; padding: 1px 6px; border-radius: 6px; font-size: 12.5px; }
+  .how .lbl { color: var(--dim); font-size: 12.5px; font-weight: 700; margin-bottom: -4px; }
+  .cmd {
+    display: flex; align-items: center; gap: 8px; background: #0f1114; border: 1px solid var(--line); border-radius: 10px;
+    padding: 6px 6px 6px 12px; direction: ltr;
+  }
+  .cmd code { flex: 1; min-width: 0; color: #e7e9ee; font-size: 13px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; text-align: left; }
+  .cmd code.sh::before { content: "$ "; color: var(--dim); }
+  .cmd .btn { padding: 5px 12px; font-size: 12.5px; }
+  .how .go { align-self: flex-start; margin-top: auto; }
+  .jump {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; color: var(--muted); font-size: 14px; font-weight: 700;
+    border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; background: rgba(28,31,38,.6);
+  }
+  .jump:hover { color: var(--orange2); border-color: var(--orange); text-decoration: none; }
 
   footer { color: var(--dim); text-align: center; padding: 40px 0 60px; font-size: 14px; }
   .toast {
@@ -212,6 +225,7 @@
       <code id="installAll">npx skills add alfaris/full-production-studio</code>
       <button class="btn primary" type="button" data-copy-from="installAll" data-i18n="copy">Copy</button>
     </div>
+    <a class="jump" href="#install" data-i18n="jump"></a>
   </div>
 
   <section id="director">
@@ -245,7 +259,7 @@
     <div class="grid" id="grid"></div>
   </section>
 
-  <section>
+  <section id="install">
     <h2 class="sec-title" data-i18n="howTitle"></h2>
     <div class="how" id="how"></div>
   </section>
@@ -289,11 +303,16 @@ const T = {
     none: 'No skills match your search.',
     view: 'SKILL.md', zip: 'ZIP', toolkit: '🧰 needs toolkit', original: '⭐ original',
     howTitle: '⚡ Install on any AI',
+    jump: '⚡ How to install on any AI ↓',
     how: [
-      ['Claude Code, Codex, Cursor, Gemini CLI', 'Run <code>npx skills add alfaris/full-production-studio</code>, or add only some skills with <code>--skill name</code>.'],
-      ['Claude Code plugin', '<code>/plugin marketplace add alfaris/full-production-studio</code> then <code>/plugin install full-production-studio@full-production-studio</code>.'],
-      ['Claude.ai', 'Download a skill’s <b>.zip</b> (button on each card) → Settings → Capabilities → Skills → Upload.'],
-      ['ChatGPT · Gemini · Claude Projects', 'Download a skill’s <b>.md</b> from the latest release and paste it into a custom GPT, a Gem, or Project instructions.'],
+      { h: 'Claude Code, Codex, Cursor, Gemini CLI', p: 'Install the whole studio with one command:',
+        cmds: [['', 'npx skills add alfaris/full-production-studio'], ['Or only the skills you want:', 'npx skills add alfaris/full-production-studio --skill studio-director']] },
+      { h: 'Claude Code plugin', p: 'Inside Claude Code, add the marketplace, then install:',
+        cmds: [['', '/plugin marketplace add alfaris/full-production-studio'], ['', '/plugin install full-production-studio@full-production-studio']] },
+      { h: 'Claude.ai', p: 'Download a skill’s <b>ZIP</b> from its card, then go to Settings → Capabilities → Skills → Upload skill.',
+        link: ['#skills', 'Choose a skill ↑'] },
+      { h: 'ChatGPT · Gemini · Claude Projects', p: 'Download a skill’s <b>.md</b> file from the latest release and paste it into a custom GPT, a Gem, or Project instructions.',
+        link: ['https://github.com/alfaris/full-production-studio/releases/latest', 'Open the latest release ↗'] },
     ],
     fKicker: 'Meet the founder', fName: 'Ahmed Faris', fRole: 'Product Designer · Educator · Mentor',
     fBio: 'I’m a product designer, educator and mentor with 15+ years in design. I built Full Production Studio so every creator, especially Arab creators, can make better videos with AI without being a programmer, from the first idea to the final export.',
@@ -316,11 +335,16 @@ const T = {
     none: 'مفيش سكيلز بالاسم ده.',
     view: 'SKILL.md', zip: 'ZIP', toolkit: '🧰 محتاجة أدوات', original: '⭐ أصلي',
     howTitle: '⚡ التركيب على أي AI',
+    jump: '⚡ إزاي تركّب على أي AI ↓',
     how: [
-      ['Claude Code، Codex، Cursor، Gemini CLI', 'شغّل <code>npx skills add alfaris/full-production-studio</code>، أو ركّب سكيلز معيّنة بـ <code>--skill name</code>.'],
-      ['كـplugin على Claude Code', '<code>/plugin marketplace add alfaris/full-production-studio</code> وبعدين <code>/plugin install full-production-studio@full-production-studio</code>.'],
-      ['Claude.ai', 'نزّل ملف الـ<b>zip</b> للسكيل (الزرار في كل كارت) ← Settings ← Capabilities ← Skills ← Upload.'],
-      ['ChatGPT · Gemini · Claude Projects', 'نزّل ملف الـ<b>md</b> للسكيل من آخر إصدار، والصقه في تعليمات الـGPT أو الـGem أو الـProject.'],
+      { h: 'Claude Code، Codex، Cursor، Gemini CLI', p: 'ركّب الاستوديو كله بأمر واحد:',
+        cmds: [['', 'npx skills add alfaris/full-production-studio'], ['أو السكيلز اللي عايزها بس:', 'npx skills add alfaris/full-production-studio --skill studio-director']] },
+      { h: 'كـplugin على Claude Code', p: 'جوه Claude Code، ضيف الـmarketplace وبعدين ركّب:',
+        cmds: [['', '/plugin marketplace add alfaris/full-production-studio'], ['', '/plugin install full-production-studio@full-production-studio']] },
+      { h: 'Claude.ai', p: 'نزّل ملف الـ<b>ZIP</b> من كارت السكيل، وبعدين روح Settings ← Capabilities ← Skills ← Upload skill.',
+        link: ['#skills', 'اختار سكيل ↑'] },
+      { h: 'ChatGPT · Gemini · Claude Projects', p: 'نزّل ملف الـ<b>md</b> للسكيل من آخر إصدار، والصقه في تعليمات الـGPT أو الـGem أو الـProject.',
+        link: ['https://github.com/alfaris/full-production-studio/releases/latest', 'افتح آخر إصدار ↗'] },
     ],
     fKicker: 'المؤسس', fName: 'أحمد فارس', fRole: 'مصمم منتجات · مدرّب · منتور',
     fBio: 'أنا مصمم منتجات ومدرّب ومنتور، وبشتغل في التصميم من أكتر من ١٥ سنة. عملت «استوديو إنتاج متكامل» عشان أي صانع محتوى، وخصوصًا صنّاع المحتوى العرب، يقدر يطلّع فيديوهات أحسن بالـAI من غير ما يكون مبرمج، من أول فكرة لحد التصدير.',
@@ -352,7 +376,13 @@ function setLang(l) {
   $('#q').placeholder = T[l].search;
   $('#flow').innerHTML = T[l].flow.map(s => `<span>${s}</span>`).join(`<i>${l === 'ar' ? '←' : '→'}</i>`);
   $('#fStats').innerHTML = T[l].fStats.map(x => `<span>${x}</span>`).join('');
-  $('#how').innerHTML = T[l].how.map(([h, p]) => `<div><h3>${h}</h3><p>${p}</p></div>`).join('');
+  $('#how').innerHTML = T[l].how.map(c => `<div>
+      <h3>${c.h}</h3><p>${c.p}</p>
+      ${(c.cmds || []).map(([lbl, cmd]) => `${lbl ? `<div class="lbl">${lbl}</div>` : ''}
+        <div class="cmd"><code class="${cmd.startsWith('/') ? '' : 'sh'}">${esc(cmd)}</code>
+        <button class="btn primary" type="button" data-copy="${esc(cmd)}">${T[l].copy}</button></div>`).join('')}
+      ${c.link ? `<a class="btn go" href="${c.link[0]}"${c.link[0].startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${c.link[1]}</a>` : ''}
+    </div>`).join('');
   if (DATA) renderAll();
 }
 
