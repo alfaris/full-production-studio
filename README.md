@@ -1,38 +1,40 @@
 <div align="center">
 
+**English** · [العربية](README.ar.md)
+
 # 🎬 Full Production Studio
-### استوديو إنتاج متكامل
 
-**أفكار · محتوى · موشن · احترافي**
+**💡 Ideas · 📄 Content · 🎥 Motion · ✨ Pro**
 
-A single repo of open-source **Agent Skills** for video & content creators, covering every stage from the first idea to the final export.
-It installs on Claude Code, Claude.ai, Codex, Cursor, Gemini CLI, ChatGPT and any agent that reads `SKILL.md`.
+65 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
+Works with Claude Code, Claude.ai, Codex, Cursor, Gemini CLI, ChatGPT, and any agent that reads `SKILL.md`.
+
+[![Release](https://img.shields.io/github/v/release/alfaris/full-production-studio)](https://github.com/alfaris/full-production-studio/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 </div>
 
 ---
 
-## 🇪🇬 بالعربي
+## What's inside
 
-السكيلز دي بتحوّل الـAI بتاعك لاستوديو إنتاج كامل: من تحليل المنافسين وكتابة الهوك والسكريبت، لحد الموشن جرافيك بالكود (Remotion / HTML)، والمونتاج، والكابشنز، والتصدير.
-مش لازم تكون مبرمج: تقدر تنزّلها بأمر واحد على Claude Code، أو ترفعها على Claude.ai، أو تلصق ملف السكيل في تعليمات المشروع على أي AI.
+Without guidance, AI output for scripts and motion graphics tends to be generic. These skills give your AI what it's missing: hook formulas, retention structure, easing and timing taste, Remotion know-how, editing rhythm, and export pipelines.
 
-**التقسيمة:**
-
-| | القسم | بيعمل إيه |
+| | Section | What it covers |
 |---|---|---|
-| 💡 | **أفكار** | بحث، استراتيجية، تحليل منافسين، زوايا جديدة |
-| 📄 | **محتوى** | سكريبتات، هوكات، عناوين، صوتك الخاص، كتابة لكل منصة |
-| 🎥 | **موشن** | موشن جرافيك بالكود، Easing، Remotion، صوت، فيزياء |
-| ✨ | **احترافي** | مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات |
+| 💡 | **Ideas** | Research, strategy, competitor analysis, finding angles |
+| 📄 | **Content** | Scripts, hooks, titles, your own voice, writing for every platform |
+| 🎥 | **Motion** | Code-based motion graphics, Remotion, sound design, simulations |
+| ✨ | **Pro** | Editing, captions, color grading, reframing, clip extraction |
+
+You don't need to be a programmer. Pick whichever install method below fits the AI you use.
 
 ---
 
-## ⚡ Install / التركيب
+## ⚡ Install
 
-
-### 1) Any agent (Claude Code, Codex, Cursor, Gemini CLI, Copilot …), one command
-Uses the open [`skills`](https://github.com/vercel-labs/skills) CLI, which detects your installed agents:
+### 1) Any coding agent (Claude Code, Codex, Cursor, Gemini CLI, Copilot …), one command
+Uses the open [`skills`](https://github.com/vercel-labs/skills) CLI, which detects the agents you have installed:
 ```bash
 npx skills add alfaris/full-production-studio
 ```
@@ -47,10 +49,10 @@ npx skills add alfaris/full-production-studio --skill yt-script --skill motion-d
 /plugin install full-production-studio@full-production-studio
 ```
 
-### 3) Manual install script (copies into your agents' skills folders)
+### 3) Install script (copies into your agents' skills folders)
 ```bash
 git clone https://github.com/alfaris/full-production-studio && cd full-production-studio
-./scripts/install.sh            # macOS / Linux / Git Bash, all detected agents
+./scripts/install.sh            # macOS / Linux / Git Bash, every detected agent
 ./scripts/install.sh claude     # just Claude Code  (~/.claude/skills)
 ```
 ```powershell
@@ -60,11 +62,11 @@ git clone https://github.com/alfaris/full-production-studio && cd full-productio
 Targets: `claude` → `~/.claude/skills`, `codex` → `~/.codex/skills`, `agents` → `~/.agents/skills` (shared standard folder), `gemini` → `~/.gemini/skills`.
 
 ### 4) Claude.ai (web / desktop app)
-Download a skill zip from the [Releases](../../releases) page (or run `python scripts/studio.py build` → `dist/zips/`), then go to **Settings → Capabilities → Skills → Upload skill**.
+Download a skill `.zip` from the [latest release](https://github.com/alfaris/full-production-studio/releases/latest), then go to **Settings → Capabilities → Skills → Upload skill**.
 
-### 5) ChatGPT, Gemini, Claude Projects, or any chat AI with no skill support
-Open `dist/prompts/<skill>.md` (from Releases or `build`). Each one is a single file with the skill and its reference docs. Paste it into:
-- **ChatGPT** → custom GPT → *Instructions* (or upload as *Knowledge*)
+### 5) ChatGPT, Gemini, Claude Projects, or any chat AI
+Download a skill `.md` from the [latest release](https://github.com/alfaris/full-production-studio/releases/latest). Each one is a single file with the skill and its reference docs. Paste it into:
+- **ChatGPT** → custom GPT → *Instructions* (or upload it as *Knowledge*)
 - **Gemini** → Gem → *Instructions*
 - **Claude.ai Project** → *Project instructions* / *Project knowledge*
 
@@ -73,7 +75,7 @@ Open `dist/prompts/<skill>.md` (from Releases or `build`). Each one is a single 
 ## 📚 Skills
 
 <!-- BEGIN:CATALOG -->
-### أفكار · Ideas (9)
+### 💡 Ideas (9)
 
 _Research, strategy, competitor analysis, finding angles_
 
@@ -83,13 +85,13 @@ _Research, strategy, competitor analysis, finding angles_
 | [`invisible-threads`](skills/invisible-threads/SKILL.md) | Discovers non-obvious thematic connections ("invisible threads") across a corpus of essays, articles, or transcripts. | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`open-education-hub-deep-dives`](skills/open-education-hub-deep-dives/SKILL.md) | Create SEO-optimized deep dive articles for the Open Education Hub. This skill combines proprietary OpenEd insights (podcasts, Slack,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`seo-research`](skills/seo-research/SKILL.md) | Strategic keyword research and content planning. Use this skill BEFORE writing to identify opportunities, validate topics, and create a… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`youtube`](skills/youtube/SKILL.md) | > _Optional Python scripts in execution/ need a YouTube Data API key._ | [AgriciDaniel](https://github.com/AgriciDaniel/claude-youtube) |
-| [`yt-audit`](skills/yt-audit/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-plan`](skills/yt-plan/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-retention`](skills/yt-retention/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-viral`](skills/yt-viral/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`youtube`](skills/youtube/SKILL.md) | The ultimate YouTube creator skill. Covers channel audits, video SEO, retention-engineered scripts, hook writing, thumbnail briefs,… _Optional Python scripts in execution/ need a YouTube Data API key._ | [AgriciDaniel](https://github.com/AgriciDaniel/claude-youtube) |
+| [`yt-audit`](skills/yt-audit/SKILL.md) | Audit a YouTube channel end to end - packaging, consistency, the first fifteen seconds, and what to fix first. Use for "audit my channel",… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-plan`](skills/yt-plan/SKILL.md) | Plan a week or a month of YouTube uploads - what to post, when, and in what order, sized to the creator's actual capacity. Use for "plan… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-retention`](skills/yt-retention/SKILL.md) | Read a YouTube Studio audience-retention export and find where viewers actually leave, then say what to change. Use for "why do people… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-viral`](skills/yt-viral/SKILL.md) | Find what is actually working in the user's niche on YouTube and rank it by how far each video beat its own channel, then name the… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
 
-### محتوى · Content (32)
+### 📄 Content (32)
 
 _Scripts, hooks, titles, voice, writing for every platform_
 
@@ -121,14 +123,14 @@ _Scripts, hooks, titles, voice, writing for every platform_
 | [`x-posting`](skills/x-posting/SKILL.md) | Post and schedule content to X/Twitter. Use when batch processing social posts, promoting podcasts/blogs, or scheduling content. Handles… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube-script-writer`](skills/youtube-script-writer/SKILL.md) | Write a high-retention YouTube script — explainer, tutorial, video essay, review, or talking head — on the packaging then cold-open then… | [mohitagw15856](https://github.com/mohitagw15856/pm-claude-skills) |
 | [`youtube-title-creator`](skills/youtube-title-creator/SKILL.md) | Generate high-CTR YouTube titles and thumbnails using framework fitting method. Match content to 119 proven formulas from Creator Hooks,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`yt-chapters`](skills/yt-chapters/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-comment`](skills/yt-comment/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-package`](skills/yt-package/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-script`](skills/yt-script/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-seo`](skills/yt-seo/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
-| [`yt-shorts`](skills/yt-shorts/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-chapters`](skills/yt-chapters/SKILL.md) | Write YouTube chapters from a transcript, validated against YouTube's own rules so they actually render. Use for "add chapters",… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-comment`](skills/yt-comment/SKILL.md) | Draft replies to YouTube comments in the creator's voice, triaged by which ones are worth answering. Use for "reply to my comments",… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-package`](skills/yt-package/SKILL.md) | Write and lint the title and thumbnail for a YouTube video as one pairing, checking truncation, duplication and vagueness before publish.… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-script`](skills/yt-script/SKILL.md) | Write a YouTube video script from a raw idea - hook options off 21 formulas, scored, then the full spoken script with the retention beats… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-seo`](skills/yt-seo/SKILL.md) | Write the description, tags and search-facing text for a YouTube video, aimed at the query a real person types. Use for "write my… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-shorts`](skills/yt-shorts/SKILL.md) | Find the Shorts hiding inside a long video and write them, using the transcript to pick self-contained moments. Use for "cut this into… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
 
-### موشن · Motion (10)
+### 🎥 Motion (10)
 
 _Motion graphics, animation taste, Remotion, sound design, visuals_
 
@@ -145,7 +147,7 @@ _Motion graphics, animation taste, Remotion, sound design, visuals_
 | [`video-transitions`](skills/video-transitions/SKILL.md) 🧰 | Join two clips with a visible transition effect (wipe, slide, dissolve, pixelize, circle open/close, fade-to-black, etc.) using ffmpeg… | [agamm](https://github.com/agamm/video-agent) |
 | [`web-sims`](skills/web-sims/SKILL.md) 🧰 | Build a simulation-style video (agents, particles, 3D machines, fly-throughs) as one HTML page whose render(t) is a pure function of time,… | [whaleyxbt](https://github.com/whaleyxbt/claude-motion) |
 
-### احترافي · Pro (14)
+### ✨ Pro (14)
 
 _Editing, captions, color, reframing, clips and post-production_
 
@@ -164,22 +166,22 @@ _Editing, captions, color, reframing, clips and post-production_
 | [`vellum-prep`](skills/vellum-prep/SKILL.md) | Convert markdown manuscripts to Vellum-ready Word documents. _Needs Python._ | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube-clip-extractor`](skills/youtube-clip-extractor/SKILL.md) | Download YouTube videos, identify compelling clips from transcripts, cut clips with ffmpeg, and generate platform-optimized on-screen text… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube-downloader`](skills/youtube-downloader/SKILL.md) | Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`yt-edit`](skills/yt-edit/SKILL.md) | >- | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
+| [`yt-edit`](skills/yt-edit/SKILL.md) | Turn a raw recording's transcript into an edit decision list - dead air, filler cues and retakes, with timecodes. Use for "edit this",… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
 
-🧰 = needs its upstream toolkit repo cloned (the guidance still works anywhere).
+🧰 = needs its upstream toolkit repo cloned (the guidance itself works anywhere).
 <!-- END:CATALOG -->
 
 ---
 
 ## 🔄 Updating from upstream
 
-All skills are copied, unmodified except where noted, from the original MIT-licensed repos, each pinned to an exact commit in [`sources.json`](sources.json).
-To pull newer versions: change a `ref` in `sources.json`, then run
+All skills are copied from the original MIT-licensed repos, unmodified except where noted, and each repo is pinned to an exact commit in [`sources.json`](sources.json).
+To pull newer versions, change a `ref` in `sources.json`, then run:
 ```bash
-python scripts/studio.py sync    # re-copy skills, regenerate this README + AGENTS.md + catalog.json
-python scripts/studio.py check   # validate all SKILL.md files
+python scripts/studio.py sync    # re-copy skills, regenerate both READMEs + AGENTS.md + catalog.json
+python scripts/studio.py check   # validate every SKILL.md
 ```
-Every skill folder includes `UPSTREAM.md` (source, commit, any changes) and `LICENSE.txt`.
+Each skill folder includes `UPSTREAM.md` (source, commit, any changes) and `LICENSE.txt`. Push a tag like `v1.1.0` and GitHub Actions publishes the release files.
 
 ## 🙏 Credits
 
@@ -196,4 +198,4 @@ This repo is a curated bundle. All credit goes to the original authors:
 | [video-agent](https://github.com/agamm/video-agent) | agamm | MIT |
 | [content-os](https://github.com/cdeistopened/content-os) | cdeistopened | MIT |
 
-Full license texts: [`THIRD_PARTY_LICENSES/`](THIRD_PARTY_LICENSES). The packaging (scripts, README, installers) is MIT, see [`LICENSE`](LICENSE).
+Full license texts are in [`THIRD_PARTY_LICENSES/`](THIRD_PARTY_LICENSES). The packaging (scripts, READMEs, installers) is MIT; see [`LICENSE`](LICENSE).

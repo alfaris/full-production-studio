@@ -1,9 +1,33 @@
 {
   "categories": {
-    "ideas":   { "ar": "أفكار",   "en": "Ideas",   "about": "Research, strategy, competitor analysis, finding angles" },
-    "content": { "ar": "محتوى",   "en": "Content", "about": "Scripts, hooks, titles, voice, writing for every platform" },
-    "motion":  { "ar": "موشن",    "en": "Motion",  "about": "Motion graphics, animation taste, Remotion, sound design, visuals" },
-    "pro":     { "ar": "احترافي", "en": "Pro",     "about": "Editing, captions, color, reframing, clips and post-production" }
+    "ideas": {
+      "ar": "أفكار",
+      "en": "Ideas",
+      "about": "Research, strategy, competitor analysis, finding angles",
+      "icon": "💡",
+      "about_ar": "بحث، استراتيجية، تحليل منافسين، زوايا جديدة"
+    },
+    "content": {
+      "ar": "محتوى",
+      "en": "Content",
+      "about": "Scripts, hooks, titles, voice, writing for every platform",
+      "icon": "📄",
+      "about_ar": "سكريبتات، هوكات، عناوين، صوتك الخاص، كتابة لكل منصة"
+    },
+    "motion": {
+      "ar": "موشن",
+      "en": "Motion",
+      "about": "Motion graphics, animation taste, Remotion, sound design, visuals",
+      "icon": "🎥",
+      "about_ar": "موشن جرافيك بالكود، Remotion، صوت، محاكاة"
+    },
+    "pro": {
+      "ar": "احترافي",
+      "en": "Pro",
+      "about": "Editing, captions, color, reframing, clips and post-production",
+      "icon": "✨",
+      "about_ar": "مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات"
+    }
   },
   "sources": [
     {
@@ -11,9 +35,16 @@
       "ref": "a2feb2104981a375ffd4f87ee04f4f5344ac43c6",
       "skills_glob": "skills/*",
       "categories": {
-        "yt-plan": "ideas", "yt-viral": "ideas", "yt-audit": "ideas", "yt-retention": "ideas",
-        "yt-script": "content", "yt-package": "content", "yt-seo": "content", "yt-chapters": "content",
-        "yt-comment": "content", "yt-shorts": "content",
+        "yt-plan": "ideas",
+        "yt-viral": "ideas",
+        "yt-audit": "ideas",
+        "yt-retention": "ideas",
+        "yt-script": "content",
+        "yt-package": "content",
+        "yt-seo": "content",
+        "yt-chapters": "content",
+        "yt-comment": "content",
+        "yt-shorts": "content",
         "yt-edit": "pro"
       }
     },
@@ -21,67 +52,135 @@
       "repo": "AgriciDaniel/claude-youtube",
       "ref": "84c3fa6805200632fadb4fe2795ef265511271c7",
       "skills_glob": "skills/*",
-      "categories": { "youtube": "ideas" },
-      "notes": { "youtube": "Optional Python scripts in execution/ need a YouTube Data API key." }
+      "categories": {
+        "youtube": "ideas"
+      },
+      "notes": {
+        "youtube": "Optional Python scripts in execution/ need a YouTube Data API key."
+      }
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
       "ref": "f7c90bc09ee05dc25cf257bdb1826f2c2552c2cb",
-      "sparse": ["/plugins/pm-writers/skills/youtube-script-writer/", "/LICENSE"],
+      "sparse": [
+        "/plugins/pm-writers/skills/youtube-script-writer/",
+        "/LICENSE"
+      ],
       "skills_glob": "plugins/pm-writers/skills/youtube-script-writer",
-      "categories": { "youtube-script-writer": "content" }
+      "categories": {
+        "youtube-script-writer": "content"
+      }
     },
     {
       "repo": "whaleyxbt/claude-motion",
       "ref": "e627941543d9988b155dc610bb9cc0115a5e365e",
       "skills_glob": ".claude/skills/*",
-      "categories": { "motion-design": "motion", "review-loop": "motion", "sound-design": "motion", "web-sims": "motion" },
-      "toolkit": ["motion-design", "review-loop", "sound-design", "web-sims"]
+      "categories": {
+        "motion-design": "motion",
+        "review-loop": "motion",
+        "sound-design": "motion",
+        "web-sims": "motion"
+      },
+      "toolkit": [
+        "motion-design",
+        "review-loop",
+        "sound-design",
+        "web-sims"
+      ]
     },
     {
       "repo": "howseen-ai/claude-motion-design",
       "ref": "3d90d349ef3fdde9b7e89de4df4a2159c9e8697f",
       "skills_glob": "skill/*",
-      "rename": { "motion-design": "motion-design-html" },
-      "categories": { "motion-design-html": "motion" },
-      "notes": { "motion-design-html": "Needs Node + Playwright + ffmpeg (and Python for the helper scripts)." }
+      "rename": {
+        "motion-design": "motion-design-html"
+      },
+      "categories": {
+        "motion-design-html": "motion"
+      },
+      "notes": {
+        "motion-design-html": "Needs Node + Playwright + ffmpeg (and Python for the helper scripts)."
+      }
     },
     {
       "repo": "haidrrrry/claude-remotion-skill",
       "ref": "1dcbe5e3fc6cf970bd10d3cc05f0a8a5d19d0383",
       "skills_glob": "remotion-motion-graphics",
-      "categories": { "remotion-motion-graphics": "motion" }
+      "categories": {
+        "remotion-motion-graphics": "motion"
+      }
     },
     {
       "repo": "agamm/video-agent",
       "ref": "cc00d2815869cbf2d708426a5082612f0c3b4dbf",
       "skills_glob": ".claude/skills/*",
       "categories": {
-        "remotion-graphics": "motion", "video-transitions": "motion", "video-overlay": "motion",
-        "editor": "pro", "edl-edit": "pro", "captions": "pro", "color-grade": "pro", "cutting-rhythm": "pro",
-        "filler-removal": "pro", "grok-video-edit": "pro", "reframe-social": "pro", "audio-edit": "pro"
+        "remotion-graphics": "motion",
+        "video-transitions": "motion",
+        "video-overlay": "motion",
+        "editor": "pro",
+        "edl-edit": "pro",
+        "captions": "pro",
+        "color-grade": "pro",
+        "cutting-rhythm": "pro",
+        "filler-removal": "pro",
+        "grok-video-edit": "pro",
+        "reframe-social": "pro",
+        "audio-edit": "pro"
       },
-      "toolkit": ["remotion-graphics", "video-transitions", "video-overlay", "editor", "edl-edit", "captions",
-                  "color-grade", "cutting-rhythm", "filler-removal", "grok-video-edit", "reframe-social"]
+      "toolkit": [
+        "remotion-graphics",
+        "video-transitions",
+        "video-overlay",
+        "editor",
+        "edl-edit",
+        "captions",
+        "color-grade",
+        "cutting-rhythm",
+        "filler-removal",
+        "grok-video-edit",
+        "reframe-social"
+      ]
     },
     {
       "repo": "cdeistopened/content-os",
       "ref": "16e080f04186d892dcaa55672bea63096b0912ad",
       "skills_glob": "skills/*/*",
       "categories": {
-        "seo-research": "ideas", "find-your-margin": "ideas", "invisible-threads": "ideas",
+        "seo-research": "ideas",
+        "find-your-margin": "ideas",
+        "invisible-threads": "ideas",
         "open-education-hub-deep-dives": "ideas",
-        "youtube-title-creator": "content", "cold-open-creator": "content",
-        "hook-and-headline-writing": "content", "ghostwriter": "content", "writing-style": "content",
-        "human-writing": "content", "anti-ai-writing": "content", "ai-tells": "content",
-        "transcript-polisher": "content", "email-writing": "content", "how-newsletters": "content",
-        "dude-with-sign-writer": "content", "voice-pirate-wires": "content", "social-content-creation": "content",
-        "text-content": "content", "x-posting": "content", "x-article-converter": "content",
-        "meta-ads-creative": "content", "short-form-video": "content", "podcast-blog-post-creator": "content",
-        "day-in-the-life": "content", "verified-review": "content", "seo-content-writer": "content",
-        "video-caption-creation": "content", "podcast-production": "content",
+        "youtube-title-creator": "content",
+        "cold-open-creator": "content",
+        "hook-and-headline-writing": "content",
+        "ghostwriter": "content",
+        "writing-style": "content",
+        "human-writing": "content",
+        "anti-ai-writing": "content",
+        "ai-tells": "content",
+        "transcript-polisher": "content",
+        "email-writing": "content",
+        "how-newsletters": "content",
+        "dude-with-sign-writer": "content",
+        "voice-pirate-wires": "content",
+        "social-content-creation": "content",
+        "text-content": "content",
+        "x-posting": "content",
+        "x-article-converter": "content",
+        "meta-ads-creative": "content",
+        "short-form-video": "content",
+        "podcast-blog-post-creator": "content",
+        "day-in-the-life": "content",
+        "verified-review": "content",
+        "seo-content-writer": "content",
+        "video-caption-creation": "content",
+        "podcast-production": "content",
         "nano-banana-image-generator": "motion",
-        "youtube-clip-extractor": "pro", "youtube-downloader": "pro", "vellum-prep": "pro", "memo": "pro"
+        "youtube-clip-extractor": "pro",
+        "youtube-downloader": "pro",
+        "vellum-prep": "pro",
+        "memo": "pro"
       },
       "notes": {
         "nano-banana-image-generator": "Needs a Google Gemini API key.",

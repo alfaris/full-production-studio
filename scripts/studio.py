@@ -58,10 +58,20 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
     if not m:
         return {}, text
     meta = {}
-    for line in m.group(1).splitlines():
+    lines = m.group(1).splitlines()
+    for i, line in enumerate(lines):
         k, sep, v = line.partition(":")
         if sep and not line.startswith((" ", "\t")):
             v = v.strip()
+            if v[:1] in (">", "|"):  # YAML block scalar: gather the indented lines that follow
+                block = []
+                for nxt in lines[i + 1:]:
+                    if nxt.strip() and not nxt.startswith((" ", "\t")):
+                        break
+                    block.append(nxt.strip())
+                v = (" " if v[0] == ">" else "\n").join(b for b in block if b).strip()
+                meta[k.strip()] = v
+                continue
             if len(v) >= 2 and v[0] == v[-1] == '"':
                 try:
                     v = json.loads(v)
@@ -187,25 +197,41 @@ def short(desc: str, n: int = 140) -> str:
     return desc if len(desc) <= n else desc[: n - 1].rsplit(" ", 1)[0] + "…"
 
 
-def write_docs(catalog: list[dict]) -> None:
-    lines = []
-    for key, cat in SOURCES["categories"].items():
-        items = [c for c in catalog if c["category"] == key]
-        lines += [f"### {cat['ar']} · {cat['en']} ({len(items)})", "", f"_{cat['about']}_", "",
-                  "| Skill | What it does | Source |", "|---|---|---|"]
-        for c in items:
-            flag = " 🧰" if c["toolkit"] else ""
-            note = f" _{c['note']}_" if c["note"] else ""
-            lines.append(f"| [`{c['name']}`](skills/{c['name']}/SKILL.md){flag} | {short(c['description'])}{note} "
-                         f"| [{c['repo'].split('/')[0]}](https://github.com/{c['repo']}) |")
-        lines.append("")
-    lines.append("🧰 = needs its upstream toolkit repo cloned (the guidance still works anywhere).")
-    block = f"{BEGIN}\n" + "\n".join(lines) + f"\n{END}"
+README_LANGS = {
+    "README.md": {
+        "title": lambda c: c["en"], "about": "about",
+        "head": "| Skill | What it does | Source |",
+        "legend": "🧰 = needs its upstream toolkit repo cloned (the guidance itself works anywhere).",
+    },
+    "README.ar.md": {
+        "title": lambda c: c["ar"], "about": "about_ar",
+        "head": "| السكيل | بتعمل إيه | المصدر |",
+        "legend": "🧰 = محتاجة تعمل clone للريبو الأصلي بتاعها عشان السكريبتات تشتغل (الإرشادات نفسها تنفع في أي مكان).",
+    },
+}
 
-    readme = ROOT / "README.md"
-    txt = readme.read_text(encoding="utf-8")
-    txt = re.sub(re.escape(BEGIN) + ".*?" + re.escape(END), lambda _: block, txt, flags=re.S)
-    readme.write_text(txt, encoding="utf-8", newline="\n")
+
+def write_docs(catalog: list[dict]) -> None:
+    for fname, L in README_LANGS.items():
+        lines = []
+        for key, cat in SOURCES["categories"].items():
+            items = [c for c in catalog if c["category"] == key]
+            lines += [f"### {cat['icon']} {L['title'](cat)} ({len(items)})", "", f"_{cat[L['about']]}_", "",
+                      L["head"], "|---|---|---|"]
+            for c in items:
+                flag = " 🧰" if c["toolkit"] else ""
+                note = f" _{c['note']}_" if c["note"] else ""
+                lines.append(f"| [`{c['name']}`](skills/{c['name']}/SKILL.md){flag} | {short(c['description'])}{note} "
+                             f"| [{c['repo'].split('/')[0]}](https://github.com/{c['repo']}) |")
+            lines.append("")
+        lines.append(L["legend"])
+        block = f"{BEGIN}\n" + "\n".join(lines) + f"\n{END}"
+        readme = ROOT / fname
+        txt = readme.read_text(encoding="utf-8")
+        if BEGIN not in txt:
+            sys.exit(f"✗ {fname} is missing the {BEGIN} marker")
+        txt = re.sub(re.escape(BEGIN) + ".*?" + re.escape(END), lambda _: block, txt, flags=re.S)
+        readme.write_text(txt, encoding="utf-8", newline="\n")
 
     agents = ["# Full Production Studio — skills index", "",
               "This repo is a library of Agent Skills for video & content production.",

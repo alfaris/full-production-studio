@@ -40,7 +40,7 @@
     "category": "ideas",
     "repo": "AgriciDaniel/claude-youtube",
     "path": "skills/claude-youtube",
-    "description": ">",
+    "description": "The ultimate YouTube creator skill. Covers channel audits, video SEO, retention-engineered scripts, hook writing, thumbnail briefs, content strategy, content calendars, Shorts optimisation, analytics interpretation, monetisation planning, competitor research, cross-platform repurposing, upload metadata packages, and data-driven video idea generation. Triggers on: \"youtube\", \"channel\", \"video\", \"views\", \"subscribers\", \"watch time\", \"shorts\", \"thumbnail\", \"CTR\", \"retention\", \"monetize\", \"script\", \"hook\", \"upload\", \"youtube audit\", \"video ideas\", \"content calendar\", \"competitor analysis\", \"repurpose video\", \"youtube seo\", \"youtube strategy\", \"youtube analytics\".",
     "toolkit": false,
     "note": "Optional Python scripts in execution/ need a YouTube Data API key."
   },
@@ -49,7 +49,7 @@
     "category": "ideas",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-audit",
-    "description": ">-",
+    "description": "Audit a YouTube channel end to end - packaging, consistency, the first fifteen seconds, and what to fix first. Use for \"audit my channel\", \"why isn't my channel growing\", \"review my videos\", or a pasted channel URL.",
     "toolkit": false,
     "note": ""
   },
@@ -58,7 +58,7 @@
     "category": "ideas",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-plan",
-    "description": ">-",
+    "description": "Plan a week or a month of YouTube uploads - what to post, when, and in what order, sized to the creator's actual capacity. Use for \"plan my week\", \"content calendar\", \"what should I post\", \"I have no idea what to make next\".",
     "toolkit": false,
     "note": ""
   },
@@ -67,7 +67,7 @@
     "category": "ideas",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-retention",
-    "description": ">-",
+    "description": "Read a YouTube Studio audience-retention export and find where viewers actually leave, then say what to change. Use for \"why do people stop watching\", \"my retention is bad\", a pasted retention chart or CSV, or \"fix my pacing\".",
     "toolkit": false,
     "note": ""
   },
@@ -76,7 +76,7 @@
     "category": "ideas",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-viral",
-    "description": ">-",
+    "description": "Find what is actually working in the user's niche on YouTube and rank it by how far each video beat its own channel, then name the formula. Use for \"what's working right now\", \"find viral videos in my niche\", \"why did this blow up\", competitor research, or a swipe file.",
     "toolkit": false,
     "note": ""
   },
@@ -319,7 +319,7 @@
     "category": "content",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-chapters",
-    "description": ">-",
+    "description": "Write YouTube chapters from a transcript, validated against YouTube's own rules so they actually render. Use for \"add chapters\", \"timestamps\", \"break this video into sections\".",
     "toolkit": false,
     "note": ""
   },
@@ -328,7 +328,7 @@
     "category": "content",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-comment",
-    "description": ">-",
+    "description": "Draft replies to YouTube comments in the creator's voice, triaged by which ones are worth answering. Use for \"reply to my comments\", \"handle the comment section\", \"someone asked X\", or a pasted comment thread.",
     "toolkit": false,
     "note": ""
   },
@@ -337,7 +337,7 @@
     "category": "content",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-package",
-    "description": ">-",
+    "description": "Write and lint the title and thumbnail for a YouTube video as one pairing, checking truncation, duplication and vagueness before publish. Use for \"title ideas\", \"what should I call this\", \"thumbnail text\", \"my CTR is bad\", packaging, or any request to rename or repackage an existing video.",
     "toolkit": false,
     "note": ""
   },
@@ -346,7 +346,7 @@
     "category": "content",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-script",
-    "description": ">-",
+    "description": "Write a YouTube video script from a raw idea - hook options off 21 formulas, scored, then the full spoken script with the retention beats marked. Use whenever the user wants a video script, a hook, an opening line, \"what should I say\", \"write my next video\", or is about to record and does not have the first fifteen seconds yet.",
     "toolkit": false,
     "note": ""
   },
@@ -355,7 +355,7 @@
     "category": "content",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-seo",
-    "description": ">-",
+    "description": "Write the description, tags and search-facing text for a YouTube video, aimed at the query a real person types. Use for \"write my description\", \"tags\", \"SEO\", \"help this video get found\", \"nobody is finding this\".",
     "toolkit": false,
     "note": ""
   },
@@ -364,7 +364,7 @@
     "category": "content",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-shorts",
-    "description": ">-",
+    "description": "Find the Shorts hiding inside a long video and write them, using the transcript to pick self-contained moments. Use for \"cut this into shorts\", \"clip this\", \"repurpose this video\", \"what should I clip\".",
     "toolkit": false,
     "note": ""
   },
@@ -580,7 +580,7 @@
     "category": "pro",
     "repo": "Jakeschincariol/youtube-agent-skill",
     "path": "skills/yt-edit",
-    "description": ">-",
+    "description": "Turn a raw recording's transcript into an edit decision list - dead air, filler cues and retakes, with timecodes. Use for \"edit this\", \"cut the dead space\", \"tighten this video\", \"I rambled\", or any request to shorten footage from a transcript.",
     "toolkit": false,
     "note": ""
   }
