@@ -18,6 +18,8 @@ pip install faster-whisper   # then use WhisperModel("large-v3").transcribe(...,
 
 Always force `--language ar`. Auto-detect sometimes picks Persian/Urdu for short clips.
 
+If `editor-apprentice` is installed, its `transcribe.py` already produces word-level transcripts per speech island and flags islands where speech was heard but no words came out. Clean that output here (sections 2–3), then hand the corrected words back to the apprentice's stages.
+
 ## 2. Typical errors and fixes
 
 | Problem | Example (heard → wrongly written → fix) |

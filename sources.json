@@ -195,6 +195,17 @@
         "vellum-prep"
       ],
       "exclude_reason": "Not about video/content production (homeschool blog templates, Apple Notes CLI, Vellum book export)."
+    },
+    {
+      "repo": "hamzts1412-web/editor-apprentice",
+      "ref": "f8085fd5cfb8ca4a711235f9ca9c617c5e0fa568",
+      "skills_glob": "plugins/editor-apprentice/skills/*",
+      "categories": {
+        "editor-apprentice": "pro"
+      },
+      "notes": {
+        "editor-apprentice": "Claude Code only; needs Python 3.10+, ffmpeg and faster-whisper (asks before installing)."
+      }
     }
   ],
   "originals": {
@@ -279,6 +290,22 @@
         "review-loop",
         "sound-design",
         "arabic-motion-typography"
+      ]
+    },
+    {
+      "id": "editor",
+      "icon": "✂️",
+      "en": "Video editor",
+      "ar": "مونتير",
+      "skills": [
+        "studio-director",
+        "editor-apprentice",
+        "arabic-transcript-cleanup",
+        "cutting-rhythm",
+        "filler-removal",
+        "captions",
+        "audio-edit",
+        "color-grade"
       ]
     }
   ]

@@ -17,7 +17,7 @@
 
 <div dir="rtl">
 
-71 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
+72 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
 فيها **مخرج** بيدير المشروع كله، وأول سكيلز **معمولة للعربي من الأساس** لصنّاع المحتوى العرب.
 بتشتغل على: Claude Code، Claude.ai، Codex، Cursor، Gemini CLI، ChatGPT، وأي AI بيقرا ملفات `SKILL.md`.
 
@@ -40,7 +40,7 @@
 
 ## 🎬 ابدأ من هنا: المخرج
 
-71 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
+72 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
 
 > «استخدم studio-director، واعملي ريل ٤٥ ثانية عن ___»
 
@@ -65,7 +65,7 @@
 
 ## 📦 باقات جاهزة
 
-مش عايز الـ71 كلهم؟ ركّب باقة:
+مش عايز الـ72 كلهم؟ ركّب باقة:
 
 </div>
 
@@ -84,6 +84,9 @@ npx skills add alfaris/full-production-studio --skill studio-director --skill sh
 
 # 🎥 موشن ديزاينر
 npx skills add alfaris/full-production-studio --skill studio-director --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
+
+# ✂️ مونتير: بيتعلّم طريقتك إنت في المونتاج لكل عميل (Claude Code)
+npx skills add alfaris/full-production-studio --skill studio-director --skill editor-apprentice --skill arabic-transcript-cleanup --skill cutting-rhythm --skill filler-removal --skill captions --skill audio-edit --skill color-grade
 ```
 
 <div dir="rtl">
@@ -245,7 +248,7 @@ _موشن جرافيك بالكود، Remotion، صوت، محاكاة_
 | [`video-transitions`](skills/video-transitions/SKILL.md) 🧰 | Join two clips with a visible transition effect (wipe, slide, dissolve, pixelize, circle open/close, fade-to-black, etc.) using ffmpeg… | [agamm](https://github.com/agamm/video-agent) |
 | [`web-sims`](skills/web-sims/SKILL.md) 🧰 | Build a simulation-style video (agents, particles, 3D machines, fly-throughs) as one HTML page whose render(t) is a pure function of time,… | [whaleyxbt](https://github.com/whaleyxbt/claude-motion) |
 
-### ✨ احترافي (12)
+### ✨ احترافي (13)
 
 _مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات_
 
@@ -256,6 +259,7 @@ _مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات_
 | [`color-grade`](skills/color-grade/SKILL.md) 🧰 | Color-grade a video — apply a cinematic look / LUT, or generate and compare candidate looks for the user to pick. Use whenever footage… | [agamm](https://github.com/agamm/video-agent) |
 | [`cutting-rhythm`](skills/cutting-rhythm/SKILL.md) 🧰 | Make an edit feel flowing, natural and snappy rather than merely accurate — split edits (J/L cuts), where to place a cut relative to… | [agamm](https://github.com/agamm/video-agent) |
 | [`editor`](skills/editor/SKILL.md) 🧰 | Turn raw footage into a finished edit in a specific genre/format — montage, documentary, tutorial, news, workshop, vlog, trailer,… | [agamm](https://github.com/agamm/video-agent) |
+| [`editor-apprentice`](skills/editor-apprentice/SKILL.md) | Turns Claude into a video editor's apprentice. Claude asks the editor to teach it how they work with each client, splits that workflow… _Claude Code only; needs Python 3.10+, ffmpeg and faster-whisper (asks before installing)._ | [hamzts1412-web](https://github.com/hamzts1412-web/editor-apprentice) |
 | [`edl-edit`](skills/edl-edit/SKILL.md) 🧰 | Build a multi-clip edit as an auditable JSON "edit decision list" (EDL) — a list of clips with source/in/out and a written rationale per… | [agamm](https://github.com/agamm/video-agent) |
 | [`filler-removal`](skills/filler-removal/SKILL.md) 🧰 | Remove filler words and disfluencies (um, uh, like, you know, basically) from a talking-head video so it sounds like they were never said.… | [agamm](https://github.com/agamm/video-agent) |
 | [`grok-video-edit`](skills/grok-video-edit/SKILL.md) 🧰 | Apply AI-generated visual edits to video using xAI / Grok — change object colors, add effects (smoke, fire, sparkles), restyle scenes, or… | [agamm](https://github.com/agamm/video-agent) |
@@ -299,6 +303,7 @@ python scripts/studio.py check   # يتأكد إن كل SKILL.md سليم
 | [claude-remotion-skill](https://github.com/haidrrrry/claude-remotion-skill) | haidrrrry | MIT |
 | [video-agent](https://github.com/agamm/video-agent) | agamm | MIT |
 | [content-os](https://github.com/cdeistopened/content-os) | cdeistopened | MIT |
+| [editor-apprentice](https://github.com/hamzts1412-web/editor-apprentice) | Hamza Sayed | MIT |
 
 نصوص الرخص كاملة في [`THIRD_PARTY_LICENSES/`](THIRD_PARTY_LICENSES). وأدوات التجميع والتركيب نفسها رخصتها MIT، شوف [`LICENSE`](LICENSE).
 
