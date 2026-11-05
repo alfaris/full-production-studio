@@ -3,6 +3,8 @@ name: find-your-margin
 description: Help a knowledge worker find where their attention earns the fattest margin when combined with AI. Maps their skill stack against AI capabilities to identify high-surplus opportunities vs. commodity traps. Use when someone asks where to focus their AI efforts, how to avoid the allocation economy race-to-zero, or how to build a defensible position as an individual operator.
 ---
 
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
+
 # Find Your Margin
 
 Audit a knowledge worker's skill stack against AI capabilities to find the narrow lanes where their human judgment + AI throughput creates surplus nobody else can touch. Based on the marginalist insight that intelligence, like capital, flows to the area of highest return — and the counterpoint that individuals win not by competing on allocation efficiency, but by finding fat margins at human scale.

@@ -3,6 +3,8 @@ name: text-content
 description: Create high-performing text posts for social media using framework fitting method. 360+ proven templates across LinkedIn, X, Facebook, and Instagram. Progressive disclosure loads only relevant templates based on platform and content type.
 ---
 
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
+
 # Text Content Creator
 
 ## Purpose

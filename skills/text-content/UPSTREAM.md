@@ -7,4 +7,4 @@
 
 ## Changes in Full Production Studio
 
-- None (verbatim copy).
+- Added a note that its brand-specific examples belong to the original author and must be adapted.

@@ -7,4 +7,4 @@
 
 ## Changes in Full Production Studio
 
-- None (verbatim copy).
+- Replaced the description so it triggers only for its own job (the original asked to be used for ANY/EVERY task, which hijacks other skills).

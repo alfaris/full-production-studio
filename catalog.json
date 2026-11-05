@@ -186,7 +186,7 @@
     "category": "content",
     "repo": "cdeistopened/content-os",
     "path": "skills/writing/ai-tells",
-    "description": "Patterns that make writing sound AI-generated. Invoke this skill for ANY writing task - newsletters, social media, blog posts, emails. Apply these constraints automatically.",
+    "description": "Checklist of patterns that make writing sound AI-generated (filler openers, stacked connectors, rule of three, hedging). Use when reviewing or de-AI-ing a draft (newsletters, social posts, blog posts, emails) or when the user says a text sounds like AI.",
     "toolkit": false,
     "note": ""
   },
@@ -231,7 +231,7 @@
     "category": "content",
     "repo": "cdeistopened/content-os",
     "path": "skills/writing/ghostwriter",
-    "description": "Transform source material into authentic, human-written content. Use for ANY writing task - newsletters, articles, social posts, emails. Combines voice transformation, AI pattern detection, and Charlie Deist's signature moves. Replaces the old ai-tells and human-writing skills.",
+    "description": "Turn source material (notes, transcripts, outlines) into authentic, human-sounding writing such as newsletters, articles, social posts and emails, using voice transformation and AI-pattern detection. Use when the user asks you to ghostwrite or turn material into a finished written piece.",
     "toolkit": false,
     "note": ""
   },
@@ -357,7 +357,7 @@
     "category": "content",
     "repo": "cdeistopened/content-os",
     "path": "skills/writing/writing-style",
-    "description": "Core writing standards for all Skill Stack content. Invoke automatically for any writing task. Combines anti-AI patterns, voice principles, and prose style.",
+    "description": "Prose and voice standards (anti-AI patterns, voice principles, sentence style) originally written for another team's newsletter. Use when the user asks for a style pass or an edit on written content; not for video scripts.",
     "toolkit": false,
     "note": ""
   },
@@ -492,7 +492,7 @@
     "category": "motion",
     "repo": "haidrrrry/claude-remotion-skill",
     "path": "remotion-motion-graphics",
-    "description": "Create and edit professional motion graphics videos with Remotion (React-based video). Use this skill EVERY time the user wants to create a video, edit a video, animate something, build an intro/outro/logo animation, make a Reel/Short/promo/launch video, add text animations or captions to footage, composite images and B-roll into a video, or mentions Remotion, motion graphics, video rendering, or \"make this video look better/less generic\". Also trigger when editing an existing Remotion project or when the user complains their video looks basic, generic, or amateur — this skill contains the exact fixes. Always read this skill BEFORE writing any Remotion code.",
+    "description": "Create and edit motion graphics videos with Remotion (React): intros and outros, logo animations, promos, text animations, captions on footage, and compositing images and B-roll. Use when the user wants a motion graphics video built in Remotion, is working in a Remotion project, or says their Remotion video looks generic or amateur. Read it before writing Remotion code.",
     "toolkit": false,
     "note": ""
   },

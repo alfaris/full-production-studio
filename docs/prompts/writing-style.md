@@ -1,9 +1,11 @@
 ---
 name: writing-style
-description: Core writing standards for all Skill Stack content. Invoke automatically for any writing task. Combines anti-AI patterns, voice principles, and prose style.
 priority: root
 always_invoke: true
+description: "Prose and voice standards (anti-AI patterns, voice principles, sentence style) originally written for another team's newsletter. Use when the user asks for a style pass or an edit on written content; not for video scripts."
 ---
+
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
 
 # Writing Style
 

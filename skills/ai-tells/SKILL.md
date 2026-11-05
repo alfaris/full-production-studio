@@ -1,6 +1,6 @@
 ---
 name: ai-tells
-description: Patterns that make writing sound AI-generated. Invoke this skill for ANY writing task - newsletters, social media, blog posts, emails. Apply these constraints automatically.
+description: "Checklist of patterns that make writing sound AI-generated (filler openers, stacked connectors, rule of three, hedging). Use when reviewing or de-AI-ing a draft (newsletters, social posts, blog posts, emails) or when the user says a text sounds like AI."
 ---
 
 # AI Tells

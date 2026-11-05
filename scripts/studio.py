@@ -3,7 +3,8 @@
 
   python scripts/studio.py sync     # pull pinned upstream skills into skills/, regenerate catalog/README/AGENTS.md
   python scripts/studio.py build    # build dist/ (zip per skill + single-file prompts for chat AIs)
-  python scripts/studio.py check    # validate every skills/*/SKILL.md
+  python scripts/studio.py check    # validate every skills/*/SKILL.md (strict YAML; needs PyYAML)
+  python scripts/studio.py notes 1.5.0  # print that version's CHANGELOG section (release notes)
 
 Needs only Python 3.9+ and git. Upstream refs are pinned in sources.json;
 bump a "ref" there and re-run `sync` to update.
@@ -19,6 +20,11 @@ import sys
 import tempfile
 import zipfile
 from pathlib import Path
+
+try:
+    import yaml  # PyYAML: the same strictness as the tools that load skills
+except ImportError:  # pragma: no cover
+    yaml = None
 
 for _s in (sys.stdout, sys.stderr):  # Windows consoles default to cp1252
     if hasattr(_s, "reconfigure"):
@@ -95,6 +101,37 @@ def first_paragraph(body: str) -> str:
     return re.sub(r"\s+", " ", " ".join(para))[:1000]
 
 
+def strict_frontmatter(text: str):
+    """Parse frontmatter the way skill loaders do. Returns (dict | None, error | None)."""
+    m = FM_RE.match(text)
+    if not m:
+        return None, "no frontmatter"
+    if yaml is None:
+        sys.exit("✗ PyYAML is required: pip install pyyaml")
+    try:
+        data = yaml.safe_load(m.group(1))
+    except yaml.YAMLError as e:
+        return None, str(e).splitlines()[0]
+    if not isinstance(data, dict):
+        return None, "frontmatter is not a mapping"
+    return data, None
+
+
+def set_description(fm: str, value: str) -> str:
+    """Replace the description key (single-line or block scalar) with a safely quoted one."""
+    out, skip = [], False
+    for line in fm.splitlines():
+        if skip and (line.startswith((" ", "\t")) or not line.strip()):
+            continue
+        skip = False
+        if line.startswith("description:"):
+            skip = True
+            continue
+        out.append(line)
+    out.append(f"description: {json.dumps(value, ensure_ascii=False)}")
+    return "\n".join(out)
+
+
 def normalize(skill_md: Path, name: str, src: dict, changes: list[str]) -> dict:
     text = skill_md.read_text(encoding="utf-8").lstrip("﻿")
     meta, body = parse_frontmatter(text)
@@ -116,6 +153,30 @@ def normalize(skill_md: Path, name: str, src: dict, changes: list[str]) -> dict:
             fm += f"\ndescription: {json.dumps(first_paragraph(body), ensure_ascii=False)}"
             changes.append("Added missing `description` to frontmatter.")
         text = f"---\n{fm}\n---\n" + text[m.end():]
+
+    override = SOURCES.get("description_overrides", {}).get(name)
+    data, err = strict_frontmatter(text)
+    if override or err:
+        m = FM_RE.match(text)
+        desc = override or meta.get("description") or first_paragraph(body)
+        text = f"---\n{set_description(m.group(1), desc)}\n---\n" + text[m.end():]
+        if override:
+            changes.append("Replaced the description so it triggers only for its own job "
+                           "(the original asked to be used for ANY/EVERY task, which hijacks other skills).")
+        if err:
+            changes.append(f"Quoted the description so strict YAML loaders accept it (was: `{err}`).")
+        data, err = strict_frontmatter(text)
+        if err:
+            sys.exit(f"  ✗ {name}: frontmatter still invalid after repair: {err}")
+
+    if name in SOURCES.get("adapt_notes", []):
+        note = ("\n> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, "
+                "people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* "
+                "examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when "
+                "available) and never write in that other brand's voice.\n")
+        fm_end = FM_RE.match(text).end()
+        text = text[:fm_end] + note + text[fm_end:]
+        changes.append("Added a note that its brand-specific examples belong to the original author and must be adapted.")
     if name in src.get("toolkit", []):
         note = (f"\n> **Full Production Studio note:** this skill drives the toolkit in "
                 f"[{src['repo']}](https://github.com/{src['repo']}). Clone that repo and run your agent "
@@ -336,9 +397,10 @@ def check() -> None:
     bad = 0
     names = set()
     for md in sorted(SKILLS.glob("*/SKILL.md")):
-        meta, _ = parse_frontmatter(md.read_text(encoding="utf-8"))
+        meta, yerr = strict_frontmatter(md.read_text(encoding="utf-8"))
+        meta = meta or {}
         folder = md.parent.name
-        errs = []
+        errs = [f"invalid YAML frontmatter: {yerr}"] if yerr else []
         if meta.get("name") != folder:
             errs.append(f"name `{meta.get('name')}` ≠ folder")
         if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", folder) or len(folder) > 64:
@@ -357,6 +419,24 @@ def check() -> None:
     sys.exit(1 if bad else 0)
 
 
+def notes() -> None:
+    """Print the CHANGELOG section for a version (used as GitHub release notes)."""
+    if len(sys.argv) < 3:
+        sys.exit("usage: studio.py notes <version>")
+    want = sys.argv[2].lstrip("v")
+    out, on = [], False
+    for line in (ROOT / "CHANGELOG.md").read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            on = line[3:].lstrip("v").startswith(want + " ") or line[3:].strip().lstrip("v") == want
+            continue
+        if on:
+            out.append(line)
+    text = "\n".join(out).strip()
+    if not text:
+        sys.exit(f"✗ no '## v{want}' section in CHANGELOG.md")
+    print(text)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    {"sync": sync, "build": build, "check": check}.get(cmd, lambda: sys.exit(__doc__))()
+    {"sync": sync, "build": build, "check": check, "notes": notes}.get(cmd, lambda: sys.exit(__doc__))()

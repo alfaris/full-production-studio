@@ -3,6 +3,8 @@ name: nano-banana-image-generator
 description: Generate AI images using Nano Banana Pro (Gemini). Use this skill when the user needs images - thumbnails, social posts, blog headers, or creative visuals. Follows an iterative workflow - brainstorm concepts, select direction, generate in multiple styles, then produce via API.
 ---
 
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
+
 # Nano Banana Image Generator
 
 Generate professional, non-generic images using Nano Banana Pro (Gemini API).

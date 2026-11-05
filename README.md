@@ -126,9 +126,11 @@ git clone https://github.com/alfaris/full-production-studio && cd full-productio
 ```
 ```powershell
 .\scripts\install.ps1           # Windows PowerShell
-.\scripts\install.ps1 -Agent codex
+.\scripts\install.ps1 -Agent cursor
 ```
-Targets: `claude` → `~/.claude/skills`, `codex` → `~/.codex/skills`, `agents` → `~/.agents/skills` (shared standard folder), `gemini` → `~/.gemini/skills`.
+Targets: `claude` → `~/.claude/skills`, `cursor` → `~/.cursor/skills`, `gemini` → `~/.gemini/skills`, `agents` → `~/.agents/skills` (the shared folder that Codex, Cline, Zed, Warp and others read; `codex` is an alias).
+
+**Your own skills are safe:** if you already have a skill with the same name (e.g. your own `captions`), the installer keeps yours and tells you. Add `--force` (`-Force` on Windows) only if you want to replace it.
 
 ### 4) Claude.ai (web / desktop app)
 Download a skill `.zip` from the [latest release](https://github.com/alfaris/full-production-studio/releases/latest), then go to **Settings → Capabilities → Skills → Upload skill**.
@@ -183,12 +185,12 @@ _Scripts, hooks, titles, voice, writing for every platform_
 
 | Skill | What it does | Source |
 |---|---|---|
-| [`ai-tells`](skills/ai-tells/SKILL.md) | Patterns that make writing sound AI-generated. Invoke this skill for ANY writing task - newsletters, social media, blog posts, emails. Apply these constraints… | [cdeistopened](https://github.com/cdeistopened/content-os) |
+| [`ai-tells`](skills/ai-tells/SKILL.md) | Checklist of patterns that make writing sound AI-generated (filler openers, stacked connectors, rule of three, hedging). Use when reviewing or de-AI-ing a draft… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`anti-ai-writing`](skills/anti-ai-writing/SKILL.md) | Transform AI-assisted drafts into authentic, human-sounding content. This skill provides patterns to detect and eliminate AI tells, frameworks for natural writing, and… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`cold-open-creator`](skills/cold-open-creator/SKILL.md) | Create 25-35 second cold opens that hook listeners by dropping them into a specific moment that encapsulates the episode's themes. Merge Descript's character-driven… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`dude-with-sign-writer`](skills/dude-with-sign-writer/SKILL.md) | Creates punchy, conversational one-liners in "Dude With Sign" style - bold statements that challenge norms, validate feelings, or poke fun at everyday truths. Use when… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`email-writing`](skills/email-writing/SKILL.md) | Write authentic, human-sounding emails that build relationships and drive action. This skill should be used when drafting welcome emails, follow-ups, newsletters,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`ghostwriter`](skills/ghostwriter/SKILL.md) | Transform source material into authentic, human-written content. Use for ANY writing task - newsletters, articles, social posts, emails. Combines voice transformation,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
+| [`ghostwriter`](skills/ghostwriter/SKILL.md) | Turn source material (notes, transcripts, outlines) into authentic, human-sounding writing such as newsletters, articles, social posts and emails, using voice… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`hook-and-headline-writing`](skills/hook-and-headline-writing/SKILL.md) | Create attention-grabbing hooks and headlines using 15 proven formulas, sticky techniques, and the 4 U's test. This skill provides systematic frameworks for generating… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`how-newsletters`](skills/how-newsletters/SKILL.md) | Writing style reference based on case studies of successful newsletters. This skill should be used when the user wants to write in the distinctive voice and style of… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`human-writing`](skills/human-writing/SKILL.md) | Transform AI-assisted drafts into authentic, distinctive prose. Use this skill when (1) reviewing or humanizing AI-generated content, (2) writing content that must not… | [cdeistopened](https://github.com/cdeistopened/content-os) |
@@ -202,7 +204,7 @@ _Scripts, hooks, titles, voice, writing for every platform_
 | [`transcript-polisher`](skills/transcript-polisher/SKILL.md) | Transform raw podcast transcripts into polished, readable documents. This skill removes filler words, fixes grammar, adds structure, and preserves authentic voice. Use… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`video-caption-creation`](skills/video-caption-creation/SKILL.md) | Create on-screen text hooks and captions for short-form video clips. Built around the Complementarity Principle - on-screen text should ADD to what the viewer hears,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`voice-pirate-wires`](skills/voice-pirate-wires/SKILL.md) | Write in the Pirate Wires style - authentic, conversational, contrarian. This voice is direct and confident with irreverent humor, takes obvious-but-unsaid positions,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`writing-style`](skills/writing-style/SKILL.md) | Core writing standards for all Skill Stack content. Invoke automatically for any writing task. Combines anti-AI patterns, voice principles, and prose style. | [cdeistopened](https://github.com/cdeistopened/content-os) |
+| [`writing-style`](skills/writing-style/SKILL.md) | Prose and voice standards (anti-AI patterns, voice principles, sentence style) originally written for another team's newsletter. Use when the user asks for a style pass… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`x-article-converter`](skills/x-article-converter/SKILL.md) | Convert blog posts or newsletters into X/Twitter articles with handles inserted and a posting strategy. Use when the user wants to turn an article into X content,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`x-posting`](skills/x-posting/SKILL.md) | Post and schedule content to X/Twitter. Use when batch processing social posts, promoting podcasts/blogs, or scheduling content. Handles guest tagging, template… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube-script-writer`](skills/youtube-script-writer/SKILL.md) | Write a high-retention YouTube script — explainer, tutorial, video essay, review, or talking head — on the packaging then cold-open then value-stack then retention… | [mohitagw15856](https://github.com/mohitagw15856/pm-claude-skills) |
@@ -224,7 +226,7 @@ _Motion graphics, animation taste, Remotion, sound design, visuals_
 | [`motion-design-html`](skills/motion-design-html/SKILL.md) | Code-only motion design pipeline (no After Effects) for Raphaël / Howseen: launch films, showreels, product promos, LinkedIn/X videos, meme clips. Use when asked to… _Needs Node + Playwright + ffmpeg (and Python for the helper scripts)._ | [howseen-ai](https://github.com/howseen-ai/claude-motion-design) |
 | [`nano-banana-image-generator`](skills/nano-banana-image-generator/SKILL.md) | Generate AI images using Nano Banana Pro (Gemini). Use this skill when the user needs images - thumbnails, social posts, blog headers, or creative visuals. Follows an… _Needs a Google Gemini API key._ | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`remotion-graphics`](skills/remotion-graphics/SKILL.md) 🧰 | Create ANIMATED motion graphics — kinetic word-by-word captions, animated lower-thirds/name tags, branded intro/outro title cards, data-driven graphics (count-ups,… | [agamm](https://github.com/agamm/video-agent) |
-| [`remotion-motion-graphics`](skills/remotion-motion-graphics/SKILL.md) | Create and edit professional motion graphics videos with Remotion (React-based video). Use this skill EVERY time the user wants to create a video, edit a video, animate… | [haidrrrry](https://github.com/haidrrrry/claude-remotion-skill) |
+| [`remotion-motion-graphics`](skills/remotion-motion-graphics/SKILL.md) | Create and edit motion graphics videos with Remotion (React): intros and outros, logo animations, promos, text animations, captions on footage, and compositing images… | [haidrrrry](https://github.com/haidrrrry/claude-remotion-skill) |
 | [`review-loop`](skills/review-loop/SKILL.md) 🧰 | Visual self-review loop for motion graphics — render a draft, build contact sheets at every timeline beat, look at them, critique against a checklist, fix, repeat. Use… | [whaleyxbt](https://github.com/whaleyxbt/claude-motion) |
 | [`sound-design`](skills/sound-design/SKILL.md) 🧰 | Procedural sound design with the sfx engine — writing a cue sheet against a video's timeline, which sound goes with which visual event, gain hierarchy, panning, musical… | [whaleyxbt](https://github.com/whaleyxbt/claude-motion) |
 | [`video-overlay`](skills/video-overlay/SKILL.md) 🧰 | Composite a graphic onto video — text, a logo/image, a static transparent PNG, or an animated effect — and place it accurately, including locking it to a moving subject… | [agamm](https://github.com/agamm/video-agent) |

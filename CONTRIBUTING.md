@@ -22,6 +22,7 @@ Thanks for helping make this the best open skill library for video & content cre
 - `sync` also regenerates the skill tables in `README.md` / `README.ar.md`, `AGENTS.md`, `catalog.json` and the website data in `docs/data.json`.
 
 ```bash
+pip install pyyaml                # strict YAML, same as the tools that load skills
 python scripts/studio.py sync    # needs git + Python 3.9+
 python scripts/studio.py check   # validates every SKILL.md (CI runs this on every PR)
 python scripts/studio.py build   # builds dist/ (zips + single-file prompts), same as the release workflow

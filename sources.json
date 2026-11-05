@@ -334,5 +334,25 @@
     "arabic-captions": "كابشنز عربي الحروف فيها متوصلة، وعلامات الترقيم والإنجليزي في مكانهم، وتلوين كلمة كلمة، وتصدير لكل البرامج.",
     "arabic-motion-typography": "تحريك النص العربي في Remotion و GSAP من غير ما الحروف تتقطّع أو الترتيب يتعكس، حتى مع الكلام الإنجليزي والأرقام.",
     "editor-apprentice": "مساعد مونتير بيتعلّم طريقتك إنت لكل عميل، وبيشتغل جوه برامجك (Premiere، Resolve، After Effects، CapCut) مرحلة مرحلة، وبيحفظ اللي اتعلّمه."
-  }
+  },
+  "description_overrides": {
+    "ai-tells": "Checklist of patterns that make writing sound AI-generated (filler openers, stacked connectors, rule of three, hedging). Use when reviewing or de-AI-ing a draft (newsletters, social posts, blog posts, emails) or when the user says a text sounds like AI.",
+    "ghostwriter": "Turn source material (notes, transcripts, outlines) into authentic, human-sounding writing such as newsletters, articles, social posts and emails, using voice transformation and AI-pattern detection. Use when the user asks you to ghostwrite or turn material into a finished written piece.",
+    "writing-style": "Prose and voice standards (anti-AI patterns, voice principles, sentence style) originally written for another team's newsletter. Use when the user asks for a style pass or an edit on written content; not for video scripts.",
+    "remotion-motion-graphics": "Create and edit motion graphics videos with Remotion (React): intros and outros, logo animations, promos, text animations, captions on footage, and compositing images and B-roll. Use when the user wants a motion graphics video built in Remotion, is working in a Remotion project, or says their Remotion video looks generic or amateur. Read it before writing Remotion code."
+  },
+  "description_overrides_reason": "Originals asked to be used for ANY writing task or EVERY video request, which hijacks other skills in a full install.",
+  "adapt_notes": [
+    "text-content",
+    "nano-banana-image-generator",
+    "meta-ads-creative",
+    "seo-content-writer",
+    "x-posting",
+    "writing-style",
+    "seo-research",
+    "how-newsletters",
+    "ghostwriter",
+    "find-your-margin",
+    "motion-design-html"
+  ]
 }

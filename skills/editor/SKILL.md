@@ -1,6 +1,6 @@
 ---
 name: editor
-description: Turn raw footage into a finished edit in a specific genre/format — montage, documentary, tutorial, news, workshop, vlog, trailer, explainer. Use whenever the user wants the video "edited into a X", asks "what style should this be / what would make a good X", or hands over raw footage without spelling out every cut. This is the director: it understands the footage first, picks a treatment, then composes the other skills (edl-edit, cutting-rhythm, filler-removal, captions, reframe-social, video-transitions, video-overlay, audio-edit, color-grade, remotion-graphics, grok-video-edit) to execute it.
+description: "Turn raw footage into a finished edit in a specific genre/format — montage, documentary, tutorial, news, workshop, vlog, trailer, explainer. Use whenever the user wants the video \"edited into a X\", asks \"what style should this be / what would make a good X\", or hands over raw footage without spelling out every cut. This is the director: it understands the footage first, picks a treatment, then composes the other skills (edl-edit, cutting-rhythm, filler-removal, captions, reframe-social, video-transitions, video-overlay, audio-edit, color-grade, remotion-graphics, grok-video-edit) to execute it."
 ---
 
 > **Full Production Studio note:** this skill drives the toolkit in [agamm/video-agent](https://github.com/agamm/video-agent). Clone that repo and run your agent inside it for the scripts/paths below to work; the guidance itself is usable anywhere.

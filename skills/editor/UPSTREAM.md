@@ -7,4 +7,5 @@
 
 ## Changes in Full Production Studio
 
+- Quoted the description so strict YAML loaders accept it (was: `mapping values are not allowed here`).
 - Added a note that this skill needs its upstream toolkit repo.

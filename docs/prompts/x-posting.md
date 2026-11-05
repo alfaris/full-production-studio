@@ -3,6 +3,8 @@ name: x-posting
 description: Post and schedule content to X/Twitter. Use when batch processing social posts, promoting podcasts/blogs, or scheduling content. Handles guest tagging, template matching, and getlate.dev API integration.
 ---
 
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
+
 # X Posting Workflow
 
 End-to-end workflow for creating, approving, and scheduling X/Twitter posts from OpenEd content.

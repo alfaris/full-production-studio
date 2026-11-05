@@ -3,6 +3,8 @@ name: meta-ads-creative
 description: Create high-converting Meta (Facebook/Instagram) ad creative using the 6 Elements framework, proven ad formats, and research-driven copywriting. Optimized for lo-fi, native-feeling ads that don't look like ads.
 ---
 
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
+
 # Meta Ads Creative Skill
 
 ## Purpose

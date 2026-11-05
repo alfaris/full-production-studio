@@ -3,6 +3,8 @@ name: how-newsletters
 description: Writing style reference based on case studies of successful newsletters. This skill should be used when the user wants to write in the distinctive voice and style of professional newsletter writers, or when creating content that needs to feel authentic and human rather than AI-generated.
 ---
 
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
+
 # How Newsletters
 
 A collection of 16 case studies analyzing the voice, structure, and techniques of successful newsletters. Use these as style references when writing content that needs to feel distinctively human.

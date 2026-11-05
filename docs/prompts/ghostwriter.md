@@ -1,7 +1,9 @@
 ---
 name: ghostwriter
-description: Transform source material into authentic, human-written content. Use for ANY writing task - newsletters, articles, social posts, emails. Combines voice transformation, AI pattern detection, and Charlie Deist's signature moves. Replaces the old ai-tells and human-writing skills.
+description: "Turn source material (notes, transcripts, outlines) into authentic, human-sounding writing such as newsletters, articles, social posts and emails, using voice transformation and AI-pattern detection. Use when the user asks you to ghostwrite or turn material into a finished written piece."
 ---
+
+> **Full Production Studio note:** this skill comes from another creator's own setup. Brand names, people and folder paths in it (for example OpenEd, Skill Stack, Howseen, `~/Desktop/...`) are *their* examples. Replace them with the user's brand, voice and folders (use the `arabic-voice` Voice Card when available) and never write in that other brand's voice.
 
 # Ghostwriter
 

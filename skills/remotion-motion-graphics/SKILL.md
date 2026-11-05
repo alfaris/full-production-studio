@@ -1,6 +1,6 @@
 ---
 name: remotion-motion-graphics
-description: Create and edit professional motion graphics videos with Remotion (React-based video). Use this skill EVERY time the user wants to create a video, edit a video, animate something, build an intro/outro/logo animation, make a Reel/Short/promo/launch video, add text animations or captions to footage, composite images and B-roll into a video, or mentions Remotion, motion graphics, video rendering, or "make this video look better/less generic". Also trigger when editing an existing Remotion project or when the user complains their video looks basic, generic, or amateur — this skill contains the exact fixes. Always read this skill BEFORE writing any Remotion code.
+description: "Create and edit motion graphics videos with Remotion (React): intros and outros, logo animations, promos, text animations, captions on footage, and compositing images and B-roll. Use when the user wants a motion graphics video built in Remotion, is working in a Remotion project, or says their Remotion video looks generic or amateur. Read it before writing Remotion code."
 ---
 
 # Remotion Motion Graphics
