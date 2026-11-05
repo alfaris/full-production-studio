@@ -157,6 +157,9 @@ def sync() -> None:
                 fm_name = parse_frontmatter((d / "SKILL.md").read_text(encoding="utf-8").lstrip("﻿"))[0].get("name")
                 orig = fm_name or d.name  # the skill's declared name wins over its folder name
                 name = src.get("rename", {}).get(orig, orig)
+                if name in src.get("exclude", []):
+                    print(f"  - excluded {name} (off-topic, see sources.json)")
+                    continue
                 if name in seen:
                     sys.exit(f"  ✗ name clash: `{name}` from {src['repo']} and {seen[name]} — add a rename in sources.json")
                 cat = src["categories"].get(name)
@@ -204,7 +207,22 @@ def sync() -> None:
     catalog.sort(key=lambda c: (order.index(c["category"]), c["name"]))
     (ROOT / "catalog.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_docs(catalog)
+    write_site(catalog)
     print(f"\n{len(catalog)} skills synced.")
+
+
+def write_site(catalog: list[dict]) -> None:
+    """Data for the GitHub Pages site in docs/ (served at alfaris.github.io/full-production-studio)."""
+    names = {c["name"] for c in catalog}
+    for pack in SOURCES.get("packs", []):
+        missing = [s for s in pack["skills"] if s not in names]
+        if missing:
+            sys.exit(f"  ✗ pack `{pack['id']}` lists unknown skills: {missing}")
+    data = {"repo": "alfaris/full-production-studio", "categories": SOURCES["categories"],
+            "packs": SOURCES.get("packs", []), "skills": catalog}
+    (ROOT / "docs").mkdir(exist_ok=True)
+    (ROOT / "docs" / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")),
+                                             encoding="utf-8")
 
 
 def short(desc: str, n: int = 140) -> str:

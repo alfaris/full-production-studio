@@ -128,15 +128,6 @@
     "note": ""
   },
   {
-    "name": "open-education-hub-deep-dives",
-    "category": "ideas",
-    "repo": "cdeistopened/content-os",
-    "path": "skills/research/open-education-hub-deep-dives",
-    "description": "Create SEO-optimized deep dive articles for the Open Education Hub. This skill combines proprietary OpenEd insights (podcasts, Slack, newsletters) with SEO-structured headers to create authoritative, non-generic content on homeschooling topics. Use when writing curriculum guides, pedagogical method explainers, grade-level guides, or state-specific homeschool content.",
-    "toolkit": false,
-    "note": ""
-  },
-  {
     "name": "seo-research",
     "category": "ideas",
     "repo": "cdeistopened/content-os",
@@ -214,15 +205,6 @@
     "repo": "cdeistopened/content-os",
     "path": "skills/writing/cold-open-creator",
     "description": "Create 25-35 second cold opens that hook listeners by dropping them into a specific moment that encapsulates the episode's themes. Merge Descript's character-driven narrative with Colin & Samir's rearrangement technique.",
-    "toolkit": false,
-    "note": ""
-  },
-  {
-    "name": "day-in-the-life",
-    "category": "content",
-    "repo": "cdeistopened/content-os",
-    "path": "skills/video/day-in-the-life",
-    "description": "Write Day-in-the-Life homeschool blog posts that show how specific families structure their learning, with enough detail that readers can visualize themselves doing it.",
     "toolkit": false,
     "note": ""
   },
@@ -349,15 +331,6 @@
     "repo": "cdeistopened/content-os",
     "path": "skills/writing/transcript-polisher",
     "description": "Transform raw podcast transcripts into polished, readable documents. This skill removes filler words, fixes grammar, adds structure, and preserves authentic voice. Use when processing podcast transcripts, interview recordings, video captions, or any spoken content that needs cleanup while maintaining 100% fidelity to meaning.",
-    "toolkit": false,
-    "note": ""
-  },
-  {
-    "name": "verified-review",
-    "category": "content",
-    "repo": "cdeistopened/content-os",
-    "path": "skills/writing/verified-review",
-    "description": "Write structured product/curriculum reviews from real OpenEd families. Reviews are practical, honest, and include enough detail that parents can decide if the tool is right for them.",
     "toolkit": false,
     "note": ""
   },
@@ -641,15 +614,6 @@
     "note": ""
   },
   {
-    "name": "memo",
-    "category": "pro",
-    "repo": "cdeistopened/content-os",
-    "path": "skills/writing/memo",
-    "description": "Manage Apple Notes from the terminal.",
-    "toolkit": false,
-    "note": "macOS only (Apple Notes)."
-  },
-  {
     "name": "reframe-social",
     "category": "pro",
     "repo": "agamm/video-agent",
@@ -657,15 +621,6 @@
     "description": "Reframe a video to a different aspect ratio for social platforms — vertical 9:16 (Reels/Shorts/TikTok), square 1:1, or 4:5 portrait — from horizontal source. Use whenever the user wants to make a video vertical/square, fit it for Instagram/TikTok/YouTube Shorts, repurpose a 16:9 clip for social, or crop/pad to an aspect ratio. Covers crop-vs-pad choice, keeping an off-center subject in frame, and following a moving subject.",
     "toolkit": true,
     "note": ""
-  },
-  {
-    "name": "vellum-prep",
-    "category": "pro",
-    "repo": "cdeistopened/content-os",
-    "path": "skills/productivity/vellum-prep",
-    "description": "Convert markdown manuscripts to Vellum-ready Word documents.",
-    "toolkit": false,
-    "note": "Needs Python."
   },
   {
     "name": "youtube-clip-extractor",

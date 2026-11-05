@@ -1,0 +1,27 @@
+name: 💡 Suggest a skill / اقترح سكيل
+description: Suggest an open-source skill (or an idea for a new one) to add to the studio
+labels: ["skill-suggestion"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Repo / link (لينك الريبو)
+      placeholder: https://github.com/owner/repo
+  - type: input
+    id: license
+    attributes:
+      label: License (الرخصة)
+      description: MIT, Apache-2.0, BSD… Skills without a license can't be included.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Section (القسم)
+      options: ["💡 Ideas / أفكار", "📄 Content / محتوى", "🎥 Motion / موشن", "✨ Pro / احترافي", "⭐ Studio original / أصلي", "Not sure / مش متأكد"]
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What does it help creators do? (بتساعد صنّاع المحتوى في إيه؟)
+    validations:
+      required: true

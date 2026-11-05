@@ -157,7 +157,6 @@
         "seo-research": "ideas",
         "find-your-margin": "ideas",
         "invisible-threads": "ideas",
-        "open-education-hub-deep-dives": "ideas",
         "youtube-title-creator": "content",
         "cold-open-creator": "content",
         "hook-and-headline-writing": "content",
@@ -178,22 +177,24 @@
         "meta-ads-creative": "content",
         "short-form-video": "content",
         "podcast-blog-post-creator": "content",
-        "day-in-the-life": "content",
-        "verified-review": "content",
         "seo-content-writer": "content",
         "video-caption-creation": "content",
         "podcast-production": "content",
         "nano-banana-image-generator": "motion",
         "youtube-clip-extractor": "pro",
-        "youtube-downloader": "pro",
-        "vellum-prep": "pro",
-        "memo": "pro"
+        "youtube-downloader": "pro"
       },
       "notes": {
-        "nano-banana-image-generator": "Needs a Google Gemini API key.",
-        "memo": "macOS only (Apple Notes).",
-        "vellum-prep": "Needs Python."
-      }
+        "nano-banana-image-generator": "Needs a Google Gemini API key."
+      },
+      "exclude": [
+        "day-in-the-life",
+        "verified-review",
+        "open-education-hub-deep-dives",
+        "memo",
+        "vellum-prep"
+      ],
+      "exclude_reason": "Not about video/content production (homeschool blog templates, Apple Notes CLI, Vellum book export)."
     }
   ],
   "originals": {
@@ -208,5 +209,77 @@
     "arabic-transcript-cleanup": "studio",
     "arabic-captions": "studio",
     "arabic-motion-typography": "studio"
-  }
+  },
+  "packs": [
+    {
+      "id": "director",
+      "icon": "🎬",
+      "en": "Director",
+      "ar": "المخرج",
+      "skills": [
+        "studio-director"
+      ]
+    },
+    {
+      "id": "arabic",
+      "icon": "🌍",
+      "en": "Arabic creator",
+      "ar": "صانع محتوى عربي",
+      "skills": [
+        "studio-director",
+        "arabic-voice",
+        "arabic-hooks",
+        "arabic-script",
+        "arabic-shorts",
+        "arabic-titles-thumbnails",
+        "arabic-captions",
+        "arabic-youtube-seo"
+      ]
+    },
+    {
+      "id": "youtuber",
+      "icon": "▶️",
+      "en": "YouTuber",
+      "ar": "يوتيوبر",
+      "skills": [
+        "studio-director",
+        "yt-plan",
+        "yt-script",
+        "yt-package",
+        "yt-retention",
+        "yt-seo",
+        "yt-chapters",
+        "yt-edit"
+      ]
+    },
+    {
+      "id": "shorts",
+      "icon": "📱",
+      "en": "Reels / TikTok / Shorts",
+      "ar": "ريلز / تيك توك / شورتس",
+      "skills": [
+        "studio-director",
+        "short-form-video",
+        "yt-shorts",
+        "hook-and-headline-writing",
+        "video-caption-creation",
+        "reframe-social"
+      ]
+    },
+    {
+      "id": "motion",
+      "icon": "🎥",
+      "en": "Motion designer",
+      "ar": "موشن ديزاينر",
+      "skills": [
+        "studio-director",
+        "motion-design",
+        "remotion-motion-graphics",
+        "motion-design-html",
+        "review-loop",
+        "sound-design",
+        "arabic-motion-typography"
+      ]
+    }
+  ]
 }

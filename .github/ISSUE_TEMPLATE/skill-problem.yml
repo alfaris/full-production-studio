@@ -1,0 +1,30 @@
+name: 🐞 Skill problem / مشكلة في سكيل
+description: A skill gave a bad result, didn't trigger, or failed to install
+labels: ["bug"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name (اسم السكيل)
+      placeholder: arabic-captions
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Which AI / tool? (أنهي AI؟)
+      options: ["Claude Code", "Claude.ai", "ChatGPT", "Gemini", "Codex", "Cursor", "Other / غير كده"]
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install it? (ركّبتها إزاي؟)
+      options: ["npx skills add", "Claude Code plugin", "install.sh / install.ps1", "Uploaded .zip", "Pasted .md", "Other"]
+  - type: textarea
+    id: what
+    attributes:
+      label: What you asked, and what happened (طلبت إيه وحصل إيه)
+      description: Paste the prompt and the relevant part of the answer or error.
+    validations:
+      required: true

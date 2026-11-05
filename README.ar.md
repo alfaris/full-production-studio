@@ -2,21 +2,24 @@
 
 [English](README.md) · **العربية**
 
+<img src="assets/social-preview.png" alt="استوديو إنتاج متكامل: أفكار، محتوى، موشن، احترافي" width="820">
+
 # 🎬 استوديو إنتاج متكامل
 ### Full Production Studio
 
-**💡 أفكار · 📄 محتوى · 🎥 موشن · ✨ احترافي**
+### [🌐 تصفّح كل السكيلز ←](https://alfaris.github.io/full-production-studio/)
 
 [![Release](https://img.shields.io/github/v/release/alfaris/full-production-studio)](https://github.com/alfaris/full-production-studio/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-f47b20.svg)](CONTRIBUTING.md)
 
 </div>
 
 <div dir="rtl">
 
-76 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
+71 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
 فيها **مخرج** بيدير المشروع كله، وأول سكيلز **معمولة للعربي من الأساس** لصنّاع المحتوى العرب.
-بتشتغل على Claude Code وClaude.ai وCodex وCursor وGemini CLI وChatGPT، وأي AI بيقرا ملفات `SKILL.md`.
+بتشتغل على: Claude Code، Claude.ai، Codex، Cursor، Gemini CLI، ChatGPT، وأي AI بيقرا ملفات `SKILL.md`.
 
 ---
 
@@ -37,7 +40,7 @@
 
 ## 🎬 ابدأ من هنا: المخرج
 
-76 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
+71 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
 
 > «استخدم studio-director، واعملي ريل ٤٥ ثانية عن ___»
 
@@ -58,11 +61,11 @@
 | [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | كلمات مفتاحية بكل اللهجات، وطرق الكتابة المختلفة، والـchapters والتاجات |
 | [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | بتصلّح غلطات Whisper في العربي، وبتعلّم على الحشو عشان يتقص |
 | [`arabic-captions`](skills/arabic-captions/SKILL.md) | كابشنز الحروف فيها متوصلة، وعلامات الترقيم في مكانها، وتلوين كلمة كلمة |
-| [`arabic-motion-typography`](skills/arabic-motion-typography/SKILL.md) | تحريك النص العربي في Remotion وGSAP من غير ما الحروف تتقطّع |
+| [`arabic-motion-typography`](skills/arabic-motion-typography/SKILL.md) | تحريك النص العربي في Remotion و GSAP من غير ما الحروف تتقطّع |
 
 ## 📦 باقات جاهزة
 
-مش عايز الـ76 كلهم؟ ركّب باقة:
+مش عايز الـ71 كلهم؟ ركّب باقة:
 
 </div>
 
@@ -173,7 +176,7 @@ _سكيلز معمولة للريبو ده: المخرج اللي بيشغّل �
 | [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | Optimizes Arabic YouTube videos for search (keywords across dialects and فصحى, spelling variants, Arabizi, bilingual descriptions, tags,… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`studio-director`](skills/studio-director/SKILL.md) | The director of Full Production Studio. Takes a raw video idea and runs it through the whole pipeline (idea → script → visual plan →… | [alfaris](https://github.com/alfaris/full-production-studio) |
 
-### 💡 أفكار (9)
+### 💡 أفكار (8)
 
 _بحث، استراتيجية، تحليل منافسين، زوايا جديدة_
 
@@ -181,7 +184,6 @@ _بحث، استراتيجية، تحليل منافسين، زوايا جديد
 |---|---|---|
 | [`find-your-margin`](skills/find-your-margin/SKILL.md) | Help a knowledge worker find where their attention earns the fattest margin when combined with AI. Maps their skill stack against AI… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`invisible-threads`](skills/invisible-threads/SKILL.md) | Discovers non-obvious thematic connections ("invisible threads") across a corpus of essays, articles, or transcripts. | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`open-education-hub-deep-dives`](skills/open-education-hub-deep-dives/SKILL.md) | Create SEO-optimized deep dive articles for the Open Education Hub. This skill combines proprietary OpenEd insights (podcasts, Slack,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`seo-research`](skills/seo-research/SKILL.md) | Strategic keyword research and content planning. Use this skill BEFORE writing to identify opportunities, validate topics, and create a… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube`](skills/youtube/SKILL.md) | The ultimate YouTube creator skill. Covers channel audits, video SEO, retention-engineered scripts, hook writing, thumbnail briefs,… _Optional Python scripts in execution/ need a YouTube Data API key._ | [AgriciDaniel](https://github.com/AgriciDaniel/claude-youtube) |
 | [`yt-audit`](skills/yt-audit/SKILL.md) | Audit a YouTube channel end to end - packaging, consistency, the first fifteen seconds, and what to fix first. Use for "audit my channel",… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
@@ -189,7 +191,7 @@ _بحث، استراتيجية، تحليل منافسين، زوايا جديد
 | [`yt-retention`](skills/yt-retention/SKILL.md) | Read a YouTube Studio audience-retention export and find where viewers actually leave, then say what to change. Use for "why do people… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
 | [`yt-viral`](skills/yt-viral/SKILL.md) | Find what is actually working in the user's niche on YouTube and rank it by how far each video beat its own channel, then name the… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
 
-### 📄 محتوى (32)
+### 📄 محتوى (30)
 
 _سكريبتات، هوكات، عناوين، صوتك الخاص، كتابة لكل منصة_
 
@@ -198,7 +200,6 @@ _سكريبتات، هوكات، عناوين، صوتك الخاص، كتابة
 | [`ai-tells`](skills/ai-tells/SKILL.md) | Patterns that make writing sound AI-generated. Invoke this skill for ANY writing task - newsletters, social media, blog posts, emails.… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`anti-ai-writing`](skills/anti-ai-writing/SKILL.md) | Transform AI-assisted drafts into authentic, human-sounding content. This skill provides patterns to detect and eliminate AI tells,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`cold-open-creator`](skills/cold-open-creator/SKILL.md) | Create 25-35 second cold opens that hook listeners by dropping them into a specific moment that encapsulates the episode's themes. Merge… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`day-in-the-life`](skills/day-in-the-life/SKILL.md) | Write Day-in-the-Life homeschool blog posts that show how specific families structure their learning, with enough detail that readers can… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`dude-with-sign-writer`](skills/dude-with-sign-writer/SKILL.md) | Creates punchy, conversational one-liners in "Dude With Sign" style - bold statements that challenge norms, validate feelings, or poke fun… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`email-writing`](skills/email-writing/SKILL.md) | Write authentic, human-sounding emails that build relationships and drive action. This skill should be used when drafting welcome emails,… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`ghostwriter`](skills/ghostwriter/SKILL.md) | Transform source material into authentic, human-written content. Use for ANY writing task - newsletters, articles, social posts, emails.… | [cdeistopened](https://github.com/cdeistopened/content-os) |
@@ -213,7 +214,6 @@ _سكريبتات، هوكات، عناوين، صوتك الخاص، كتابة
 | [`social-content-creation`](skills/social-content-creation/SKILL.md) | Transform newsletters, articles, and podcasts into platform-optimized social posts using 180+ proven templates. This skill uses the… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`text-content`](skills/text-content/SKILL.md) | Create high-performing text posts for social media using framework fitting method. 360+ proven templates across LinkedIn, X, Facebook, and… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`transcript-polisher`](skills/transcript-polisher/SKILL.md) | Transform raw podcast transcripts into polished, readable documents. This skill removes filler words, fixes grammar, adds structure, and… | [cdeistopened](https://github.com/cdeistopened/content-os) |
-| [`verified-review`](skills/verified-review/SKILL.md) | Write structured product/curriculum reviews from real OpenEd families. Reviews are practical, honest, and include enough detail that… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`video-caption-creation`](skills/video-caption-creation/SKILL.md) | Create on-screen text hooks and captions for short-form video clips. Built around the Complementarity Principle - on-screen text should… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`voice-pirate-wires`](skills/voice-pirate-wires/SKILL.md) | Write in the Pirate Wires style - authentic, conversational, contrarian. This voice is direct and confident with irreverent humor, takes… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`writing-style`](skills/writing-style/SKILL.md) | Core writing standards for all Skill Stack content. Invoke automatically for any writing task. Combines anti-AI patterns, voice… | [cdeistopened](https://github.com/cdeistopened/content-os) |
@@ -245,7 +245,7 @@ _موشن جرافيك بالكود، Remotion، صوت، محاكاة_
 | [`video-transitions`](skills/video-transitions/SKILL.md) 🧰 | Join two clips with a visible transition effect (wipe, slide, dissolve, pixelize, circle open/close, fade-to-black, etc.) using ffmpeg… | [agamm](https://github.com/agamm/video-agent) |
 | [`web-sims`](skills/web-sims/SKILL.md) 🧰 | Build a simulation-style video (agents, particles, 3D machines, fly-throughs) as one HTML page whose render(t) is a pure function of time,… | [whaleyxbt](https://github.com/whaleyxbt/claude-motion) |
 
-### ✨ احترافي (14)
+### ✨ احترافي (12)
 
 _مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات_
 
@@ -259,9 +259,7 @@ _مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات_
 | [`edl-edit`](skills/edl-edit/SKILL.md) 🧰 | Build a multi-clip edit as an auditable JSON "edit decision list" (EDL) — a list of clips with source/in/out and a written rationale per… | [agamm](https://github.com/agamm/video-agent) |
 | [`filler-removal`](skills/filler-removal/SKILL.md) 🧰 | Remove filler words and disfluencies (um, uh, like, you know, basically) from a talking-head video so it sounds like they were never said.… | [agamm](https://github.com/agamm/video-agent) |
 | [`grok-video-edit`](skills/grok-video-edit/SKILL.md) 🧰 | Apply AI-generated visual edits to video using xAI / Grok — change object colors, add effects (smoke, fire, sparkles), restyle scenes, or… | [agamm](https://github.com/agamm/video-agent) |
-| [`memo`](skills/memo/SKILL.md) | Manage Apple Notes from the terminal. _macOS only (Apple Notes)._ | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`reframe-social`](skills/reframe-social/SKILL.md) 🧰 | Reframe a video to a different aspect ratio for social platforms — vertical 9:16 (Reels/Shorts/TikTok), square 1:1, or 4:5 portrait — from… | [agamm](https://github.com/agamm/video-agent) |
-| [`vellum-prep`](skills/vellum-prep/SKILL.md) | Convert markdown manuscripts to Vellum-ready Word documents. _Needs Python._ | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube-clip-extractor`](skills/youtube-clip-extractor/SKILL.md) | Download YouTube videos, identify compelling clips from transcripts, cut clips with ffmpeg, and generate platform-optimized on-screen text… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`youtube-downloader`](skills/youtube-downloader/SKILL.md) | Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when… | [cdeistopened](https://github.com/cdeistopened/content-os) |
 | [`yt-edit`](skills/yt-edit/SKILL.md) | Turn a raw recording's transcript into an edit decision list - dead air, filler cues and retakes, with timecodes. Use for "edit this",… | [Jakeschincariol](https://github.com/Jakeschincariol/youtube-agent-skill) |
