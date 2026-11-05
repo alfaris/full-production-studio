@@ -66,8 +66,10 @@ function dashedRoundedRect(size, radius) {
 }
 
 // ---------- main ----------
-export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
+export function mountStudio3D(stage, { onSelect, onDirector, still: startStill = false } = {}) {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // "still" = no animation: OS reduced-motion, or the user pressed Pause (WCAG 2.2.2)
+  let still = reduced || startStill;
 
   let renderer;
   try {
@@ -189,7 +191,7 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'stage-label';
-    b.innerHTML = `<span>${c.s.ar}</span><small>${c.s.en}</small>`;
+    b.innerHTML = `<span lang="ar">${c.s.ar}</span><small lang="en">${c.s.en}</small>`;
     b.setAttribute('aria-label', `${c.s.en} / ${c.s.ar}`);
     b.addEventListener('click', () => onSelect && onSelect(c.s.key));
     b.addEventListener('pointerenter', () => (hovered = c));
@@ -201,6 +203,7 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
   centerLabel.type = 'button';
   centerLabel.className = 'stage-pill';
   centerLabel.innerHTML = '🎬 studio-director';
+  centerLabel.lang = 'en';
   centerLabel.addEventListener('click', () => onDirector && onDirector());
   labelLayer.appendChild(centerLabel);
 
@@ -237,7 +240,7 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
     const burstHit = !hit && ray.intersectObject(coreBall, false)[0];
     hovered = hit ? cubes[hit.object.userData.index] : null;
     stage.style.cursor = hit || burstHit ? 'pointer' : '';
-    if (reduced) render(performance.now());
+    if (still) render(performance.now());
   });
   stage.addEventListener('pointerleave', () => { pointerInside = false; hovered = null; stage.style.cursor = ''; });
   stage.addEventListener('click', e => {
@@ -250,6 +253,7 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
 
   // ---- animation ----
   const t0 = performance.now();
+  let frozenAt = 0;
   let last = t0, visible = true, raf = 0;
   const v = new THREE.Vector3();
 
@@ -260,8 +264,8 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
 
   function render(now) {
     const dt = Math.min(0.05, (now - last) / 1000); last = now;
-    const time = reduced ? 3 : (now - t0) / 1000;
-    const motion = reduced ? 0 : 1;
+    const time = still ? Math.max(3, frozenAt) : (now - t0) / 1000;
+    const motion = still ? 0 : 1;
 
     // camera parallax
     smooth.lerp(pointerInside ? mouse : smooth.set(smooth.x * 0.96, smooth.y * 0.96), 0.06);
@@ -302,7 +306,7 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
       const c = cubes[wi];
       for (let p = 0; p < PULSES_PER_WIRE; p++) {
         const k = wi * PULSES_PER_WIRE + p;
-        if (!reduced) pulseT[k] = (pulseT[k] + dt * 0.16 * c.speed) % 1;
+        if (!still) pulseT[k] = (pulseT[k] + dt * 0.16 * c.speed) % 1;
         const t = pulseT[k];
         wires[wi].curve.getPointAt(t, v);
         pulsePos.set([v.x, v.y, v.z + 0.02], k * 3);
@@ -333,10 +337,10 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
     raf = 0;
     if (!visible) return;
     render(now);
-    if (!reduced) raf = requestAnimationFrame(loop);
+    if (!still) raf = requestAnimationFrame(loop);
   }
 
-  new ResizeObserver(() => { layout(); if (reduced) render(performance.now()); }).observe(stage);
+  new ResizeObserver(() => { layout(); if (still) render(performance.now()); }).observe(stage);
   new IntersectionObserver(([e]) => {
     visible = e.isIntersecting;
     if (visible && !raf) raf = requestAnimationFrame(loop);
@@ -344,5 +348,12 @@ export function mountStudio3D(stage, { onSelect, onDirector } = {}) {
 
   layout();
   raf = requestAnimationFrame(loop);
-  return { renderer, scene };
+  function setStill(v) {
+    if (reduced) return true; // the OS setting always wins
+    still = !!v;
+    if (still) { frozenAt = (performance.now() - t0) / 1000; render(performance.now()); }
+    else if (!raf && visible) raf = requestAnimationFrame(loop);
+    return still;
+  }
+  return { renderer, scene, setStill, reduced, isStill: () => still };
 }
