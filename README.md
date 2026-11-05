@@ -6,7 +6,8 @@
 
 **💡 Ideas · 📄 Content · 🎥 Motion · ✨ Pro**
 
-65 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
+76 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
+A **studio director** that runs the whole pipeline, plus the first **Arabic-first** creator skills.<br>
 Works with Claude Code, Claude.ai, Codex, Cursor, Gemini CLI, ChatGPT, and any agent that reads `SKILL.md`.
 
 [![Release](https://img.shields.io/github/v/release/alfaris/full-production-studio)](https://github.com/alfaris/full-production-studio/releases/latest)
@@ -28,6 +29,54 @@ Without guidance, AI output for scripts and motion graphics tends to be generic.
 | ✨ | **Pro** | Editing, captions, color grading, reframing, clip extraction |
 
 You don't need to be a programmer. Pick whichever install method below fits the AI you use.
+
+---
+
+## 🎬 Start here: the Studio Director
+
+76 skills is a lot. You don't have to know any of them. Install the studio and tell your AI:
+
+> *"Use studio-director. Make me a 45-second reel about ___."*
+
+[`studio-director`](skills/studio-director/SKILL.md) runs the project like a real production: **idea → script → visual plan → motion → edit → captions → export**. At each stage it picks the right skill, checks the result against a quality gate, and asks you for one decision before moving on.
+
+## 🌍 Arabic-first skills
+
+The first open skills built **for Arabic creators**, not translated. They handle dialects (Egyptian, Khaleeji, Levantine), right-to-left layout, Arabic captions that don't break, Arabic kinetic typography, and Arabic YouTube SEO.
+
+| Skill | What it solves |
+|---|---|
+| [`arabic-voice`](skills/arabic-voice/SKILL.md) | Turns stiff, AI-sounding Arabic into the creator's real spoken dialect |
+| [`arabic-hooks`](skills/arabic-hooks/SKILL.md) | 12 hook formulas with Egyptian and Khaleeji examples |
+| [`arabic-script`](skills/arabic-script/SKILL.md) | Full YouTube scripts timed to Arabic speech rate |
+| [`arabic-shorts`](skills/arabic-shorts/SKILL.md) | Reels/TikTok/Shorts in one pass, with RTL-safe screen layout |
+| [`arabic-titles-thumbnails`](skills/arabic-titles-thumbnails/SKILL.md) | Titles + thumbnail text as a pair, RTL placement, Arabic fonts |
+| [`arabic-market-research`](skills/arabic-market-research/SKILL.md) | What's underserved in Arabic, competitors, the Ramadan/season calendar |
+| [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | Keywords across dialects, spelling variants, chapters, tags |
+| [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | Fixes Whisper's Arabic mistakes, marks fillers for cutting |
+| [`arabic-captions`](skills/arabic-captions/SKILL.md) | Captions with joined letters, correct RTL punctuation, word-by-word highlights |
+| [`arabic-motion-typography`](skills/arabic-motion-typography/SKILL.md) | Arabic kinetic text in Remotion/GSAP without broken letters |
+
+## 📦 Starter packs
+
+Don't want all 76? Install a pack:
+
+```bash
+# 🎬 Director: one skill that orchestrates everything else you install
+npx skills add alfaris/full-production-studio --skill studio-director
+
+# 🌍 Arabic creator
+npx skills add alfaris/full-production-studio --skill studio-director --skill arabic-voice --skill arabic-hooks --skill arabic-script --skill arabic-shorts --skill arabic-titles-thumbnails --skill arabic-captions --skill arabic-youtube-seo
+
+# ▶️ YouTuber
+npx skills add alfaris/full-production-studio --skill studio-director --skill yt-plan --skill yt-script --skill yt-package --skill yt-retention --skill yt-seo --skill yt-chapters --skill yt-edit
+
+# 📱 Reels / TikTok / Shorts
+npx skills add alfaris/full-production-studio --skill studio-director --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
+
+# 🎥 Motion designer
+npx skills add alfaris/full-production-studio --skill studio-director --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
+```
 
 ---
 
@@ -75,6 +124,24 @@ Download a skill `.md` from the [latest release](https://github.com/alfaris/full
 ## 📚 Skills
 
 <!-- BEGIN:CATALOG -->
+### ⭐ Studio originals (11)
+
+_Written for this repo: the studio director that runs the whole pipeline, plus Arabic-first skills for Arab creators_
+
+| Skill | What it does | Source |
+|---|---|---|
+| [`arabic-captions`](skills/arabic-captions/SKILL.md) | Creates correct Arabic subtitles and burned-in captions. Covers SRT/ASS files, right-to-left punctuation fixes, Arabic font rendering in… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-hooks`](skills/arabic-hooks/SKILL.md) | Writes scroll-stopping Arabic hooks and video openings (first 1–15 seconds) in the creator's own dialect, using formulas proven on Arabic… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-market-research`](skills/arabic-market-research/SKILL.md) | Researches the Arabic content market for a niche (what's working on Arabic YouTube, TikTok and Instagram, competitor channels, audience… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-motion-typography`](skills/arabic-motion-typography/SKILL.md) | Animates Arabic text correctly and beautifully in Remotion, HTML/CSS/GSAP and After Effects-style workflows. Covers right-to-left layout,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-script`](skills/arabic-script/SKILL.md) | Writes complete Arabic video scripts (YouTube long-form, explainers, tutorials, talking-head, faceless) that keep viewers watching, in the… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-shorts`](skills/arabic-shorts/SKILL.md) | Plans and writes Arabic short-form videos (Reels, TikTok, YouTube Shorts, Snapchat Spotlight) end-to-end in one pass, covering hook, 20–60… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-titles-thumbnails`](skills/arabic-titles-thumbnails/SKILL.md) | Creates Arabic YouTube titles and thumbnail text as a matched pair, handling right-to-left layout, mixed Arabic/English, digit style,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | Cleans Arabic speech transcripts from Whisper, YouTube auto-captions or other tools. It fixes dialect words the AI turned into فصحى,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-voice`](skills/arabic-voice/SKILL.md) | Captures an Arab creator's real speaking voice (dialect, rhythm, signature phrases, code-switching) into a reusable Voice Card, and… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | Optimizes Arabic YouTube videos for search (keywords across dialects and فصحى, spelling variants, Arabizi, bilingual descriptions, tags,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`studio-director`](skills/studio-director/SKILL.md) | The director of Full Production Studio. Takes a raw video idea and runs it through the whole pipeline (idea → script → visual plan →… | [alfaris](https://github.com/alfaris/full-production-studio) |
+
 ### 💡 Ideas (9)
 
 _Research, strategy, competitor analysis, finding angles_
@@ -175,7 +242,7 @@ _Editing, captions, color, reframing, clips and post-production_
 
 ## 🔄 Updating from upstream
 
-All skills are copied from the original MIT-licensed repos, unmodified except where noted, and each repo is pinned to an exact commit in [`sources.json`](sources.json).
+Upstream skills are copied from the original MIT-licensed repos, unmodified except where noted, and each repo is pinned to an exact commit in [`sources.json`](sources.json). Skills written for this repo (the director and the Arabic skills) live in [`originals/`](originals); edit them there, not in `skills/`.
 To pull newer versions, change a `ref` in `sources.json`, then run:
 ```bash
 python scripts/studio.py sync    # re-copy skills, regenerate both READMEs + AGENTS.md + catalog.json
@@ -185,7 +252,7 @@ Each skill folder includes `UPSTREAM.md` (source, commit, any changes) and `LICE
 
 ## 🙏 Credits
 
-This repo is a curated bundle. All credit goes to the original authors:
+The director and the Arabic-first skills are original to this repo. Everything else is a curated bundle, and all credit goes to the original authors:
 
 | Repo | Author | License |
 |---|---|---|

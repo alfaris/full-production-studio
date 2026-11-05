@@ -185,6 +185,21 @@ def sync() -> None:
             if missing:
                 sys.exit(f"  ✗ listed in sources.json but not found upstream: {sorted(missing)}")
 
+    # Skills written for this repo (originals/<name>/SKILL.md), category from sources.json → "originals"
+    for name, cat in SOURCES.get("originals", {}).items():
+        d = ROOT / "originals" / name
+        meta, _ = parse_frontmatter((d / "SKILL.md").read_text(encoding="utf-8"))
+        if meta.get("name") != name or not meta.get("description"):
+            sys.exit(f"  ✗ originals/{name}/SKILL.md needs `name: {name}` and a description")
+        if name in seen:
+            sys.exit(f"  ✗ name clash: original `{name}` vs {seen[name]}")
+        seen[name] = "originals"
+        shutil.copytree(d, SKILLS / name)
+        catalog.append({"name": name, "category": cat, "repo": "alfaris/full-production-studio",
+                        "path": f"originals/{name}", "description": meta["description"],
+                        "toolkit": False, "note": "", "original": True})
+        print(f"  ✓ {name} [{cat}] (original)")
+
     order = list(SOURCES["categories"])
     catalog.sort(key=lambda c: (order.index(c["category"]), c["name"]))
     (ROOT / "catalog.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -237,7 +252,9 @@ def write_docs(catalog: list[dict]) -> None:
               "This repo is a library of Agent Skills for video & content production.",
               "Each skill lives in `skills/<name>/SKILL.md` (YAML frontmatter + instructions).",
               "", "**For any AI agent reading this file:** when a task matches a skill below, open its SKILL.md "
-              "and follow it. Load files referenced inside a skill folder only when the skill asks for them.", ""]
+              "and follow it. Load files referenced inside a skill folder only when the skill asks for them.", "",
+              "**Not sure which skill fits, or making a whole video?** Start with `skills/studio-director/SKILL.md`: "
+              "it routes each production stage to the right skill. For Arabic-language content, prefer the `arabic-*` skills.", ""]
     for key, cat in SOURCES["categories"].items():
         agents += [f"## {cat['en']} ({cat['ar']})", ""]
         for c in (c for c in catalog if c["category"] == key):

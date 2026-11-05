@@ -14,7 +14,8 @@
 
 <div dir="rtl">
 
-65 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
+76 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
+فيها **مخرج** بيدير المشروع كله، وأول سكيلز **معمولة للعربي من الأساس** لصنّاع المحتوى العرب.
 بتشتغل على Claude Code وClaude.ai وCodex وCursor وGemini CLI وChatGPT، وأي AI بيقرا ملفات `SKILL.md`.
 
 ---
@@ -31,6 +32,58 @@
 | ✨ | **احترافي** | مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات |
 
 مش لازم تكون مبرمج. اختار طريقة التركيب اللي تناسب الـAI اللي بتستخدمه.
+
+---
+
+## 🎬 ابدأ من هنا: المخرج
+
+76 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
+
+> «استخدم studio-director، واعملي ريل ٤٥ ثانية عن ___»
+
+سكيل [`studio-director`](skills/studio-director/SKILL.md) بيدير المشروع زي أي إنتاج حقيقي: **فكرة ← سكريبت ← توزيع المشاهد ← موشن ← مونتاج ← كابشنز ← تصدير**. في كل مرحلة بيختار السكيل المناسبة، ويراجع النتيجة على معايير جودة، وياخد منك قرار واحد قبل ما يكمّل.
+
+## 🌍 سكيلز معمولة للعربي
+
+أول سكيلز مفتوحة المصدر **معمولة لصنّاع المحتوى العرب** من الأساس، مش مترجمة. بتفهم اللهجات (مصري، خليجي، شامي)، والكتابة من اليمين للشمال، وبتطلّع كابشن عربي من غير ما الحروف تتقطّع، وموشن للنص العربي، وسيو يوتيوب بالعربي.
+
+| السكيل | بتحل إيه |
+|---|---|
+| [`arabic-voice`](skills/arabic-voice/SKILL.md) | بتحوّل الكلام الرسمي اللي شكله AI للهجتك الحقيقية |
+| [`arabic-hooks`](skills/arabic-hooks/SKILL.md) | 12 معادلة هوك بأمثلة مصري وخليجي |
+| [`arabic-script`](skills/arabic-script/SKILL.md) | سكريبت يوتيوب كامل متظبط على سرعة الكلام العربي |
+| [`arabic-shorts`](skills/arabic-shorts/SKILL.md) | ريلز وتيك توك وشورتس في رد واحد، والنص في الأماكن الآمنة على الشاشة |
+| [`arabic-titles-thumbnails`](skills/arabic-titles-thumbnails/SKILL.md) | العنوان ونص الثمبنيل مع بعض، ومكان النص صح للعربي، وخطوط عربية |
+| [`arabic-market-research`](skills/arabic-market-research/SKILL.md) | إيه الناقص في المحتوى العربي، والمنافسين، ومواسم زي رمضان |
+| [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | كلمات مفتاحية بكل اللهجات، وطرق الكتابة المختلفة، والـchapters والتاجات |
+| [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | بتصلّح غلطات Whisper في العربي، وبتعلّم على الحشو عشان يتقص |
+| [`arabic-captions`](skills/arabic-captions/SKILL.md) | كابشنز الحروف فيها متوصلة، وعلامات الترقيم في مكانها، وتلوين كلمة كلمة |
+| [`arabic-motion-typography`](skills/arabic-motion-typography/SKILL.md) | تحريك النص العربي في Remotion وGSAP من غير ما الحروف تتقطّع |
+
+## 📦 باقات جاهزة
+
+مش عايز الـ76 كلهم؟ ركّب باقة:
+
+</div>
+
+```bash
+# 🎬 المخرج: سكيل واحدة بتشغّل أي سكيلز تانية متركّبة عندك
+npx skills add alfaris/full-production-studio --skill studio-director
+
+# 🌍 صانع محتوى عربي
+npx skills add alfaris/full-production-studio --skill studio-director --skill arabic-voice --skill arabic-hooks --skill arabic-script --skill arabic-shorts --skill arabic-titles-thumbnails --skill arabic-captions --skill arabic-youtube-seo
+
+# ▶️ يوتيوبر
+npx skills add alfaris/full-production-studio --skill studio-director --skill yt-plan --skill yt-script --skill yt-package --skill yt-retention --skill yt-seo --skill yt-chapters --skill yt-edit
+
+# 📱 ريلز / تيك توك / شورتس
+npx skills add alfaris/full-production-studio --skill studio-director --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
+
+# 🎥 موشن ديزاينر
+npx skills add alfaris/full-production-studio --skill studio-director --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
+```
+
+<div dir="rtl">
 
 ---
 
@@ -102,6 +155,24 @@ git clone https://github.com/alfaris/full-production-studio && cd full-productio
 > وصف السكيلز بالإنجليزي زي ما كاتبه أصحابها الأصليين. الـAI بيفهمها ويرد عليك بلغتك عادي.
 
 <!-- BEGIN:CATALOG -->
+### ⭐ أصلي من الاستوديو (11)
+
+_سكيلز معمولة للريبو ده: المخرج اللي بيشغّل الخط كله، وسكيلز معمولة للعربي من الأساس_
+
+| السكيل | بتعمل إيه | المصدر |
+|---|---|---|
+| [`arabic-captions`](skills/arabic-captions/SKILL.md) | Creates correct Arabic subtitles and burned-in captions. Covers SRT/ASS files, right-to-left punctuation fixes, Arabic font rendering in… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-hooks`](skills/arabic-hooks/SKILL.md) | Writes scroll-stopping Arabic hooks and video openings (first 1–15 seconds) in the creator's own dialect, using formulas proven on Arabic… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-market-research`](skills/arabic-market-research/SKILL.md) | Researches the Arabic content market for a niche (what's working on Arabic YouTube, TikTok and Instagram, competitor channels, audience… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-motion-typography`](skills/arabic-motion-typography/SKILL.md) | Animates Arabic text correctly and beautifully in Remotion, HTML/CSS/GSAP and After Effects-style workflows. Covers right-to-left layout,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-script`](skills/arabic-script/SKILL.md) | Writes complete Arabic video scripts (YouTube long-form, explainers, tutorials, talking-head, faceless) that keep viewers watching, in the… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-shorts`](skills/arabic-shorts/SKILL.md) | Plans and writes Arabic short-form videos (Reels, TikTok, YouTube Shorts, Snapchat Spotlight) end-to-end in one pass, covering hook, 20–60… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-titles-thumbnails`](skills/arabic-titles-thumbnails/SKILL.md) | Creates Arabic YouTube titles and thumbnail text as a matched pair, handling right-to-left layout, mixed Arabic/English, digit style,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | Cleans Arabic speech transcripts from Whisper, YouTube auto-captions or other tools. It fixes dialect words the AI turned into فصحى,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-voice`](skills/arabic-voice/SKILL.md) | Captures an Arab creator's real speaking voice (dialect, rhythm, signature phrases, code-switching) into a reusable Voice Card, and… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | Optimizes Arabic YouTube videos for search (keywords across dialects and فصحى, spelling variants, Arabizi, bilingual descriptions, tags,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`studio-director`](skills/studio-director/SKILL.md) | The director of Full Production Studio. Takes a raw video idea and runs it through the whole pipeline (idea → script → visual plan →… | [alfaris](https://github.com/alfaris/full-production-studio) |
+
 ### 💡 أفكار (9)
 
 _بحث، استراتيجية، تحليل منافسين، زوايا جديدة_
@@ -202,7 +273,7 @@ _مونتاج، كابشنز، تلوين، Reframe، تقطيع كليبات_
 
 ## 🔄 التحديث من المصدر
 
-كل السكيلز منسوخة من الريبوهات الأصلية (رخصة MIT) زي ما هي، إلا في الحالات المذكورة في ملف `UPSTREAM.md` جوه كل سكيل. وكل ريبو متثبّت على commit معيّن في [`sources.json`](sources.json).
+السكيلز اللي من ريبوهات تانية منسوخة زي ما هي (رخصة MIT)، إلا في الحالات المذكورة في ملف `UPSTREAM.md` جوه كل سكيل، وكل ريبو متثبّت على commit معيّن في [`sources.json`](sources.json). أما السكيلز المعمولة للريبو ده (المخرج والسكيلز العربي) فموجودة في [`originals/`](originals)، ولو عايز تعدّلها عدّلها هناك مش في `skills/`.
 عشان تحدّث، غيّر الـ`ref` في `sources.json` وشغّل:
 
 </div>
@@ -218,7 +289,7 @@ python scripts/studio.py check   # يتأكد إن كل SKILL.md سليم
 
 ## 🙏 الكريدت
 
-الريبو ده تجميعة، والفضل كله لأصحاب السكيلز الأصليين:
+المخرج والسكيلز العربي معمولين مخصوص للريبو ده. الباقي تجميعة، والفضل كله لأصحابها الأصليين:
 
 | الريبو | صاحبه | الرخصة |
 |---|---|---|

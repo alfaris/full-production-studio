@@ -1,5 +1,12 @@
 {
   "categories": {
+    "studio": {
+      "ar": "أصلي من الاستوديو",
+      "en": "Studio originals",
+      "icon": "⭐",
+      "about": "Written for this repo: the studio director that runs the whole pipeline, plus Arabic-first skills for Arab creators",
+      "about_ar": "سكيلز معمولة للريبو ده: المخرج اللي بيشغّل الخط كله، وسكيلز معمولة للعربي من الأساس"
+    },
     "ideas": {
       "ar": "أفكار",
       "en": "Ideas",
@@ -188,5 +195,18 @@
         "vellum-prep": "Needs Python."
       }
     }
-  ]
+  ],
+  "originals": {
+    "studio-director": "studio",
+    "arabic-voice": "studio",
+    "arabic-hooks": "studio",
+    "arabic-script": "studio",
+    "arabic-titles-thumbnails": "studio",
+    "arabic-shorts": "studio",
+    "arabic-market-research": "studio",
+    "arabic-youtube-seo": "studio",
+    "arabic-transcript-cleanup": "studio",
+    "arabic-captions": "studio",
+    "arabic-motion-typography": "studio"
+  }
 }
