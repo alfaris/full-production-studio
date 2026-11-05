@@ -229,7 +229,9 @@
       "ar": "المخرج",
       "skills": [
         "studio-director"
-      ]
+      ],
+      "about": "One skill that runs everything else you install.",
+      "about_ar": "سكيل واحدة بتشغّل أي سكيلز تانية متركّبة عندك."
     },
     {
       "id": "arabic",
@@ -245,7 +247,9 @@
         "arabic-titles-thumbnails",
         "arabic-captions",
         "arabic-youtube-seo"
-      ]
+      ],
+      "about": "Write, caption and rank Arabic videos in your own dialect.",
+      "about_ar": "اكتب، وحط كابشنز، وظبّط السيو لفيديوهاتك العربي بلهجتك."
     },
     {
       "id": "youtuber",
@@ -261,7 +265,9 @@
         "yt-seo",
         "yt-chapters",
         "yt-edit"
-      ]
+      ],
+      "about": "Plan, script, package and grow a YouTube channel.",
+      "about_ar": "خطط، واكتب، وجهّز، ونمّي قناتك على يوتيوب."
     },
     {
       "id": "shorts",
@@ -275,7 +281,9 @@
         "hook-and-headline-writing",
         "video-caption-creation",
         "reframe-social"
-      ]
+      ],
+      "about": "Hooks, scripts, captions and vertical reframing.",
+      "about_ar": "هوكات، وسكريبتات، وكابشنز، وتحويل للفيديو الطولي."
     },
     {
       "id": "motion",
@@ -290,7 +298,9 @@
         "review-loop",
         "sound-design",
         "arabic-motion-typography"
-      ]
+      ],
+      "about": "Code-based motion graphics with real taste.",
+      "about_ar": "موشن جرافيك بالكود بذوق حقيقي."
     },
     {
       "id": "editor",
@@ -306,7 +316,23 @@
         "captions",
         "audio-edit",
         "color-grade"
-      ]
+      ],
+      "about": "An apprentice that learns how you edit, plus cut, sound and color.",
+      "about_ar": "مساعد بيتعلّم طريقتك في المونتاج، ومعاه القص والصوت والألوان."
     }
-  ]
+  ],
+  "descriptions_ar": {
+    "studio-director": "المخرج: بياخد فكرة الفيديو ويمشّيها على الخط كله (فكرة ← سكريبت ← مشاهد ← موشن ← مونتاج ← كابشنز ← تصدير)، ويختار السكيل المناسبة لكل مرحلة، ويراجع النتيجة قبل ما يكمّل.",
+    "arabic-voice": "بتطلّع «كارت الصوت» بتاعك (لهجتك، وطريقتك، وجملك المميزة)، وبتحوّل أي كلام رسمي أو شكله AI لكلامك الطبيعي.",
+    "arabic-hooks": "بتكتب هوك يشد في أول ٣ ثواني بلهجتك، بـ١٢ معادلة مجرّبة على الريلز وتيك توك واليوتيوب.",
+    "arabic-script": "سكريبت يوتيوب كامل بلهجتك، متظبط على سرعة الكلام العربي، وجنب كل جملة اللي هيظهر على الشاشة.",
+    "arabic-titles-thumbnails": "العنوان ونص الثمبنيل مع بعض: طول مناسب للموبايل، ومكان النص صح من اليمين للشمال، وخطوط عربية تتقري.",
+    "arabic-shorts": "ريل أو تيك توك أو شورت كامل في رد واحد: هوك، وسكريبت، ولقطات، ونص على الشاشة، وكابشن، وهاشتاجات، وكله في الأماكن الآمنة.",
+    "arabic-market-research": "بتحلل السوق العربي في مجالك: المنافسين، وأسئلة الجمهور، والناقص بالعربي مقارنة بالإنجليزي، ومواسم زي رمضان.",
+    "arabic-youtube-seo": "سيو يوتيوب بالعربي: كلمات مفتاحية بكل اللهجات وطرق الكتابة، ووصف، وchapters، وتاجات، وهاشتاجات.",
+    "arabic-transcript-cleanup": "بتنضّف التفريغ العربي: بترجّع كلام اللهجة اللي اتحوّل فصحى، وبتصلّح المصطلحات الإنجليزي، وبتعلّم على الحشو عشان يتقص.",
+    "arabic-captions": "كابشنز عربي الحروف فيها متوصلة، وعلامات الترقيم والإنجليزي في مكانهم، وتلوين كلمة كلمة، وتصدير لكل البرامج.",
+    "arabic-motion-typography": "تحريك النص العربي في Remotion و GSAP من غير ما الحروف تتقطّع أو الترتيب يتعكس، حتى مع الكلام الإنجليزي والأرقام.",
+    "editor-apprentice": "مساعد مونتير بيتعلّم طريقتك إنت لكل عميل، وبيشتغل جوه برامجك (Premiere، Resolve، After Effects، CapCut) مرحلة مرحلة، وبيحفظ اللي اتعلّمه."
+  }
 }

@@ -12,7 +12,7 @@ Most motion tools and tutorials assume Latin text. Applied to Arabic, the usual 
 1. **Animate words, never letters.** Splitting Arabic into characters (`split('')`, GSAP SplitText `chars`) breaks the joined shapes. Split by spaces only.
 2. **No `letter-spacing`** on Arabic. It disconnects letters. For stretching, use kashida (ـ) deliberately, or scale the word.
 3. **Set direction.** Containers get `direction: rtl` (CSS) / `dir="rtl"` (HTML). In flex rows, `direction: rtl` makes word 1 sit on the right.
-4. **Isolate mixed text.** English words and numbers inside Arabic: wrap in `<bdi>` or `unicode-bidi: isolate` so they don't reorder the line.
+4. **Isolate mixed text, and keep English runs together.** English words and numbers inside Arabic: wrap in `<bdi>` or `unicode-bidi: isolate` so they don't reorder the line. **Never animate consecutive English words as separate items:** in an RTL row each item is placed right-to-left, so «Claude Code» renders as «Code Claude». Merge runs of non-Arabic words into one token first (`tokenize()` below).
 5. **Leave room for marks.** Arabic has tall ascenders and diacritics. Use `line-height ≥ 1.5`, and add vertical padding to any `overflow: hidden` / mask (≥ 0.25em) or dots and marks get clipped.
 6. **Load the real font** before rendering. A fallback font produces wrong shapes and different widths.
 
@@ -32,12 +32,24 @@ Arabic needs about **10–15% larger** font size than Latin to read the same at 
 import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
 import { loadFont } from '@remotion/google-fonts/Cairo';
 
+// Split on spaces, but merge consecutive non-Arabic words ("Claude Code", "4K 60fps") into one token.
+// Otherwise an RTL row reverses them: «جربت Code Claude» instead of «جربت Claude Code».
+const hasArabic = (w: string) => /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/.test(w);
+export function tokenize(text: string): string[] {
+  return text.split(/\s+/).filter(Boolean).reduce<string[]>((out, w) => {
+    const last = out[out.length - 1];
+    if (last !== undefined && !hasArabic(w) && !hasArabic(last)) out[out.length - 1] = `${last} ${w}`;
+    else out.push(w);
+    return out;
+  }, []);
+}
+
 const { fontFamily } = loadFont(); // waits for the font automatically during render
 
 export const ArabicTitle: React.FC<{ text: string }> = ({ text }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const words = text.split(' '); // WORDS, never characters
+  const words = tokenize(text); // WORDS (never characters), with English runs kept together
 
   return (
     <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -79,7 +91,8 @@ Take word timestamps from Whisper (`arabic-transcript-cleanup`), convert to fram
 
 ```js
 // Split by words only
-el.innerHTML = el.textContent.split(' ').map(w => `<span class="w"><bdi>${w}</bdi></span>`).join(' ');
+// tokenize() from the Remotion recipe above: words, with English runs kept together
+el.innerHTML = tokenize(el.textContent).map(w => `<span class="w"><bdi>${w}</bdi></span>`).join(' ');
 gsap.from('.w', { y: 40, opacity: 0, filter: 'blur(6px)', stagger: 0.06, ease: 'expo.out', duration: 0.6 });
 ```
 With GSAP SplitText use `type: "words"` (never `"chars"`), and set `dir="rtl"` on the parent.
@@ -97,4 +110,4 @@ With GSAP SplitText use `type: "words"` (never `"chars"`), and set `dir="rtl"` o
 
 ## 7. Render check
 
-Render stills (`npx remotion still … --frame=N`) at the start, the middle of the stagger, and the end. Check: letters joined, word order right-to-left, no clipped dots/marks, English and numbers not reversed, text inside the safe area.
+Render stills (`npx remotion still … --frame=N`) at the start, the middle of the stagger, and the end. Check: letters joined, word order right-to-left, no clipped dots/marks, English and numbers not reversed, text inside the safe area. Test with a sentence that has **two English words in a row on the same line** (e.g. «جربت Claude Code امبارح»); a line break between them can hide a reversed order.

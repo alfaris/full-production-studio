@@ -153,6 +153,27 @@
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+  /* proof */
+  .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 14px; }
+  .proof-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .proof-card h3 { margin: 0; font-size: 18px; }
+  .pv { display: flex; flex-direction: column; gap: 6px; }
+  .pv .tag { align-self: flex-start; font-size: 12.5px; font-weight: 800; border-radius: 999px; padding: 2px 10px; border: 1px solid; }
+  .pv.bad .tag { color: #ff8a80; border-color: rgba(255,138,128,.45); background: rgba(255,138,128,.08); }
+  .pv.good .tag { color: #6ee7a8; border-color: rgba(110,231,168,.45); background: rgba(110,231,168,.08); }
+  .pv img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); }
+  .pv.bad img { border-color: rgba(255,138,128,.35); }
+  .pv.good img { border-color: rgba(110,231,168,.35); }
+  .pv blockquote { margin: 0; padding: 12px 14px; border-radius: 10px; background: #0f1114; border: 1px solid var(--line); font-size: 16px; line-height: 1.7; direction: rtl; text-align: right; }
+  .pv.bad blockquote { border-color: rgba(255,138,128,.35); color: #c4c8d0; }
+  .pv.good blockquote { border-color: rgba(110,231,168,.35); color: var(--text); font-weight: 700; }
+  .proof-card .pnote { color: var(--muted); font-size: 13.5px; margin: 0; }
+  .proof-card .btn { align-self: flex-start; margin-top: auto; }
+  .card .desc[dir="rtl"] { direction: rtl; text-align: right; }
+  .card .name a { color: var(--text); }
+  .card .name a:hover { color: var(--orange2); }
+  .pack .about { color: #c4c8d0; font-size: 13.5px; margin: 0; }
+
   /* 3D stage */
   .stage { position: relative; height: clamp(320px, 30vw, 380px); margin: 10px -20px 0; display: none; touch-action: pan-y; }
   .stage-toggle {
@@ -246,6 +267,12 @@
     <div class="tiles" id="tiles" role="group" data-i18n-aria="sectionsLabel"></div>
   </div>
 
+  <section id="proof">
+    <h2 class="sec-title" data-i18n="proofTitle"></h2>
+    <p class="sec-sub" data-i18n="proofSub"></p>
+    <div class="proof" id="proofGrid"></div>
+  </section>
+
   <section id="director">
     <div class="director">
       <div>
@@ -336,9 +363,30 @@ const T = {
         cmds: [['', '/plugin marketplace add alfaris/full-production-studio'], ['', '/plugin install full-production-studio@full-production-studio']] },
       { id: 'install-chat', h: 'Claude.ai', p: 'Download a skill’s <b>ZIP</b> from its card, then go to Settings → Capabilities → Skills → Upload skill.',
         link: ['#skills', 'Choose a skill ↑'] },
-      { h: 'ChatGPT · Gemini · Claude Projects', p: 'Download a skill’s <b>.md</b> file from the latest release and paste it into a custom GPT, a Gem, or Project instructions.',
-        link: ['https://github.com/alfaris/full-production-studio/releases/latest', 'Open the latest release ↗'] },
+      { h: 'ChatGPT · Gemini · Claude Projects', p: 'Press <b>Copy for ChatGPT</b> on any skill card. Short skills are copied, ready to paste into a GPT’s Instructions; long ones download as a file to upload as Knowledge. Works the same for Gems and Claude Projects.',
+        link: ['#skills', 'Choose a skill ↑'] },
     ],
+    proofTitle: '🔍 See the difference',
+    proofSub: 'Same input, without and with the studio. The caption and typography frames are real renders, not mockups.',
+    proof: [
+      { skill: 'arabic-hooks', h: 'Hooks that sound like you',
+        before: { tag: '✗ Typical AI opening', text: '«أهلاً بكم في هذا الفيديو، سوف نتحدث اليوم عن أهمية الذكاء الاصطناعي في صناعة المحتوى.»' },
+        after: { tag: '✓ arabic-hooks · pain mirror, Egyptian', text: '«طلبت من الـAI سكريبت وطلعلك كلام ممل؟ المشكلة مش في الـAI… المشكلة في أول ٣ ثواني.»' },
+        note: 'Before: “Welcome to this video, today we will talk about the importance of AI in content creation.” After: “Asked AI for a script and got something boring? The problem isn’t the AI… it’s the first 3 seconds.” Written by Claude following the skill.' },
+      { skill: 'arabic-captions', h: 'Arabic captions that don’t break',
+        before: { tag: '✗ ffmpeg defaults', img: 'proof/caption-before.png', alt: 'Burned-in caption where “Claude Code” jumps to the end of the Arabic sentence and the question mark sits in the middle' },
+        after: { tag: '✓ arabic-captions', img: 'proof/caption-after.png', alt: 'The same caption rendered correctly: “Claude Code” first, question mark at the end of the line' },
+        note: 'Real ffmpeg renders of the same subtitle line. Without the fix, “Claude Code” jumps to the end of the sentence and the question mark lands in the middle.' },
+      { skill: 'arabic-motion-typography', h: 'Arabic text that animates correctly',
+        before: { tag: '✗ Split into letters (the usual tutorial)', img: 'proof/typo-before.png', alt: 'Animated Arabic title split into letters: letters disconnected and in reverse order' },
+        after: { tag: '✓ arabic-motion-typography', img: 'proof/typo-after.png', alt: 'The same title animated by word: letters joined, words in the right order' },
+        note: 'Real Remotion renders. Splitting into letters disconnects and reverses Arabic; the skill animates by word and keeps “Claude Code” in order.' },
+    ],
+    tryIt: n => `Copy install: ${n}`,
+    gpt: 'Copy for ChatGPT', gptAria: n => `Copy ${n} for ChatGPT`,
+    gptOpened: 'Opened the skill file in a new tab: select all (Ctrl/Cmd + A), copy, and paste it into your GPT’s Instructions.',
+    gptCopied: 'Copied ✓ In ChatGPT: create a GPT → Configure → paste into Instructions. (Also works in a Gem or a Claude Project.)',
+    gptTooLong: n => `Downloaded ✓ It’s ${n.toLocaleString('en')} characters, too long for a GPT’s Instructions (8,000), so upload the file as Knowledge in your GPT, a Gem, or a Claude Project.`,
     fKicker: 'Meet the founder', fName: 'Ahmed Faris', fRole: 'Product Designer · Educator · Mentor',
     fBio: 'I’m a product designer, educator and mentor with 15+ years in design. I built Full Production Studio so every creator, especially Arab creators, can make better videos with AI without being a programmer, from the first idea to the final export.',
     fStats: ['<b>15+</b> years in design', '<b>5,000+</b> learners taught', 'Senior Product Designer at <b>Teracloud</b>'],
@@ -361,7 +409,7 @@ const T = {
     flow: ['فكرة', 'سكريبت', 'توزيع المشاهد', 'موشن', 'مونتاج', 'كابشنز', 'تصدير'],
     packsTitle: '📦 باقات جاهزة', packsSub: 'ركّب اللي محتاجه بس بأمر واحد.',
     skills: 'سكيل', install: 'انسخ أمر التركيب',
-    skillsTitle: '📚 كل السكيلز', skillsSub: 'الوصف بالإنجليزي زي ما كاتبه صاحب كل سكيل، والـAI هيرد عليك بلغتك عادي.',
+    skillsTitle: '📚 كل السكيلز', skillsSub: 'وصف السكيلز الأصلية والمونتير بالعربي، والباقي بالإنجليزي زي ما كاتبه صاحبه، والـAI هيرد عليك بلغتك عادي.',
     search: 'دوّر على سكيل… (مثلًا hook أو remotion أو captions أو عربي)', all: 'الكل', shown: n => `${n} سكيل`,
     none: 'مفيش سكيلز بالاسم ده.',
     view: 'SKILL.md', zip: 'ZIP', toolkit: '🧰 محتاجة أدوات', original: '⭐ أصلي',
@@ -374,9 +422,30 @@ const T = {
         cmds: [['', '/plugin marketplace add alfaris/full-production-studio'], ['', '/plugin install full-production-studio@full-production-studio']] },
       { id: 'install-chat', h: 'Claude.ai', p: 'نزّل ملف الـ<b>ZIP</b> من كارت السكيل، وبعدين روح Settings ← Capabilities ← Skills ← Upload skill.',
         link: ['#skills', 'اختار سكيل ↑'] },
-      { h: 'ChatGPT · Gemini · Claude Projects', p: 'نزّل ملف الـ<b>md</b> للسكيل من آخر إصدار، والصقه في تعليمات الـGPT أو الـGem أو الـProject.',
-        link: ['https://github.com/alfaris/full-production-studio/releases/latest', 'افتح آخر إصدار ↗'] },
+      { h: 'ChatGPT · Gemini · Claude Projects', p: 'دوس <b>انسخ لـChatGPT</b> في كارت أي سكيل. السكيلز القصيرة بتتنسخ وتلزقها في تعليمات الـGPT، والطويلة بتنزل كملف ترفعه كـKnowledge. ونفس الكلام في الـGem والـClaude Project.',
+        link: ['#skills', 'اختار سكيل ↑'] },
     ],
+    proofTitle: '🔍 شوف الفرق',
+    proofSub: 'نفس المدخل، من غير الاستوديو ومعاه. صور الكابشن والتحريك رندر حقيقي، مش تصميم.',
+    proof: [
+      { skill: 'arabic-hooks', h: 'هوك بيتكلم زيّك',
+        before: { tag: '✗ بداية AI عادية', text: '«أهلاً بكم في هذا الفيديو، سوف نتحدث اليوم عن أهمية الذكاء الاصطناعي في صناعة المحتوى.»' },
+        after: { tag: '✓ arabic-hooks · معادلة «المشكلة»، مصري', text: '«طلبت من الـAI سكريبت وطلعلك كلام ممل؟ المشكلة مش في الـAI… المشكلة في أول ٣ ثواني.»' },
+        note: 'الهوك التاني كتبه Claude باتباع السكيل.' },
+      { skill: 'arabic-captions', h: 'كابشن عربي ما بيتكسرش',
+        before: { tag: '✗ إعدادات ffmpeg العادية', img: 'proof/caption-before.png', alt: 'كابشن محروق في الفيديو، الإنجليزي فيه راح لآخر الجملة وعلامة الاستفهام في النص' },
+        after: { tag: '✓ arabic-captions', img: 'proof/caption-after.png', alt: 'نفس الكابشن مظبوط: Claude Code في الأول وعلامة الاستفهام في آخر السطر' },
+        note: 'رندر حقيقي بـ ffmpeg لنفس السطر. من غير التصليح، Claude Code بيروح لآخر الجملة وعلامة الاستفهام بتقع في النص.' },
+      { skill: 'arabic-motion-typography', h: 'تحريك نص عربي صح',
+        before: { tag: '✗ تقسيم لحروف (زي الشروحات العادية)', img: 'proof/typo-before.png', alt: 'عنوان عربي متحرك متقسم لحروف: الحروف منفصلة ومعكوسة' },
+        after: { tag: '✓ arabic-motion-typography', img: 'proof/typo-after.png', alt: 'نفس العنوان متحرك كلمة كلمة: الحروف متوصلة والترتيب صح' },
+        note: 'رندر حقيقي بـ Remotion. التقسيم لحروف بيفصل الحروف ويعكسها؛ السكيل بتحرّك كلمة كلمة وبتحافظ على ترتيب Claude Code.' },
+    ],
+    tryIt: n => `انسخ أمر تركيب ${n}`,
+    gpt: 'انسخ لـChatGPT', gptAria: n => `انسخ ${n} لـChatGPT`,
+    gptOpened: 'فتحتلك ملف السكيل في تاب جديدة: حدد الكل (Ctrl/Cmd + A)، وانسخ، والصقه في تعليمات الـGPT.',
+    gptCopied: 'اتنسخ ✓ في ChatGPT: اعمل GPT ← Configure ← الصقه في Instructions. (وينفع كمان في Gem أو Claude Project.)',
+    gptTooLong: n => `اتنزّل ✓ الملف ${n.toLocaleString('en')} حرف، أطول من حد تعليمات الـGPT (8,000)، فارفعه كـKnowledge في الـGPT أو الـGem أو الـClaude Project.`,
     fKicker: 'المؤسس', fName: 'أحمد فارس', fRole: 'مصمم منتجات · مدرّب · منتور',
     fBio: 'أنا مصمم منتجات ومدرّب ومنتور، وبشتغل في التصميم من أكتر من ١٥ سنة. عملت «استوديو إنتاج متكامل» عشان أي صانع محتوى، وخصوصًا صنّاع المحتوى العرب، يقدر يطلّع فيديوهات أحسن بالـAI من غير ما يكون مبرمج، من أول فكرة لحد التصدير.',
     fStats: ['<b>+15</b> سنة في التصميم', '<b>+5,000</b> متعلم درّبتهم', 'Senior Product Designer في <b>Teracloud</b>'],
@@ -392,6 +461,13 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cmdFor = names => `npx skills add ${REPO} ` + names.map(n => `--skill ${n}`).join(' ');
 
+function legacyCopy(text) {
+  const a = document.createElement('textarea');
+  a.value = text; a.setAttribute('readonly', ''); a.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+  document.body.appendChild(a); a.select();
+  let ok = false; try { ok = document.execCommand('copy'); } catch { ok = false; }
+  a.remove(); return ok;
+}
 let toastTimer = 0;
 function toast(msg, ms = 1600) {
   const t = $('#toast'); t.textContent = msg; t.classList.add('show');
@@ -399,7 +475,7 @@ function toast(msg, ms = 1600) {
 }
 async function copy(text) {
   try { await navigator.clipboard.writeText(text); }
-  catch { const a = document.createElement('textarea'); a.value = text; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); }
+  catch { legacyCopy(text); }
   // Teach the next step at the moment it's needed
   if (text.startsWith('npx skills add')) toast(T[lang].copiedInstall, 6000);
   else if (text.startsWith('/plugin')) toast(T[lang].copiedPlugin, 4000);
@@ -419,6 +495,14 @@ function setLang(l) {
   updateMotionBtn();
   $('#flow').innerHTML = T[l].flow.map(s => `<span>${s}</span>`).join(`<i>${l === 'ar' ? '←' : '→'}</i>`);
   $('#fStats').innerHTML = T[l].fStats.map(x => `<span>${x}</span>`).join('');
+  const pv = (cls, v) => `<div class="pv ${cls}"><span class="tag">${v.tag}</span>${v.img
+      ? `<img src="${v.img}" alt="${esc(v.alt)}" loading="lazy" width="900" height="150">`
+      : `<blockquote lang="ar">${v.text}</blockquote>`}</div>`;
+  $('#proofGrid').innerHTML = T[l].proof.map(c => `<article class="proof-card">
+      <h3>${c.h}</h3>${pv('bad', c.before)}${pv('good', c.after)}
+      <p class="pnote">${c.note}</p>
+      <button class="btn" type="button" data-copy="${esc(cmdFor([c.skill]))}">${T[l].tryIt(`<span lang="en" dir="ltr">${c.skill}</span>`)}</button>
+    </article>`).join('');
   $('#how').innerHTML = T[l].how.map(c => `<div${c.id ? ` id="${c.id}"` : ''}>
       <h3>${c.h}</h3><p>${c.p}</p>
       ${(c.cmds || []).map(([lbl, cmd]) => `${lbl ? `<div class="lbl">${lbl}</div>` : ''}
@@ -442,6 +526,7 @@ function renderAll() {
   $('#packs').innerHTML = DATA.packs.map(p => `
     <div class="pack">
       <h3>${p.icon} ${lang === 'ar' ? p.ar : p.en}</h3>
+      <p class="about">${lang === 'ar' ? (p.about_ar || '') : (p.about || '')}</p>
       <p>${p.skills.length} ${T[lang].skills} · <span class="mono" dir="ltr" lang="en">${p.skills.slice(0, 3).join(', ')}${p.skills.length > 3 ? '…' : ''}</span></p>
       <button class="btn primary" type="button" data-copy="${esc(cmdFor(p.skills))}">${T[lang].install}</button>
     </div>`).join('');
@@ -453,24 +538,52 @@ function renderGrid() {
   const wantsArabic = /عرب|arab/.test(q);
   const list = DATA.skills.filter(s =>
     (cat === 'all' || s.category === cat) &&
-    (!q || (s.name + ' ' + s.description + ' ' + s.repo).toLowerCase().includes(q) || (wantsArabic && s.name.startsWith('arabic'))));
+    (!q || (s.name + ' ' + s.description + ' ' + (s.description_ar || '') + ' ' + s.repo).toLowerCase().includes(q) || (wantsArabic && s.name.startsWith('arabic'))));
   $('#count').textContent = T[lang].shown(list.length);
   $('#grid').innerHTML = list.length ? list.map(s => {
     const c = DATA.categories[s.category];
     return `<article class="card">
-      <div class="head"><h3 class="name mono" lang="en" style="margin:0">${esc(s.name)}</h3><span class="badge ${s.original ? 'star' : ''}">${c.icon} ${catName(s.category)}</span></div>
-      <div class="desc" lang="en">${esc(s.description)}</div>
+      <div class="head"><h3 class="name mono" lang="en" style="margin:0"><a href="https://github.com/${REPO}/blob/main/skills/${s.name}/SKILL.md" aria-label="${esc(T[lang].aView(s.name))}">${esc(s.name)}</a></h3><span class="badge ${s.original ? 'star' : ''}">${c.icon} ${catName(s.category)}</span></div>
+      ${lang === 'ar' && s.description_ar
+        ? `<div class="desc" lang="ar" dir="rtl">${esc(s.description_ar)}</div>`
+        : `<div class="desc" lang="en">${esc(s.description)}</div>`}
       <div class="meta">${s.original ? T[lang].original + ' · ' : ''}${s.toolkit ? T[lang].toolkit + ' · ' : ''}<a href="https://github.com/${s.repo}" dir="ltr">${esc(s.repo.split('/')[0])}</a>${s.note ? ' · ' + esc(s.note) : ''}</div>
       <div class="actions">
         <button class="btn primary" type="button" data-copy="${esc(cmdFor([s.name]))}" aria-label="${esc(T[lang].aInstall(s.name))}">${T[lang].install}</button>
-        <a class="btn" href="https://github.com/${REPO}/blob/main/skills/${s.name}/SKILL.md" aria-label="${esc(T[lang].aView(s.name))}">${T[lang].view}</a>
+        <button class="btn" type="button" data-gpt="${s.name}" data-chars="${s.prompt_chars || 0}" aria-label="${esc(T[lang].gptAria(s.name))}">${T[lang].gpt}</button>
         <a class="btn" href="https://github.com/${REPO}/releases/latest/download/${s.name}.zip" aria-label="${esc(T[lang].aZip(s.name))}">${T[lang].zip}</a>
       </div>
     </article>`;
   }).join('') : `<div class="empty">${T[lang].none}</div>`;
 }
 
+const GPT_LIMIT = 8000; // ChatGPT custom GPT "Instructions" field limit
+async function copyForChat(name, chars) {
+  const url = `prompts/${name}.md`;
+  if (chars > GPT_LIMIT) {            // too long to paste: download it to upload as Knowledge
+    const a = document.createElement('a'); a.href = url; a.download = `${name}.md`;
+    document.body.appendChild(a); a.click(); a.remove();
+    toast(T[lang].gptTooLong(chars), 7000);
+    return;
+  }
+  const load = fetch(url).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); });
+  try {                                 // 1) ClipboardItem keeps the click's permission while the file loads (Safari, Chrome)
+    await navigator.clipboard.write([new ClipboardItem({ 'text/plain': load.then(t => new Blob([t], { type: 'text/plain' })) })]);
+    toast(T[lang].gptCopied, 6000); return;
+  } catch { /* fall through */ }
+  let text = '';
+  try { text = await load; } catch { /* network problem: open the file instead */ }
+  if (text) {
+    try { await navigator.clipboard.writeText(text); toast(T[lang].gptCopied, 6000); return; } catch { /* fall through */ }
+    if (legacyCopy(text)) { toast(T[lang].gptCopied, 6000); return; }   // 3) older browsers / restricted clipboard
+  }
+  window.open(url, '_blank', 'noopener');                               // 4) last resort: show the file to copy by hand
+  toast(T[lang].gptOpened, 7000);
+}
+
 document.addEventListener('click', e => {
+  const g = e.target.closest('[data-gpt]');
+  if (g) { copyForChat(g.dataset.gpt, +g.dataset.chars); return; }
   const b = e.target.closest('[data-copy],[data-copy-from],[data-cat]');
   if (!b) return;
   if (b.dataset.copy) copy(b.dataset.copy);

@@ -211,6 +211,18 @@ def sync() -> None:
     print(f"\n{len(catalog)} skills synced.")
 
 
+def prompt_text(c: dict) -> str:
+    """One-file version of a skill (SKILL.md + its .md references) for chat AIs without skill support."""
+    d = SKILLS / c["name"]
+    parts = [(d / "SKILL.md").read_text(encoding="utf-8")]
+    for f in sorted(d.rglob("*")):
+        if f.is_file() and f.suffix == ".md" and f.name not in {"SKILL.md", "UPSTREAM.md"}:
+            parts.append(f"\n\n---\n\n<!-- file: {f.relative_to(d).as_posix()} -->\n\n"
+                         + f.read_text(encoding="utf-8", errors="replace"))
+    parts.append(f"\n\n---\nSource: https://github.com/{c['repo']} (MIT). Packaged by Full Production Studio.\n")
+    return "".join(parts)
+
+
 def write_site(catalog: list[dict]) -> None:
     """Data for the GitHub Pages site in docs/ (served at alfaris.github.io/full-production-studio)."""
     names = {c["name"] for c in catalog}
@@ -218,9 +230,18 @@ def write_site(catalog: list[dict]) -> None:
         missing = [s for s in pack["skills"] if s not in names]
         if missing:
             sys.exit(f"  ✗ pack `{pack['id']}` lists unknown skills: {missing}")
+    prompts = ROOT / "docs" / "prompts"
+    if prompts.exists():
+        shutil.rmtree(prompts)
+    prompts.mkdir(parents=True)
+    ar = SOURCES.get("descriptions_ar", {})
+    skills = []
+    for c in catalog:
+        text = prompt_text(c)
+        (prompts / f"{c['name']}.md").write_text(text, encoding="utf-8", newline="\n")
+        skills.append({**c, "description_ar": ar.get(c["name"], ""), "prompt_chars": len(text)})
     data = {"repo": "alfaris/full-production-studio", "categories": SOURCES["categories"],
-            "packs": SOURCES.get("packs", []), "skills": catalog}
-    (ROOT / "docs").mkdir(exist_ok=True)
+            "packs": SOURCES.get("packs", []), "skills": skills}
     (ROOT / "docs" / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")),
                                              encoding="utf-8")
 
@@ -254,7 +275,10 @@ def write_docs(catalog: list[dict]) -> None:
             for c in items:
                 flag = " 🧰" if c["toolkit"] else ""
                 note = f" _{c['note']}_" if c["note"] else ""
-                lines.append(f"| [`{c['name']}`](skills/{c['name']}/SKILL.md){flag} | {short(c['description'])}{note} "
+                desc = c["description"]
+                if fname == "README.ar.md" and SOURCES.get("descriptions_ar", {}).get(c["name"]):
+                    desc = SOURCES["descriptions_ar"][c["name"]]
+                lines.append(f"| [`{c['name']}`](skills/{c['name']}/SKILL.md){flag} | {short(desc, 170)}{note} "
                              f"| [{c['repo'].split('/')[0]}](https://github.com/{c['repo']}) |")
             lines.append("")
         lines.append(L["legend"])
@@ -299,13 +323,7 @@ def build() -> None:
                 if f.is_file():
                     z.write(f, f"{c['name']}/{f.relative_to(d).as_posix()}")
         # 2) single-file prompt: paste into ChatGPT GPT / Gemini Gem / Claude Project instructions
-        parts = [(d / "SKILL.md").read_text(encoding="utf-8")]
-        for f in sorted(d.rglob("*")):
-            if (f.is_file() and f.suffix == ".md" and f.name not in {"SKILL.md", "UPSTREAM.md"}):
-                parts.append(f"\n\n---\n\n<!-- file: {f.relative_to(d).as_posix()} -->\n\n"
-                             + f.read_text(encoding="utf-8", errors="replace"))
-        parts.append(f"\n\n---\nSource: https://github.com/{c['repo']} (MIT). Packaged by Full Production Studio.\n")
-        (DIST / "prompts" / f"{c['name']}.md").write_text("".join(parts), encoding="utf-8")
+        (DIST / "prompts" / f"{c['name']}.md").write_text(prompt_text(c), encoding="utf-8")
     with zipfile.ZipFile(DIST / f"{REPO_SLUG}-all-skills.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(SKILLS.rglob("*")):
             if f.is_file():
