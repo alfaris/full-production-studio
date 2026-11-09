@@ -8,7 +8,7 @@
 
 ### [🌐 Browse all skills →](https://alfaris.github.io/full-production-studio/)
 
-75 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
+77 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
 A **studio director** that runs the whole pipeline, plus the first **Arabic-first** creator skills.<br>
 Works with Claude Code, Claude.ai, Codex, Cursor, Gemini CLI, ChatGPT, and any agent that reads `SKILL.md`.
 
@@ -51,11 +51,11 @@ Same input, without and with the studio. The caption and typography frames are *
 
 ## 🎬 Start here: the Studio Director
 
-75 skills is a lot. You don't have to know any of them. Install the studio and tell your AI:
+77 skills is a lot. You don't have to know any of them. Install the studio and tell your AI:
 
 > *"Use studio-director. Make me a 45-second reel about ___."*
 
-[`studio-director`](skills/studio-director/SKILL.md) runs the project like a real production: **idea → script → visual plan → motion → edit → captions → export**. At each stage it picks the right skill, checks the result against a quality gate, and asks you for one decision before moving on. It runs a team of department heads that each report back with a handoff: [`motion-designer`](skills/motion-designer/SKILL.md) for motion graphics, [`colorist`](skills/colorist/SKILL.md) for the grade, and [`sound-designer`](skills/sound-designer/SKILL.md) for the mix.
+[`studio-director`](skills/studio-director/SKILL.md) runs the project like a real production: **idea → script → visual plan → motion → edit → captions → export**. At each stage it picks the right skill, checks the result against a quality gate, and asks you for one decision before moving on. It runs a team of department heads that each report back with a handoff: [`motion-designer`](skills/motion-designer/SKILL.md) for motion graphics, [`colorist`](skills/colorist/SKILL.md) for the grade, [`sound-designer`](skills/sound-designer/SKILL.md) for the mix, [`packaging-lead`](skills/packaging-lead/SKILL.md) for title, thumbnail and captions, and [`distribution-lead`](skills/distribution-lead/SKILL.md) for exports, cut-downs and posting.
 
 ## 🌍 Arabic-first skills
 
@@ -76,20 +76,20 @@ The first open skills built **for Arabic creators**, not translated. They handle
 
 ## 📦 Starter packs
 
-Don't want all 75? Install a pack:
+Don't want all 77? Install a pack:
 
 ```bash
 # 🎬 Director: one skill that orchestrates everything else you install
 npx skills add alfaris/full-production-studio --skill studio-director
 
 # 🌍 Arabic creator
-npx skills add alfaris/full-production-studio --skill studio-director --skill arabic-voice --skill arabic-hooks --skill arabic-script --skill arabic-shorts --skill arabic-titles-thumbnails --skill arabic-captions --skill arabic-youtube-seo
+npx skills add alfaris/full-production-studio --skill studio-director --skill packaging-lead --skill distribution-lead --skill arabic-voice --skill arabic-hooks --skill arabic-script --skill arabic-shorts --skill arabic-titles-thumbnails --skill arabic-captions --skill arabic-youtube-seo
 
 # ▶️ YouTuber
-npx skills add alfaris/full-production-studio --skill studio-director --skill yt-plan --skill yt-script --skill yt-package --skill yt-retention --skill yt-seo --skill yt-chapters --skill yt-edit
+npx skills add alfaris/full-production-studio --skill studio-director --skill packaging-lead --skill distribution-lead --skill yt-plan --skill yt-script --skill yt-package --skill yt-retention --skill yt-seo --skill yt-chapters --skill yt-edit
 
 # 📱 Reels / TikTok / Shorts
-npx skills add alfaris/full-production-studio --skill studio-director --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
+npx skills add alfaris/full-production-studio --skill studio-director --skill packaging-lead --skill distribution-lead --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
 
 # 🎥 Motion designer
 npx skills add alfaris/full-production-studio --skill studio-director --skill motion-designer --skill sound-designer --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
@@ -146,7 +146,7 @@ Download a skill `.md` from the [latest release](https://github.com/alfaris/full
 ## 📚 Skills
 
 <!-- BEGIN:CATALOG -->
-### ⭐ Studio originals (14)
+### ⭐ Studio originals (16)
 
 _Written for this repo: the studio director that runs the whole pipeline, plus Arabic-first skills for Arab creators_
 
@@ -163,7 +163,9 @@ _Written for this repo: the studio director that runs the whole pipeline, plus A
 | [`arabic-voice`](skills/arabic-voice/SKILL.md) | Captures an Arab creator's real speaking voice (dialect, rhythm, signature phrases, code-switching) into a reusable Voice Card, and rewrites stiff or AI-sounding Arabic… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | Optimizes Arabic YouTube videos for search (keywords across dialects and فصحى, spelling variants, Arabizi, bilingual descriptions, tags, chapters, and hashtags) so… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`colorist`](skills/colorist/SKILL.md) | The studio's Colorist. Owns the color of a video for the studio-director, covering log/HDR conversion, exposure and white balance correction, shot matching, a creative… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`distribution-lead`](skills/distribution-lead/SKILL.md) | The studio's Distribution Lead. Owns stage 7 for the studio-director, covering platform-correct exports, vertical and square versions, cut-downs and repurposed posts, a… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`motion-designer`](skills/motion-designer/SKILL.md) | The studio's Motion Designer. Owns stage 4 (motion graphics) for the studio-director, taking a Motion Brief and delivering a finished motion package (look, storyboard,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`packaging-lead`](skills/packaging-lead/SKILL.md) | The studio's Packaging Lead. Owns stage 6 for the studio-director, turning the finished video into everything a viewer sees before and around it, which covers the title… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`sound-designer`](skills/sound-designer/SKILL.md) | The studio's Sound Designer. Owns the sound of a video for the studio-director, covering dialogue cleanup, music bed and ducking, sound effects synced to picture and… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`studio-director`](skills/studio-director/SKILL.md) | The director of Full Production Studio. Takes a raw video idea and runs it through the whole pipeline (idea → script → visual plan → motion → edit → captions → export),… | [alfaris](https://github.com/alfaris/full-production-studio) |
 

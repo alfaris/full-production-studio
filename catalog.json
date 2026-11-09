@@ -110,11 +110,31 @@
     "original": true
   },
   {
+    "name": "distribution-lead",
+    "category": "studio",
+    "repo": "alfaris/full-production-studio",
+    "path": "originals/distribution-lead",
+    "description": "The studio's Distribution Lead. Owns stage 7 for the studio-director, covering platform-correct exports, vertical and square versions, cut-downs and repurposed posts, a posting schedule, a publish checklist, the first-48-hours follow-up, and a lessons report that feeds the next video. Delivers a Distribution Handoff. Picks and runs reframe-social, yt-shorts, youtube-clip-extractor, social-content-creation, text-content, x-article-converter, x-posting, email-writing, yt-comment and yt-retention. Use when the director reaches export/publishing, or when the user asks to export for each platform, make shorts/reels from a video, repurpose, plan when to post, publish, or check how a video did, or says \"صدّرلي الفيديو\", \"اعمل منه ريلز\", \"انشره\", \"امتى أنزّله\", \"الفيديو جاب كام\".",
+    "toolkit": false,
+    "note": "",
+    "original": true
+  },
+  {
     "name": "motion-designer",
     "category": "studio",
     "repo": "alfaris/full-production-studio",
     "path": "originals/motion-designer",
     "description": "The studio's Motion Designer. Owns stage 4 (motion graphics) for the studio-director, taking a Motion Brief and delivering a finished motion package (look, storyboard, animated titles, lower thirds, kinetic text, transitions, renders with alpha) plus a handoff report back to the director. Picks and runs the right motion skills (motion-design, remotion-motion-graphics, remotion-graphics, motion-design-html, arabic-motion-typography, web-sims, sound-design, review-loop). Use when the director reaches the motion stage, or when the user asks for motion graphics, an animated intro/outro, a logo reveal, kinetic typography, lower thirds, animated captions or explainer animation, or says \"موشن جرافيك\", \"انيميشن للنص\", \"انترو متحرك\", \"عايز موشن للفيديو\".",
+    "toolkit": false,
+    "note": "",
+    "original": true
+  },
+  {
+    "name": "packaging-lead",
+    "category": "studio",
+    "repo": "alfaris/full-production-studio",
+    "path": "originals/packaging-lead",
+    "description": "The studio's Packaging Lead. Owns stage 6 for the studio-director, turning the finished video into everything a viewer sees before and around it, which covers the title and thumbnail as one pair, captions/subtitles, description, chapters, tags, hashtags, pinned comment and end screen. Delivers a Package Handoff. Picks and runs yt-package, arabic-titles-thumbnails, youtube-title-creator, arabic-captions, captions, video-caption-creation, yt-seo, arabic-youtube-seo, yt-chapters and nano-banana-image-generator. Use when the director reaches packaging, or when the user asks for a title, thumbnail, captions, description, chapters, tags or \"everything I need to upload\", or says \"عنوان وثمبنيل\", \"اكتبلي الوصف\", \"شابترز\", \"كابشن للفيديو\", \"جهّزلي الرفع\".",
     "toolkit": false,
     "note": "",
     "original": true

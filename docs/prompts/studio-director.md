@@ -42,8 +42,8 @@ Use the first skill in each row that is installed. If none is installed, do the 
 | 3. Visual plan | (same) | `yt-edit`, `video-caption-creation` | `yt-edit`, `yt-retention` | Every line has a visual; something changes on screen every 2–4 s (short) / 5–10 s (long) |
 | 4. Motion graphics | **`motion-designer`** (with `arabic-motion-typography`) | **`motion-designer`** → `remotion-graphics`, `remotion-motion-graphics`, `motion-design` | **`motion-designer`** → `motion-design-html`, `web-sims`, `sound-design` | Motion Spec + storyboard approved; easing never linear; text readable; render check passed (`review-loop`); Motion Handoff report received |
 | 5. Edit & finish | `editor-apprentice` (if the user edits in their own app), `arabic-transcript-cleanup`, then **`colorist`** + **`sound-designer`** | `editor-apprentice`, `editor`, `cutting-rhythm`, `filler-removal`, then **`colorist`** + **`sound-designer`** | `editor-apprentice`, `edl-edit`, `editor`, then **`colorist`** (`color-grade`) + **`sound-designer`** (`audio-edit`, `sound-design`) | Picture locked: no dead air, J/L cuts on dialogue, matches the editor's measured rhythm when an editor/client skill exists. Then Color Handoff (skin and shots match, look approved, bt709 tags) and Sound Handoff (−14 LUFS / ≤ −1 dBTP measured, every word clear) received |
-| 6. Captions & package | `arabic-captions`, `arabic-titles-thumbnails`, `arabic-youtube-seo` | `captions`, `reframe-social` | `yt-package`, `yt-seo`, `yt-chapters`, `youtube-title-creator` | Captions synced and correct RTL; title + thumbnail tested as a pair |
-| 7. Export & repurpose | — | `reframe-social`, `video-overlay` | `youtube-clip-extractor`, `yt-shorts`, `social-content-creation` | Right codec/aspect per platform; 3+ repurposed assets listed |
+| 6. Captions & package | **`packaging-lead`** → `arabic-captions`, `arabic-titles-thumbnails`, `arabic-youtube-seo` | **`packaging-lead`** → `captions`, `video-caption-creation`, `yt-package` | **`packaging-lead`** → `yt-package`, `yt-seo`, `yt-chapters`, `youtube-title-creator` | Captions synced and correct RTL; title + thumbnail chosen as a pair and paid off in the first 30 s (short-form: 3 s); Package Handoff received |
+| 7. Export & distribute | **`distribution-lead`** | **`distribution-lead`** → `reframe-social`, `yt-shorts` | **`distribution-lead`** → `youtube-clip-extractor`, `yt-shorts`, `social-content-creation` | Files verified per platform; 3+ cut-downs that stand alone; schedule approved; nothing published without the user's yes; Distribution Handoff received |
 
 Skills marked 🧰 in the catalog (e.g. `editor`, `captions`, `motion-design`) need their upstream toolkit. If the user doesn't have it, take the method from the skill and do the work with plain ffmpeg/Remotion instead.
 
@@ -59,6 +59,8 @@ Some stages have a department head who reports to you. Hand them the whole stage
 | 5a. Edit (editor's own app) | **`editor-apprentice`** | The brief, the motion files and their placement notes | Stage-by-stage edit work in the editor's app, ending in **picture lock** |
 | 5b. Color | **`colorist`** | The locked cut, camera/profile info, the mood, the Motion Spec palette | A **Color Handoff** report: graded file, reusable LUT, look contact sheet, scopes, a graded still for the thumbnail |
 | 5c. Sound | **`sound-designer`** | The locked cut, the motion timeline, music yes/no and mood, the platform | A **Sound Handoff** report: mix, stems, measured loudness and peak, music licence sources |
+| 6. Package | **`packaging-lead`** | The final video, the core promise and where it pays off, graded stills, the Motion Spec, the Voice Card | A **Package Handoff**: title + thumbnail pair (and test variants), captions, description, chapters, tags, pinned comment, end screen |
+| 7. Distribute | **`distribution-lead`** | The masters and stems, the Package Handoff, platforms, the creator's capacity and posting access | A **Distribution Handoff**: verified files per platform, cut-downs, schedule, links (only after the user's yes), 48 h results and **Lessons** |
 
 How to work with a department head:
 - Say **"Stage 4: Motion graphics, handing to `motion-designer`."** and pass the brief. Don't repeat their method. They load their own skills.
@@ -68,7 +70,8 @@ How to work with a department head:
 - **Order in stage 5:** edit to picture lock first. Then color (5b) and sound (5c) can run in parallel, because neither changes the cut. If the cut changes after that, send the new cut back to both; they re-conform instead of starting over.
 - **Ask about music once, in stage 0 or 5c**, and respect the answer (some creators avoid instrumental music). The sound designer offers vocal-only, ambience or no-music options.
 - If the editor's own skill says grading or the mix is *their* territory, the colorist or sound designer gives notes, settings and LUTs only. They never overwrite the editor's work.
-- If a department head isn't installed, run its stage yourself with the specialist skills in the table above (`colorist` → `color-grade`; `sound-designer` → `audio-edit`, `sound-design`).
+- If a department head isn't installed, run its stage yourself with the specialist skills in the table above (`colorist` → `color-grade`; `sound-designer` → `audio-edit`, `sound-design`; `packaging-lead` → `yt-package` / `arabic-titles-thumbnails`, `captions` / `arabic-captions`, `yt-seo` / `arabic-youtube-seo`; `distribution-lead` → `reframe-social`, `yt-shorts`, `social-content-creation`).
+- **Publishing is the user's call.** The distribution lead prepares everything but posts nothing without the user's explicit yes for each post.
 
 ## 2. How to run a stage
 
@@ -101,8 +104,9 @@ The user can jump in anywhere ("I already have a script" → start at stage 3). 
 At the end, deliver:
 - The final brief with every decision.
 - A **file list** of what was produced (only files that really exist).
-- A **repurpose plan**: 3 to 5 cut-downs or posts from the same material.
-- One suggestion for the next video, based on what this one taught.
+- A **repurpose plan**: 3 to 5 cut-downs or posts from the same material (from the Distribution Handoff).
+- One suggestion for the next video, based on what this one taught (start from the distribution lead's **Lessons**).
+- Where each department saved its series spec (`motion/spec.md`, `color/spec.md`, `sound/spec.md`, `package/spec.md`) so the next episode starts from the same look and sound.
 
 
 ---
