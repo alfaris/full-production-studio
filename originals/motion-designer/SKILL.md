@@ -82,7 +82,20 @@ Rules:
 - **One focal point per frame.** If two elements compete, one of them waits.
 - Mark which beats are **full-screen** and which are **overlays** on footage. Overlays need alpha (§5).
 
-Show the Motion Spec and storyboard to the director (or the user, if there's no director) and get **one** approval before building. This is the cheapest point to change direction.
+### 2c. Show the storyboard to the user (approval gate)
+
+**The user approves the storyboard. The director doesn't approve it for them.** When a director is running, hand it to the director, who presents it to the user as the stage 4 decision. Nothing gets animated before the user says yes. This is the cheapest point to change direction: changing a frame costs minutes, changing an animation costs hours.
+
+Make it something the user can **see**, not just a table to read:
+
+1. **Style frame:** one full-resolution still of the hero element (usually the hook) in the final fonts, colours and layout. It shows the look of the whole video.
+2. **Storyboard sheet:** one still per beat, rendered **static** (final layout, no animation yet) and tiled into `motion/storyboard.png`. Under each frame, write its number, time, script line, and one line on how it moves (e.g. "slams in from the right, 0.4 s"). Use the real aspect ratio and show the platform safe area as a faint outline. Build the stills in the same route you'll animate in (a Remotion still, an HTML screenshot) so approval holds when the animation is built.
+3. **The table** from §2b, for the details.
+4. **One decision:** approve / change one thing (by frame number) / pick style frame A or B. Don't ask "any feedback?".
+
+If you can't render (chat-only AI), give each frame a short layout sketch in text (what's where, top/middle/bottom, right/left) plus the table, and say plainly that **no frames are rendered yet**.
+
+Record the approval in the brief (`Storyboard: approved by user, <date>, v<n>`). If the script or timing changes after approval, show the changed frames again; don't slip them in.
 
 ## 3. Pick the tool route
 
@@ -120,6 +133,7 @@ Skills marked 🧰 in the catalog (e.g. `motion-design`, `review-loop`, `sound-d
   - [ ] One focal point per frame; no unintended overlaps during transitions
   - [ ] Frame 0 is a real image, not black
   - [ ] Matches the Motion Spec: same fonts, accent and signature move everywhere
+- [ ] Matches the storyboard the user approved (any change was shown to the user again)
 - Max **2 fix rounds** per element unless the director asks for more. Then report what's left as a known issue.
 - **Final render specs** (match the edit timeline's fps and resolution):
 
@@ -144,6 +158,7 @@ Deliverables:  (only files that really exist, with path, duration, format, alpha
   - motion/out/03_lowerthird-ahmed_9x16_30.mov · 3.2 s · ProRes 4444 · alpha
 Placement:     where each file goes in the edit (timecode or script line), and which track
 Motion Spec:   motion/spec.md (reuse for the next video in this series)
+Storyboard:    motion/storyboard.png · style frame · approved by user (date, version)
 Gate check:    easing ✔  readability ✔  safe area ✔  Arabic ✔  review-loop sheets looked at ✔
 Assumptions:   what I decided without asking
 Escalations:   script/plan problems the director needs to decide on

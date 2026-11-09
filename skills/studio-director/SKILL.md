@@ -40,7 +40,7 @@ Use the first skill in each row that is installed. If none is installed, do the 
 | 1. Idea & angle | `arabic-market-research`, `arabic-voice` | `short-form-video`, `yt-viral` | `yt-plan`, `youtube`, `yt-viral`, `seo-research` | One core message, one angle that's different from what already exists, and a reason the creator is the right one to make it |
 | 2. Script & hook | `arabic-hooks`, `arabic-script` | `arabic-shorts`, `yt-shorts`, `hook-and-headline-writing` | `yt-script`, `youtube-script-writer`, `cold-open-creator` | Hook pays off by second 3; every beat earns its place; reads aloud naturally in the creator's voice |
 | 3. Visual plan | (same) | `yt-edit`, `video-caption-creation` | `yt-edit`, `yt-retention` | Every line has a visual; something changes on screen every 2–4 s (short) / 5–10 s (long) |
-| 4. Motion graphics | **`motion-designer`** (with `arabic-motion-typography`) | **`motion-designer`** → `remotion-graphics`, `remotion-motion-graphics`, `motion-design` | **`motion-designer`** → `motion-design-html`, `web-sims`, `sound-design` | Motion Spec + storyboard approved; easing never linear; text readable; render check passed (`review-loop`); Motion Handoff report received |
+| 4. Motion graphics | **`motion-designer`** (with `arabic-motion-typography`) | **`motion-designer`** → `remotion-graphics`, `remotion-motion-graphics`, `motion-design` | **`motion-designer`** → `motion-design-html`, `web-sims`, `sound-design` | Storyboard sheet + style frame shown to the user and approved by them before animating; easing never linear; text readable; render check passed (`review-loop`); Motion Handoff report received |
 | 5. Edit & finish | `editor-apprentice` (if the user edits in their own app), `arabic-transcript-cleanup`, then **`colorist`** + **`sound-designer`** | `editor-apprentice`, `editor`, `cutting-rhythm`, `filler-removal`, then **`colorist`** + **`sound-designer`** | `editor-apprentice`, `edl-edit`, `editor`, then **`colorist`** (`color-grade`) + **`sound-designer`** (`audio-edit`, `sound-design`) | Picture locked: no dead air, J/L cuts on dialogue, matches the editor's measured rhythm when an editor/client skill exists. Then Color Handoff (skin and shots match, look approved, bt709 tags) and Sound Handoff (−14 LUFS / ≤ −1 dBTP measured, every word clear) received |
 | 6. Captions & package | **`packaging-lead`** → `arabic-captions`, `arabic-titles-thumbnails`, `arabic-youtube-seo` | **`packaging-lead`** → `captions`, `video-caption-creation`, `yt-package` | **`packaging-lead`** → `yt-package`, `yt-seo`, `yt-chapters`, `youtube-title-creator` | Captions synced and correct RTL; title + thumbnail chosen as a pair and paid off in the first 30 s (short-form: 3 s); Package Handoff received |
 | 7. Export & distribute | **`distribution-lead`** | **`distribution-lead`** → `reframe-social`, `yt-shorts` | **`distribution-lead`** → `youtube-clip-extractor`, `yt-shorts`, `social-content-creation` | Files verified per platform; 3+ cut-downs that stand alone; schedule approved; nothing published without the user's yes; Distribution Handoff received |
@@ -55,7 +55,7 @@ Some stages have a department head who reports to you. Hand them the whole stage
 
 | Stage | Reports to you | You give them | They give back |
 |---|---|---|---|
-| 4. Motion graphics | **`motion-designer`** | The Project Brief, the approved script and visual plan, brand assets, the editor's app | A **Motion Handoff** report: rendered files (with format and alpha), where each one goes in the edit, gate check, assumptions, escalations |
+| 4. Motion graphics | **`motion-designer`** | The Project Brief, the approved script and visual plan, brand assets, the editor's app | First the **storyboard sheet + style frame** for the user to approve; then a **Motion Handoff** report: rendered files (with format and alpha), where each one goes in the edit, gate check, assumptions, escalations |
 | 5a. Edit (editor's own app) | **`editor-apprentice`** | The brief, the motion files and their placement notes | Stage-by-stage edit work in the editor's app, ending in **picture lock** |
 | 5b. Color | **`colorist`** | The locked cut, camera/profile info, the mood, the Motion Spec palette | A **Color Handoff** report: graded file, reusable LUT, look contact sheet, scopes, a graded still for the thumbnail |
 | 5c. Sound | **`sound-designer`** | The locked cut, the motion timeline, music yes/no and mood, the platform | A **Sound Handoff** report: mix, stems, measured loudness and peak, music licence sources |
@@ -79,6 +79,7 @@ How to work with a department head:
 2. Load that skill and follow it fully. Don't summarize it from memory.
 3. Show the output, then check it against the **Gate**. Be strict: if it fails, fix it before showing it again.
 4. Ask the user for **one** decision (approve, pick option A/B, or give one change). Don't ask open-ended "any feedback?".
+   When a department head hands you something to approve, **show it to the user**: images as images (storyboard sheet, style frame, look contact sheet, thumbnail mock-ups), not a summary of them. You can recommend an option, but the user chooses.
 5. Update the brief and move to the next stage.
 
 The user can jump in anywhere ("I already have a script" → start at stage 3). Run the gates for the stages you skipped, quickly, on what they give you.
@@ -87,6 +88,7 @@ The user can jump in anywhere ("I already have a script" → start at stage 3). 
 
 - **One core message per video.** If the idea holds two, propose splitting it into two videos.
 - **Hook before everything.** Never script the body before the hook is approved.
+- **Creative calls are the user's.** You never approve these for them: the hook (stage 2), the **storyboard and style frame** (stage 4, before any animation is built), the look (5b), music yes/no (5c), the title + thumbnail pair (6), the schedule and every post (7). Your gate checks quality; the user decides taste.
 - **Voice consistency.** Once the voice is captured (stage 1/2), every later text (captions, titles, on-screen text) uses it.
 - **Show, don't tell.** If a line can be shown (number, result, before/after), it gets a visual, not more words.
 - **Cheap tests first.** Draft render at half resolution or a contact sheet before the full render.

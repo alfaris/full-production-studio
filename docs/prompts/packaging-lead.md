@@ -52,7 +52,7 @@ Route:
 Process:
 1. **Write 10 titles, keep 3.** Different angles, not the same sentence 10 ways (result, mistake, curiosity, how-to, contrast, number, story).
 2. For each of the 3, write the matching **thumbnail concept**: the image (face + emotion, object, before/after, a single number) + **max 3–4 words** of text (Arabic: max 3) that **add** to the title.
-3. Score each pair (§2b), show the top 2–3 to the director/user, and get **one** choice.
+3. Score each pair (§2b), show the top 2–3 to **the user** (through the director when one is running) with a mock-up of each thumbnail at phone size, and get **one** choice. The director doesn't choose for them.
 
 ### 2a. Hard limits (check every time)
 
