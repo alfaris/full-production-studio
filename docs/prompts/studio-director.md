@@ -40,7 +40,7 @@ Use the first skill in each row that is installed. If none is installed, do the 
 | 1. Idea & angle | `arabic-market-research`, `arabic-voice` | `short-form-video`, `yt-viral` | `yt-plan`, `youtube`, `yt-viral`, `seo-research` | One core message, one angle that's different from what already exists, and a reason the creator is the right one to make it |
 | 2. Script & hook | `arabic-hooks`, `arabic-script` | `arabic-shorts`, `yt-shorts`, `hook-and-headline-writing` | `yt-script`, `youtube-script-writer`, `cold-open-creator` | Hook pays off by second 3; every beat earns its place; reads aloud naturally in the creator's voice |
 | 3. Visual plan | (same) | `yt-edit`, `video-caption-creation` | `yt-edit`, `yt-retention` | Every line has a visual; something changes on screen every 2–4 s (short) / 5–10 s (long) |
-| 4. Motion graphics | `arabic-motion-typography` + below | `remotion-motion-graphics`, `motion-design`, `remotion-graphics` | `motion-design-html`, `web-sims`, `sound-design` | Easing is never linear; text readable; render check passed (`review-loop`) |
+| 4. Motion graphics | **`motion-designer`** (with `arabic-motion-typography`) | **`motion-designer`** → `remotion-graphics`, `remotion-motion-graphics`, `motion-design` | **`motion-designer`** → `motion-design-html`, `web-sims`, `sound-design` | Motion Spec + storyboard approved; easing never linear; text readable; render check passed (`review-loop`); Motion Handoff report received |
 | 5. Edit | `editor-apprentice` (if the user edits in their own app), `arabic-transcript-cleanup` | `editor-apprentice`, `editor`, `cutting-rhythm`, `filler-removal` | `editor-apprentice`, `edl-edit`, `editor`, `audio-edit`, `color-grade` | No dead air; J/L cuts on dialogue; loudness normalized; matches the editor's measured rhythm when an editor/client skill exists |
 | 6. Captions & package | `arabic-captions`, `arabic-titles-thumbnails`, `arabic-youtube-seo` | `captions`, `reframe-social` | `yt-package`, `yt-seo`, `yt-chapters`, `youtube-title-creator` | Captions synced and correct RTL; title + thumbnail tested as a pair |
 | 7. Export & repurpose | — | `reframe-social`, `video-overlay` | `youtube-clip-extractor`, `yt-shorts`, `social-content-creation` | Right codec/aspect per platform; 3+ repurposed assets listed |
@@ -48,6 +48,22 @@ Use the first skill in each row that is installed. If none is installed, do the 
 Skills marked 🧰 in the catalog (e.g. `editor`, `captions`, `motion-design`) need their upstream toolkit. If the user doesn't have it, take the method from the skill and do the work with plain ffmpeg/Remotion instead.
 
 **When the user is an editor with their own way of working** (they edit in Premiere, Resolve, After Effects, Final Cut or CapCut, work for clients or a recurring channel, or say "do it the way I do it"), hand stage 5, and any later stage they want help with, to **`editor-apprentice`**. Unlike the fixed-method editing skills, it learns *that editor's* workflow and each client's style, works inside their app one stage at a time, and saves what it learns as an editor skill and one skill per client. Respect its rules: it asks before deciding, and the editor's territory (often grading, music, final polish) stays theirs. If an `editor-<name>` or `client-<name>` skill already exists, use it in every stage it covers, not just the edit. `editor-apprentice` needs Claude Code on the user's machine (it reads project files and runs local Python tools); in chat-only AIs, use `cutting-rhythm` / `filler-removal` for the method instead.
+
+## 1b. Your team (heads of department)
+
+Some stages have a department head who reports to you. Hand them the whole stage instead of calling the specialist skills yourself:
+
+| Stage | Reports to you | You give them | They give back |
+|---|---|---|---|
+| 4. Motion graphics | **`motion-designer`** | The Project Brief, the approved script and visual plan, brand assets, the editor's app | A **Motion Handoff** report: rendered files (with format and alpha), where each one goes in the edit, gate check, assumptions, escalations |
+| 5. Edit (editor's own app) | **`editor-apprentice`** | The brief, the motion files and their placement notes | Stage-by-stage edit work in the editor's app |
+
+How to work with a department head:
+- Say **"Stage 4: Motion graphics, handing to `motion-designer`."** and pass the brief. Don't repeat their method. They load their own skills.
+- They may send back **Escalations** (e.g. a beat too short to read its text). You decide, update the brief, and tell them. They never change the brief themselves.
+- Run your gate on their report, not on their promises: check that the listed files really exist before moving to stage 5.
+- Pass their notes "for the editor" to stage 5 together with the files.
+- If `motion-designer` isn't installed, run stage 4 yourself with the specialist skills in the table above.
 
 ## 2. How to run a stage
 

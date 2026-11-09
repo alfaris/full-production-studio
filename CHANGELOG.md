@@ -3,6 +3,12 @@
 All notable changes to Full Production Studio. Each release's notes on GitHub come from its section here.
 To release: add a `## vX.Y.Z` section, set the same version in `.claude-plugin/plugin.json`, then push the tag `vX.Y.Z`.
 
+## v1.6.0 — 2026-11-09
+
+- **New original: `motion-designer`.** The studio's first department head. It reports to `studio-director` and owns stage 4 (motion graphics): it turns the Project Brief into a Motion Brief, sets a Motion Spec (palette, type, easing, durations, safe areas), storyboards every element against the script, picks the tool route (Remotion, HTML/GSAP, web sims, or a keyframe spec for the editor's own app), builds through the specialist motion skills, reviews frames with `review-loop`, and ends with a **Motion Handoff** report (files, formats, alpha, placement, gate check, escalations).
+- `studio-director` gains a "Your team" section: it hands stage 4 to `motion-designer` and stage 5 to `editor-apprentice`, decides their escalations, and checks that handed-off files really exist before the edit.
+- `motion-designer` added to the 🎥 Motion designer starter pack.
+
 ## v1.5.0 — 2026-11-05
 
 Fixes from a hands-on audit (installing the repo the way users do and validating it with strict parsers).

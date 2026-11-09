@@ -17,7 +17,7 @@
 
 <div dir="rtl">
 
-72 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
+73 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
 فيها **مخرج** بيدير المشروع كله، وأول سكيلز **معمولة للعربي من الأساس** لصنّاع المحتوى العرب.
 بتشتغل على: Claude Code، Claude.ai، Codex، Cursor، Gemini CLI، ChatGPT، وأي AI بيقرا ملفات `SKILL.md`.
 
@@ -54,11 +54,11 @@
 
 ## 🎬 ابدأ من هنا: المخرج
 
-72 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
+73 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
 
 > «استخدم studio-director، واعملي ريل ٤٥ ثانية عن ___»
 
-سكيل [`studio-director`](skills/studio-director/SKILL.md) بيدير المشروع زي أي إنتاج حقيقي: **فكرة ← سكريبت ← توزيع المشاهد ← موشن ← مونتاج ← كابشنز ← تصدير**. في كل مرحلة بيختار السكيل المناسبة، ويراجع النتيجة على معايير جودة، وياخد منك قرار واحد قبل ما يكمّل.
+سكيل [`studio-director`](skills/studio-director/SKILL.md) بيدير المشروع زي أي إنتاج حقيقي: **فكرة ← سكريبت ← توزيع المشاهد ← موشن ← مونتاج ← كابشنز ← تصدير**. في كل مرحلة بيختار السكيل المناسبة، ويراجع النتيجة على معايير جودة، وياخد منك قرار واحد قبل ما يكمّل. والموشن جرافيك ليه رئيس قسم خاص بيه، [`motion-designer`](skills/motion-designer/SKILL.md)، بيصمّم الستايل ويعمل الأنيميشن ويرجع للمخرج بتقرير تسليم.
 
 ## 🌍 سكيلز معمولة للعربي
 
@@ -79,7 +79,7 @@
 
 ## 📦 باقات جاهزة
 
-مش عايز الـ72 كلهم؟ ركّب باقة:
+مش عايز الـ73 كلهم؟ ركّب باقة:
 
 </div>
 
@@ -97,7 +97,7 @@ npx skills add alfaris/full-production-studio --skill studio-director --skill yt
 npx skills add alfaris/full-production-studio --skill studio-director --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
 
 # 🎥 موشن ديزاينر
-npx skills add alfaris/full-production-studio --skill studio-director --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
+npx skills add alfaris/full-production-studio --skill studio-director --skill motion-designer --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
 
 # ✂️ مونتير: بيتعلّم طريقتك إنت في المونتاج لكل عميل (Claude Code)
 npx skills add alfaris/full-production-studio --skill studio-director --skill editor-apprentice --skill arabic-transcript-cleanup --skill cutting-rhythm --skill filler-removal --skill captions --skill audio-edit --skill color-grade
@@ -177,7 +177,7 @@ git clone https://github.com/alfaris/full-production-studio && cd full-productio
 > وصف السكيلز بالإنجليزي زي ما كاتبه أصحابها الأصليين. الـAI بيفهمها ويرد عليك بلغتك عادي.
 
 <!-- BEGIN:CATALOG -->
-### ⭐ أصلي من الاستوديو (11)
+### ⭐ أصلي من الاستوديو (12)
 
 _سكيلز معمولة للريبو ده: المخرج اللي بيشغّل الخط كله، وسكيلز معمولة للعربي من الأساس_
 
@@ -193,6 +193,7 @@ _سكيلز معمولة للريبو ده: المخرج اللي بيشغّل �
 | [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | بتنضّف التفريغ العربي: بترجّع كلام اللهجة اللي اتحوّل فصحى، وبتصلّح المصطلحات الإنجليزي، وبتعلّم على الحشو عشان يتقص. | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-voice`](skills/arabic-voice/SKILL.md) | بتطلّع «كارت الصوت» بتاعك (لهجتك، وطريقتك، وجملك المميزة)، وبتحوّل أي كلام رسمي أو شكله AI لكلامك الطبيعي. | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | سيو يوتيوب بالعربي: كلمات مفتاحية بكل اللهجات وطرق الكتابة، ووصف، وchapters، وتاجات، وهاشتاجات. | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`motion-designer`](skills/motion-designer/SKILL.md) | الموشن ديزاينر بتاع الاستوديو، وبيرجع للمخرج: بياخد البريف ويعمل ستايل الموشن، والستوري بورد، والعناوين واللوور ثيردز والنص المتحرك، ويراجع كل فريم، ويسلّم الملفات… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`studio-director`](skills/studio-director/SKILL.md) | المخرج: بياخد فكرة الفيديو ويمشّيها على الخط كله (فكرة ← سكريبت ← مشاهد ← موشن ← مونتاج ← كابشنز ← تصدير)، ويختار السكيل المناسبة لكل مرحلة، ويراجع النتيجة قبل ما يكمّل. | [alfaris](https://github.com/alfaris/full-production-studio) |
 
 ### 💡 أفكار (8)

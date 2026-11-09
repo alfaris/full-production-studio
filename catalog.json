@@ -100,6 +100,16 @@
     "original": true
   },
   {
+    "name": "motion-designer",
+    "category": "studio",
+    "repo": "alfaris/full-production-studio",
+    "path": "originals/motion-designer",
+    "description": "The studio's Motion Designer. Owns stage 4 (motion graphics) for the studio-director, taking a Motion Brief and delivering a finished motion package (look, storyboard, animated titles, lower thirds, kinetic text, transitions, renders with alpha) plus a handoff report back to the director. Picks and runs the right motion skills (motion-design, remotion-motion-graphics, remotion-graphics, motion-design-html, arabic-motion-typography, web-sims, sound-design, review-loop). Use when the director reaches the motion stage, or when the user asks for motion graphics, an animated intro/outro, a logo reveal, kinetic typography, lower thirds, animated captions or explainer animation, or says \"موشن جرافيك\", \"انيميشن للنص\", \"انترو متحرك\", \"عايز موشن للفيديو\".",
+    "toolkit": false,
+    "note": "",
+    "original": true
+  },
+  {
     "name": "studio-director",
     "category": "studio",
     "repo": "alfaris/full-production-studio",
