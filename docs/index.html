@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Full Production Studio · استوديو إنتاج متكامل</title>
-<meta name="description" content="Open-source AI skills for video & content creators: a studio director, Arabic-first skills, scripts, motion graphics, editing. Works with Claude, ChatGPT, Gemini, Codex, Cursor.">
+<meta name="description" content="Open-source AI skills for video & content creators: a studio director with a full production team, Arabic-first skills, scripts, motion graphics, editing. Works with Claude, ChatGPT, Gemini, Codex, Cursor.">
 <meta property="og:title" content="Full Production Studio · استوديو إنتاج متكامل">
 <meta property="og:description" content="Open-source AI skills for video & content creators. Works with Claude, ChatGPT, Gemini, Codex, Cursor.">
 <meta property="og:image" content="https://raw.githubusercontent.com/alfaris/full-production-studio/main/assets/social-preview.png">
@@ -91,6 +91,13 @@
   .director .flow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .director .flow span { background: var(--panel2); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 700; }
   .director .flow i { color: var(--orange); font-style: normal; align-self: center; }
+  .team-title { font-size: 15px; font-weight: 800; margin: 20px 0 8px; color: var(--text); }
+  .team { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .team a { display: flex; flex-direction: column; gap: 2px; background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; color: inherit; text-decoration: none; }
+  .team a:hover, .team a:focus-visible { border-color: var(--orange); }
+  .team b { font-size: 14px; }
+  .team small { color: var(--dim); font-size: 12px; }
+  .team code { align-self: flex-start; color: var(--orange2); font-size: 12px; direction: ltr; unicode-bidi: isolate; }
   .prompt { background: #0f1114; border: 1px dashed var(--orange); border-radius: 12px; padding: 18px; font-size: 17px; }
   .prompt small { color: var(--dim); display: block; margin-bottom: 6px; }
 
@@ -279,6 +286,8 @@
         <h2 class="sec-title" data-i18n="dirTitle"></h2>
         <p class="sec-sub" data-i18n="dirSub"></p>
         <div class="flow" id="flow"></div>
+        <h3 class="team-title" data-i18n="teamTitle"></h3>
+        <div class="team" id="team"></div>
       </div>
       <div class="prompt">
         <small data-i18n="sayThis"></small>
@@ -344,10 +353,14 @@ const T = {
     searchLabel: 'Search skills', pause: '⏸ Pause animation', play: '▶ Play animation',
     aInstall: n => `Copy install command for ${n}`, aView: n => `Open SKILL.md of ${n}`, aZip: n => `Download ${n} as ZIP`, aCopyCmd: 'Copy command',
     dirTitle: '🎬 Start with the Studio Director',
-    dirSub: "You don't need to learn the skills. The director runs the project stage by stage, picks the right skill for each stage, checks the result, and asks you for one decision before moving on.",
+    dirSub: "You don't need to learn the skills. The director runs the project stage by stage with a team of department heads. Each one does their stage and reports back, the director checks the result, and you make one decision before moving on.",
     sayThis: 'After installing, say:',
     dirPrompt: '“Use studio-director. Make me a 45-second reel about ___.”',
-    flow: ['Idea', 'Script', 'Visual plan', 'Motion', 'Edit', 'Captions', 'Export'],
+    flow: ['Idea', 'Script', 'Visual plan', 'Motion', 'Edit', 'Color & sound', 'Package', 'Publish'],
+    teamTitle: '👥 The director’s team',
+    team: [['🎥', 'Motion Designer', 'motion-designer', 'Look, storyboard, animations'], ['🎨', 'Colorist', 'colorist', 'Correction, matching, the look'],
+           ['🎧', 'Sound Designer', 'sound-designer', 'Voice, music, SFX, loudness'], ['🖼️', 'Packaging Lead', 'packaging-lead', 'Title, thumbnail, captions, SEO'],
+           ['🚀', 'Distribution Lead', 'distribution-lead', 'Exports, cut-downs, posting']],
     packsTitle: '📦 Starter packs', packsSub: 'Install only what you need with one command.',
     skills: 'skills', install: 'Copy install',
     skillsTitle: '📚 All skills', skillsSub: 'Descriptions are in English as written by each skill’s author. Your AI will still answer in your language.',
@@ -403,10 +416,14 @@ const T = {
     searchLabel: 'دوّر على سكيل', pause: '⏸ أوقف الحركة', play: '▶ شغّل الحركة',
     aInstall: n => `انسخ أمر تركيب ${n}`, aView: n => `افتح ملف SKILL.md بتاع ${n}`, aZip: n => `نزّل ${n} كملف ZIP`, aCopyCmd: 'انسخ الأمر',
     dirTitle: '🎬 ابدأ بالمخرج',
-    dirSub: 'مش محتاج تتعلم السكيلز. المخرج بيدير المشروع مرحلة مرحلة، ويختار السكيل المناسبة لكل مرحلة، ويراجع النتيجة، وياخد منك قرار واحد قبل ما يكمّل.',
+    dirSub: 'مش محتاج تتعلم السكيلز. المخرج بيدير المشروع مرحلة مرحلة ومعاه فريق رؤساء أقسام: كل واحد بيعمل مرحلته ويرجع له بتقرير، والمخرج يراجع النتيجة، وياخد منك قرار واحد قبل ما يكمّل.',
     sayThis: 'بعد التركيب قول:',
     dirPrompt: '«استخدم studio-director، واعملي ريل ٤٥ ثانية عن ___»',
-    flow: ['فكرة', 'سكريبت', 'توزيع المشاهد', 'موشن', 'مونتاج', 'كابشنز', 'تصدير'],
+    flow: ['فكرة', 'سكريبت', 'توزيع المشاهد', 'موشن', 'مونتاج', 'ألوان وصوت', 'تغليف', 'نشر'],
+    teamTitle: '👥 فريق المخرج',
+    team: [['🎥', 'موشن ديزاينر', 'motion-designer', 'الستايل والستوري بورد والأنيميشن'], ['🎨', 'كولريست', 'colorist', 'تصحيح الألوان والمطابقة واللوك'],
+           ['🎧', 'ساوند ديزاينر', 'sound-designer', 'الصوت والمزيكا والمؤثرات'], ['🖼️', 'مسؤول التغليف', 'packaging-lead', 'العنوان والثمبنيل والكابشنز'],
+           ['🚀', 'مسؤول النشر', 'distribution-lead', 'التصدير والريلز والنشر']],
     packsTitle: '📦 باقات جاهزة', packsSub: 'ركّب اللي محتاجه بس بأمر واحد.',
     skills: 'سكيل', install: 'انسخ أمر التركيب',
     skillsTitle: '📚 كل السكيلز', skillsSub: 'وصف السكيلز الأصلية والمونتير بالعربي، والباقي بالإنجليزي زي ما كاتبه صاحبه، والـAI هيرد عليك بلغتك عادي.',
@@ -494,6 +511,8 @@ function setLang(l) {
   $('#q').placeholder = T[l].search;
   updateMotionBtn();
   $('#flow').innerHTML = T[l].flow.map(s => `<span>${s}</span>`).join(`<i>${l === 'ar' ? '←' : '→'}</i>`);
+  $('#team').innerHTML = T[l].team.map(([icon, role, skill, what]) =>
+    `<a href="https://github.com/${REPO}/blob/main/skills/${skill}/SKILL.md"><b>${icon} ${role}</b><code lang="en">${skill}</code><small>${what}</small></a>`).join('');
   $('#fStats').innerHTML = T[l].fStats.map(x => `<span>${x}</span>`).join('');
   const pv = (cls, v) => `<div class="pv ${cls}"><span class="tag">${v.tag}</span>${v.img
       ? `<img src="${v.img}" alt="${esc(v.alt)}" loading="lazy" width="900" height="150">`
