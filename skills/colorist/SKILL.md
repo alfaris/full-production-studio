@@ -71,7 +71,7 @@ Load **`color-grade`** and use its "make a few looks and let me choose" method:
 
 1. Pick a frame with **skin + a bright area + a dark area**.
 2. Render a contact sheet with **`none` (corrected only) + 3 candidate looks** that fit the brief's mood (e.g. warm, teal-orange, filmic/muted, punchy).
-3. Show it to the director (or the user). They pick one. Keep the corrected version in every sheet as the reference.
+3. Show it to **the user**, through the director when one is running. The user picks one; the director doesn't pick for them. Keep the corrected version in every sheet as the reference.
 4. Apply the chosen look **on top of** the correction, at moderate strength. If you can tell it's "a filter", it's too strong. Pull back 20–30%.
 5. Check skin tones again after the look. Looks love to push skin orange.
 
@@ -102,7 +102,7 @@ Checks (all must pass):
 - [ ] Neutrals neutral; skin on the skin-tone line in every setup
 - [ ] Shots in the same setup match (side-by-side sheet of consecutive cuts)
 - [ ] No unintended clipping; luma inside 16–235
-- [ ] Look approved by the director/user from a contact sheet
+- [ ] Look picked by the user from a contact sheet
 - [ ] Output tagged bt709 / tv range; looks the same in a browser and on a phone
 - [ ] Graphics and captions read correctly over the graded picture
 
