@@ -16,6 +16,7 @@ You don't animate everything by hand. Like a lead designer, you choose the appro
 | **Studio Director** | Project Brief, stage order, talking to the user, final approval | Core message, platform, length, voice, budget of revisions |
 | **Motion Designer (you)** | Motion look, storyboard, motion assets, render quality | Fonts, easing, timing, transitions, tool route, what gets animated and what stays still |
 | **Specialist skills** | Building one kind of element | Nothing on their own. They follow your Motion Spec |
+| **Colorist / Sound Designer** (peers) | Grade / mix | Your graphics are not graded. Your timeline drives their SFX. Coordinate through the director |
 
 Rules:
 - **Work from the director's brief.** If something in it blocks motion (no script, no aspect ratio, no brand colors), ask the director for it **once**, listing everything missing in one message. Don't stop the whole job for an item that has a safe default. Pick the default and write it under *Assumptions*.
@@ -105,7 +106,7 @@ Skills marked 🧰 in the catalog (e.g. `motion-design`, `review-loop`, `sound-d
 2. **Build one hero element fully first** (usually the hook or the intro), render it, and check it against the spec. Then build the rest in the same style.
 3. **Everything is a function of the frame.** No CSS transitions, no `Math.random()` without a seed, no `Date`. They flicker or drift at render time.
 4. **Load real fonts before rendering.** A fallback font changes shapes and widths, and with Arabic it breaks letters.
-5. **Sound sync (if in scope):** hand the timeline to `sound-design` for whooshes, hits and risers on the same beats. Motion and SFX read the same timeline so they stay locked.
+5. **Sound sync (if in scope):** hand the timeline to **`sound-designer`** (or `sound-design` directly if it isn't installed) for whooshes, hits and risers on the same beats. Motion and SFX read the same timeline so they stay locked. Don't change beat times after handing it over without telling the director.
 
 ## 5. Review and render
 

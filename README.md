@@ -8,7 +8,7 @@
 
 ### [🌐 Browse all skills →](https://alfaris.github.io/full-production-studio/)
 
-73 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
+75 open-source **AI skills** for video & content creators, covering every stage from the first idea to the final export.<br>
 A **studio director** that runs the whole pipeline, plus the first **Arabic-first** creator skills.<br>
 Works with Claude Code, Claude.ai, Codex, Cursor, Gemini CLI, ChatGPT, and any agent that reads `SKILL.md`.
 
@@ -51,11 +51,11 @@ Same input, without and with the studio. The caption and typography frames are *
 
 ## 🎬 Start here: the Studio Director
 
-73 skills is a lot. You don't have to know any of them. Install the studio and tell your AI:
+75 skills is a lot. You don't have to know any of them. Install the studio and tell your AI:
 
 > *"Use studio-director. Make me a 45-second reel about ___."*
 
-[`studio-director`](skills/studio-director/SKILL.md) runs the project like a real production: **idea → script → visual plan → motion → edit → captions → export**. At each stage it picks the right skill, checks the result against a quality gate, and asks you for one decision before moving on. Motion graphics go to its own department head, [`motion-designer`](skills/motion-designer/SKILL.md), who designs the look, builds the animations and reports back with a handoff.
+[`studio-director`](skills/studio-director/SKILL.md) runs the project like a real production: **idea → script → visual plan → motion → edit → captions → export**. At each stage it picks the right skill, checks the result against a quality gate, and asks you for one decision before moving on. It runs a team of department heads that each report back with a handoff: [`motion-designer`](skills/motion-designer/SKILL.md) for motion graphics, [`colorist`](skills/colorist/SKILL.md) for the grade, and [`sound-designer`](skills/sound-designer/SKILL.md) for the mix.
 
 ## 🌍 Arabic-first skills
 
@@ -76,7 +76,7 @@ The first open skills built **for Arabic creators**, not translated. They handle
 
 ## 📦 Starter packs
 
-Don't want all 73? Install a pack:
+Don't want all 75? Install a pack:
 
 ```bash
 # 🎬 Director: one skill that orchestrates everything else you install
@@ -92,10 +92,10 @@ npx skills add alfaris/full-production-studio --skill studio-director --skill yt
 npx skills add alfaris/full-production-studio --skill studio-director --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
 
 # 🎥 Motion designer
-npx skills add alfaris/full-production-studio --skill studio-director --skill motion-designer --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
+npx skills add alfaris/full-production-studio --skill studio-director --skill motion-designer --skill sound-designer --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
 
 # ✂️ Video editor: learns how YOU edit, per client (Claude Code)
-npx skills add alfaris/full-production-studio --skill studio-director --skill editor-apprentice --skill arabic-transcript-cleanup --skill cutting-rhythm --skill filler-removal --skill captions --skill audio-edit --skill color-grade
+npx skills add alfaris/full-production-studio --skill studio-director --skill editor-apprentice --skill colorist --skill sound-designer --skill arabic-transcript-cleanup --skill cutting-rhythm --skill filler-removal --skill captions --skill audio-edit --skill color-grade
 ```
 
 ---
@@ -146,7 +146,7 @@ Download a skill `.md` from the [latest release](https://github.com/alfaris/full
 ## 📚 Skills
 
 <!-- BEGIN:CATALOG -->
-### ⭐ Studio originals (12)
+### ⭐ Studio originals (14)
 
 _Written for this repo: the studio director that runs the whole pipeline, plus Arabic-first skills for Arab creators_
 
@@ -162,7 +162,9 @@ _Written for this repo: the studio director that runs the whole pipeline, plus A
 | [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | Cleans Arabic speech transcripts from Whisper, YouTube auto-captions or other tools. It fixes dialect words the AI turned into فصحى, restores English terms written in… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-voice`](skills/arabic-voice/SKILL.md) | Captures an Arab creator's real speaking voice (dialect, rhythm, signature phrases, code-switching) into a reusable Voice Card, and rewrites stiff or AI-sounding Arabic… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | Optimizes Arabic YouTube videos for search (keywords across dialects and فصحى, spelling variants, Arabizi, bilingual descriptions, tags, chapters, and hashtags) so… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`colorist`](skills/colorist/SKILL.md) | The studio's Colorist. Owns the color of a video for the studio-director, covering log/HDR conversion, exposure and white balance correction, shot matching, a creative… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`motion-designer`](skills/motion-designer/SKILL.md) | The studio's Motion Designer. Owns stage 4 (motion graphics) for the studio-director, taking a Motion Brief and delivering a finished motion package (look, storyboard,… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`sound-designer`](skills/sound-designer/SKILL.md) | The studio's Sound Designer. Owns the sound of a video for the studio-director, covering dialogue cleanup, music bed and ducking, sound effects synced to picture and… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`studio-director`](skills/studio-director/SKILL.md) | The director of Full Production Studio. Takes a raw video idea and runs it through the whole pipeline (idea → script → visual plan → motion → edit → captions → export),… | [alfaris](https://github.com/alfaris/full-production-studio) |
 
 ### 💡 Ideas (8)

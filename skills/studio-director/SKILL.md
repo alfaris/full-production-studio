@@ -41,7 +41,7 @@ Use the first skill in each row that is installed. If none is installed, do the 
 | 2. Script & hook | `arabic-hooks`, `arabic-script` | `arabic-shorts`, `yt-shorts`, `hook-and-headline-writing` | `yt-script`, `youtube-script-writer`, `cold-open-creator` | Hook pays off by second 3; every beat earns its place; reads aloud naturally in the creator's voice |
 | 3. Visual plan | (same) | `yt-edit`, `video-caption-creation` | `yt-edit`, `yt-retention` | Every line has a visual; something changes on screen every 2–4 s (short) / 5–10 s (long) |
 | 4. Motion graphics | **`motion-designer`** (with `arabic-motion-typography`) | **`motion-designer`** → `remotion-graphics`, `remotion-motion-graphics`, `motion-design` | **`motion-designer`** → `motion-design-html`, `web-sims`, `sound-design` | Motion Spec + storyboard approved; easing never linear; text readable; render check passed (`review-loop`); Motion Handoff report received |
-| 5. Edit | `editor-apprentice` (if the user edits in their own app), `arabic-transcript-cleanup` | `editor-apprentice`, `editor`, `cutting-rhythm`, `filler-removal` | `editor-apprentice`, `edl-edit`, `editor`, `audio-edit`, `color-grade` | No dead air; J/L cuts on dialogue; loudness normalized; matches the editor's measured rhythm when an editor/client skill exists |
+| 5. Edit & finish | `editor-apprentice` (if the user edits in their own app), `arabic-transcript-cleanup`, then **`colorist`** + **`sound-designer`** | `editor-apprentice`, `editor`, `cutting-rhythm`, `filler-removal`, then **`colorist`** + **`sound-designer`** | `editor-apprentice`, `edl-edit`, `editor`, then **`colorist`** (`color-grade`) + **`sound-designer`** (`audio-edit`, `sound-design`) | Picture locked: no dead air, J/L cuts on dialogue, matches the editor's measured rhythm when an editor/client skill exists. Then Color Handoff (skin and shots match, look approved, bt709 tags) and Sound Handoff (−14 LUFS / ≤ −1 dBTP measured, every word clear) received |
 | 6. Captions & package | `arabic-captions`, `arabic-titles-thumbnails`, `arabic-youtube-seo` | `captions`, `reframe-social` | `yt-package`, `yt-seo`, `yt-chapters`, `youtube-title-creator` | Captions synced and correct RTL; title + thumbnail tested as a pair |
 | 7. Export & repurpose | — | `reframe-social`, `video-overlay` | `youtube-clip-extractor`, `yt-shorts`, `social-content-creation` | Right codec/aspect per platform; 3+ repurposed assets listed |
 
@@ -56,14 +56,19 @@ Some stages have a department head who reports to you. Hand them the whole stage
 | Stage | Reports to you | You give them | They give back |
 |---|---|---|---|
 | 4. Motion graphics | **`motion-designer`** | The Project Brief, the approved script and visual plan, brand assets, the editor's app | A **Motion Handoff** report: rendered files (with format and alpha), where each one goes in the edit, gate check, assumptions, escalations |
-| 5. Edit (editor's own app) | **`editor-apprentice`** | The brief, the motion files and their placement notes | Stage-by-stage edit work in the editor's app |
+| 5a. Edit (editor's own app) | **`editor-apprentice`** | The brief, the motion files and their placement notes | Stage-by-stage edit work in the editor's app, ending in **picture lock** |
+| 5b. Color | **`colorist`** | The locked cut, camera/profile info, the mood, the Motion Spec palette | A **Color Handoff** report: graded file, reusable LUT, look contact sheet, scopes, a graded still for the thumbnail |
+| 5c. Sound | **`sound-designer`** | The locked cut, the motion timeline, music yes/no and mood, the platform | A **Sound Handoff** report: mix, stems, measured loudness and peak, music licence sources |
 
 How to work with a department head:
 - Say **"Stage 4: Motion graphics, handing to `motion-designer`."** and pass the brief. Don't repeat their method. They load their own skills.
 - They may send back **Escalations** (e.g. a beat too short to read its text). You decide, update the brief, and tell them. They never change the brief themselves.
-- Run your gate on their report, not on their promises: check that the listed files really exist before moving to stage 5.
+- Run your gate on their report, not on their promises: check that the listed files really exist before moving to the next stage.
 - Pass their notes "for the editor" to stage 5 together with the files.
-- If `motion-designer` isn't installed, run stage 4 yourself with the specialist skills in the table above.
+- **Order in stage 5:** edit to picture lock first. Then color (5b) and sound (5c) can run in parallel, because neither changes the cut. If the cut changes after that, send the new cut back to both; they re-conform instead of starting over.
+- **Ask about music once, in stage 0 or 5c**, and respect the answer (some creators avoid instrumental music). The sound designer offers vocal-only, ambience or no-music options.
+- If the editor's own skill says grading or the mix is *their* territory, the colorist or sound designer gives notes, settings and LUTs only. They never overwrite the editor's work.
+- If a department head isn't installed, run its stage yourself with the specialist skills in the table above (`colorist` → `color-grade`; `sound-designer` → `audio-edit`, `sound-design`).
 
 ## 2. How to run a stage
 
