@@ -10,7 +10,7 @@ Thanks for helping make this the best open skill library for video & content cre
 |---|---|
 | Suggest an existing open-source skill | Open a **"Suggest a skill"** issue with the repo link and license |
 | Report a skill that misbehaves | Open a **"Skill problem"** issue: which skill, which AI, what you asked, what happened |
-| Improve an original skill (`studio-director`, `arabic-*`) | Edit it in `originals/<name>/SKILL.md` and open a PR |
+| Improve an original skill (`studio-director`, `motion-designer`, `colorist`, `sound-designer`, `packaging-lead`, `distribution-lead`, `arabic-*`) | Edit it in `originals/<name>/SKILL.md` and open a PR |
 | Fix an upstream skill | Send the fix to the **original repo** (linked in `skills/<name>/UPSTREAM.md`), then open an issue here asking to bump the pinned commit |
 | Add another dialect or language | Open an issue first so we can agree on naming (e.g. `arabic-*` → `<language>-*`) |
 

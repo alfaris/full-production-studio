@@ -17,7 +17,7 @@
 
 <div dir="rtl">
 
-72 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
+77 سكيل مفتوحة المصدر لصنّاع المحتوى والفيديو، بتغطي كل مرحلة من أول فكرة لحد التصدير النهائي.
 فيها **مخرج** بيدير المشروع كله، وأول سكيلز **معمولة للعربي من الأساس** لصنّاع المحتوى العرب.
 بتشتغل على: Claude Code، Claude.ai، Codex، Cursor، Gemini CLI، ChatGPT، وأي AI بيقرا ملفات `SKILL.md`.
 
@@ -54,11 +54,11 @@
 
 ## 🎬 ابدأ من هنا: المخرج
 
-72 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
+77 سكيل رقم كبير، ومش محتاج تحفظ ولا واحدة منهم. ركّب الاستوديو وقول للـAI:
 
 > «استخدم studio-director، واعملي ريل ٤٥ ثانية عن ___»
 
-سكيل [`studio-director`](skills/studio-director/SKILL.md) بيدير المشروع زي أي إنتاج حقيقي: **فكرة ← سكريبت ← توزيع المشاهد ← موشن ← مونتاج ← كابشنز ← تصدير**. في كل مرحلة بيختار السكيل المناسبة، ويراجع النتيجة على معايير جودة، وياخد منك قرار واحد قبل ما يكمّل.
+سكيل [`studio-director`](skills/studio-director/SKILL.md) بيدير المشروع زي أي إنتاج حقيقي: **فكرة ← سكريبت ← توزيع المشاهد ← موشن ← مونتاج ← كابشنز ← تصدير**. في كل مرحلة بيختار السكيل المناسبة، ويراجع النتيجة على معايير جودة، وياخد منك قرار واحد قبل ما يكمّل. ومعاه فريق رؤساء أقسام، كل واحد بيرجع له بتقرير تسليم: [`motion-designer`](skills/motion-designer/SKILL.md) للموشن، و[`colorist`](skills/colorist/SKILL.md) للألوان، و[`sound-designer`](skills/sound-designer/SKILL.md) للصوت، و[`packaging-lead`](skills/packaging-lead/SKILL.md) للعنوان والثمبنيل والكابشنز، و[`distribution-lead`](skills/distribution-lead/SKILL.md) للتصدير والريلز والنشر.
 
 ## 🌍 سكيلز معمولة للعربي
 
@@ -79,7 +79,7 @@
 
 ## 📦 باقات جاهزة
 
-مش عايز الـ72 كلهم؟ ركّب باقة:
+مش عايز الـ77 كلهم؟ ركّب باقة:
 
 </div>
 
@@ -88,19 +88,19 @@
 npx skills add alfaris/full-production-studio --skill studio-director
 
 # 🌍 صانع محتوى عربي
-npx skills add alfaris/full-production-studio --skill studio-director --skill arabic-voice --skill arabic-hooks --skill arabic-script --skill arabic-shorts --skill arabic-titles-thumbnails --skill arabic-captions --skill arabic-youtube-seo
+npx skills add alfaris/full-production-studio --skill studio-director --skill packaging-lead --skill distribution-lead --skill arabic-voice --skill arabic-hooks --skill arabic-script --skill arabic-shorts --skill arabic-titles-thumbnails --skill arabic-captions --skill arabic-youtube-seo
 
 # ▶️ يوتيوبر
-npx skills add alfaris/full-production-studio --skill studio-director --skill yt-plan --skill yt-script --skill yt-package --skill yt-retention --skill yt-seo --skill yt-chapters --skill yt-edit
+npx skills add alfaris/full-production-studio --skill studio-director --skill packaging-lead --skill distribution-lead --skill yt-plan --skill yt-script --skill yt-package --skill yt-retention --skill yt-seo --skill yt-chapters --skill yt-edit
 
 # 📱 ريلز / تيك توك / شورتس
-npx skills add alfaris/full-production-studio --skill studio-director --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
+npx skills add alfaris/full-production-studio --skill studio-director --skill packaging-lead --skill distribution-lead --skill short-form-video --skill yt-shorts --skill hook-and-headline-writing --skill video-caption-creation --skill reframe-social
 
 # 🎥 موشن ديزاينر
-npx skills add alfaris/full-production-studio --skill studio-director --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
+npx skills add alfaris/full-production-studio --skill studio-director --skill motion-designer --skill sound-designer --skill motion-design --skill remotion-motion-graphics --skill motion-design-html --skill review-loop --skill sound-design --skill arabic-motion-typography
 
 # ✂️ مونتير: بيتعلّم طريقتك إنت في المونتاج لكل عميل (Claude Code)
-npx skills add alfaris/full-production-studio --skill studio-director --skill editor-apprentice --skill arabic-transcript-cleanup --skill cutting-rhythm --skill filler-removal --skill captions --skill audio-edit --skill color-grade
+npx skills add alfaris/full-production-studio --skill studio-director --skill editor-apprentice --skill colorist --skill sound-designer --skill arabic-transcript-cleanup --skill cutting-rhythm --skill filler-removal --skill captions --skill audio-edit --skill color-grade
 ```
 
 <div dir="rtl">
@@ -177,7 +177,7 @@ git clone https://github.com/alfaris/full-production-studio && cd full-productio
 > وصف السكيلز بالإنجليزي زي ما كاتبه أصحابها الأصليين. الـAI بيفهمها ويرد عليك بلغتك عادي.
 
 <!-- BEGIN:CATALOG -->
-### ⭐ أصلي من الاستوديو (11)
+### ⭐ أصلي من الاستوديو (16)
 
 _سكيلز معمولة للريبو ده: المخرج اللي بيشغّل الخط كله، وسكيلز معمولة للعربي من الأساس_
 
@@ -193,6 +193,11 @@ _سكيلز معمولة للريبو ده: المخرج اللي بيشغّل �
 | [`arabic-transcript-cleanup`](skills/arabic-transcript-cleanup/SKILL.md) | بتنضّف التفريغ العربي: بترجّع كلام اللهجة اللي اتحوّل فصحى، وبتصلّح المصطلحات الإنجليزي، وبتعلّم على الحشو عشان يتقص. | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-voice`](skills/arabic-voice/SKILL.md) | بتطلّع «كارت الصوت» بتاعك (لهجتك، وطريقتك، وجملك المميزة)، وبتحوّل أي كلام رسمي أو شكله AI لكلامك الطبيعي. | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`arabic-youtube-seo`](skills/arabic-youtube-seo/SKILL.md) | سيو يوتيوب بالعربي: كلمات مفتاحية بكل اللهجات وطرق الكتابة، ووصف، وchapters، وتاجات، وهاشتاجات. | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`colorist`](skills/colorist/SKILL.md) | الكولريست بتاع الاستوديو، وبيرجع للمخرج: بيصلّح الإضاءة والوايت بالانس، ويحوّل اللوج والـHDR، ويظبط اللقطات على بعض، ويقترح لوكات تختار منها، ويسلّم الفيديو متلوّن وLUT… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`distribution-lead`](skills/distribution-lead/SKILL.md) | مسؤول النشر في الاستوديو، وبيرجع للمخرج: يصدّر نسخة مظبوطة لكل منصة، ويطلّع ريلز وشورتس من الفيديو، ويعمل جدول نشر، وما بينشرش حاجة من غير موافقتك، وبعد ٤٨ ساعة بيقولك… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`motion-designer`](skills/motion-designer/SKILL.md) | الموشن ديزاينر بتاع الاستوديو، وبيرجع للمخرج: بياخد البريف ويعمل ستايل الموشن، والستوري بورد، والعناوين واللوور ثيردز والنص المتحرك، ويراجع كل فريم، ويسلّم الملفات… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`packaging-lead`](skills/packaging-lead/SKILL.md) | مسؤول التغليف في الاستوديو، وبيرجع للمخرج: العنوان والثمبنيل كزوج واحد، والكابشنز، والوصف، والشابترز، والتاجز، والتعليق المثبّت، وبيتأكد إن الفيديو بيوفّي بالوعد في أول… | [alfaris](https://github.com/alfaris/full-production-studio) |
+| [`sound-designer`](skills/sound-designer/SKILL.md) | الساوند ديزاينر بتاع الاستوديو، وبيرجع للمخرج: بينضّف الصوت، ويحط المزيكا (أو من غير مزيكا لو حابب) والمؤثرات على الموشن، ويعمل الميكس على −14 LUFS، ويسلّم الميكس… | [alfaris](https://github.com/alfaris/full-production-studio) |
 | [`studio-director`](skills/studio-director/SKILL.md) | المخرج: بياخد فكرة الفيديو ويمشّيها على الخط كله (فكرة ← سكريبت ← مشاهد ← موشن ← مونتاج ← كابشنز ← تصدير)، ويختار السكيل المناسبة لكل مرحلة، ويراجع النتيجة قبل ما يكمّل. | [alfaris](https://github.com/alfaris/full-production-studio) |
 
 ### 💡 أفكار (8)

@@ -3,6 +3,18 @@
 All notable changes to Full Production Studio. Each release's notes on GitHub come from its section here.
 To release: add a `## vX.Y.Z` section, set the same version in `.claude-plugin/plugin.json`, then push the tag `vX.Y.Z`.
 
+## v1.6.0 — 2026-11-09
+
+- **New original: `motion-designer`.** The studio's first department head. It reports to `studio-director` and owns stage 4 (motion graphics): it turns the Project Brief into a Motion Brief, sets a Motion Spec (palette, type, easing, durations, safe areas), storyboards every element against the script, picks the tool route (Remotion, HTML/GSAP, web sims, or a keyframe spec for the editor's own app), builds through the specialist motion skills, reviews frames with `review-loop`, and ends with a **Motion Handoff** report (files, formats, alpha, placement, gate check, escalations).
+- `studio-director` gains a "Your team" section: it hands stage 4 to `motion-designer` and stage 5 to `editor-apprentice`, decides their escalations, and checks that handed-off files really exist before the edit.
+- `motion-designer` added to the 🎥 Motion designer starter pack.
+- **New original: `colorist`.** Owns the color pass. It checks for log/HDR footage and converts it, corrects exposure and white balance using rendered waveform/vectorscope images, matches shots, has the user pick a look from a contact sheet (`color-grade`), keeps skin tones on the skin-tone line, tags output as bt709, and hands back a reusable LUT and a graded still for the thumbnail.
+- **New original: `sound-designer`.** Owns the sound pass. It runs a dialogue chain (high-pass, denoise, de-hum, de-ess, EQ, compression), asks before adding music (offering vocal-only, ambience or no-music options), checks music licences, syncs SFX to the motion timeline (`sound-design`), and does a two-pass loudness mix measured against platform targets (−14 LUFS / ≤ −1 dBTP for social). It delivers the mix and stems.
+- **New original: `packaging-lead`.** Owns stage 6. It writes the title and thumbnail as one pair (10 titles → 3 pairs, scored, phone test at 168 px, hook in the first ~45 characters, nothing bottom-right) and checks that the video pays off the promise in the first 30 s. It also covers captions (SRT always, 5-line sync check), description (first 150 characters), chapters by YouTube's rules, tags, hashtags, pinned comment, end screen and a Test & Compare plan.
+- **New original: `distribution-lead`.** Owns stage 7. It exports from the master per platform and verifies each file with ffprobe, makes 3–5 stand-alone cut-downs (`reframe-social`, `yt-shorts`), schedules from the creator's own audience data, and **never publishes without the user's yes**. Over the first 48 h it compares against the channel's own median and writes Lessons that feed the director's next-video suggestion.
+- `studio-director` stage 5 is now "Edit & finish": picture lock first, then `colorist` and `sound-designer` in parallel. Stages 6 and 7 go to `packaging-lead` and `distribution-lead`. Every department returns a handoff report and saves a series spec.
+- Starter packs: `sound-designer` added to 🎥 Motion designer; `colorist` and `sound-designer` added to ✂️ Video editor; `packaging-lead` and `distribution-lead` added to 🌍 Arabic creator, ▶️ YouTuber and 📱 Reels/TikTok/Shorts.
+
 ## v1.5.0 — 2026-11-05
 
 Fixes from a hands-on audit (installing the repo the way users do and validating it with strict parsers).
